@@ -16,28 +16,28 @@ export function DevOpsCloud() {
         <span className="text-base font-semibold text-black">8</span>
       </div>
       <div className="mt-3 flex gap-1 px-4 pb-6 md:grid md:grid-cols-4 md:gap-2">
-        <IconTile ariaLabel="Arch Linux">
+        <IconTile ariaLabel="Arch Linux" href="https://wiki.archlinux.org/">
           <ArchIcon className="h-4 w-4" />
         </IconTile>
-        <IconTile ariaLabel="Debian">
+        <IconTile ariaLabel="Debian" href="https://www.debian.org/doc/">
           <DebianIcon className="h-4 w-4" />
         </IconTile>
-        <IconTile ariaLabel="Ubuntu">
+        <IconTile ariaLabel="Ubuntu" href="https://ubuntu.com/desktop/docs">
           <UbuntuIcon className="h-4 w-4" />
         </IconTile>
-        <IconTile ariaLabel="Docker">
+        <IconTile ariaLabel="Docker" href="https://docs.docker.com/">
           <Docker className="h-4 w-4" />
         </IconTile>
-        <IconTile ariaLabel="Microsoft Azure">
+        <IconTile ariaLabel="Microsoft Azure" href="https://docs.microsoft.com/en-us/azure/">
           <MicrosoftAzure className="h-4 w-4" />
         </IconTile>
-        <IconTile ariaLabel="Google Cloud">
+        <IconTile ariaLabel="Google Cloud" href="https://cloud.google.com/docs">
           <GoogleCloud className="h-4 w-4" />
         </IconTile>
-        <IconTile ariaLabel="Tailscale">
+        <IconTile ariaLabel="Tailscale" href="https://tailscale.com/docs">
           <TailscaleIcon className="h-4 w-4" />
         </IconTile>
-        <IconTile ariaLabel="Cloudflare">
+        <IconTile ariaLabel="Cloudflare" href="https://developers.cloudflare.com/">
           <Cloudflare className="h-4 w-4" />
         </IconTile>
       </div>

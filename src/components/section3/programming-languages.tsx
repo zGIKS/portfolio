@@ -14,22 +14,22 @@ export function ProgrammingLanguages() {
         <span className="text-base font-semibold text-black">6</span>
       </div>
       <div className="mt-3 flex gap-1 px-4 md:grid md:grid-cols-4 md:gap-2">
-        <IconTile ariaLabel="Go">
+        <IconTile ariaLabel="Go" href="https://go.dev/doc/">
           <Go className="h-4 w-4 text-[#00ADD8]" />
         </IconTile>
-        <IconTile ariaLabel="Rust" className="text-black">
+        <IconTile ariaLabel="Rust" className="text-black" href="https://doc.rust-lang.org/">
           <Rust className="h-4 w-4" />
         </IconTile>
-        <IconTile ariaLabel="Java">
+        <IconTile ariaLabel="Java" href="https://docs.oracle.com/en/java/">
           <Java className="h-4 w-4" />
         </IconTile>
-        <IconTile ariaLabel="Python">
+        <IconTile ariaLabel="Python" href="https://docs.python.org/">
           <Python className="h-4 w-4" />
         </IconTile>
-        <IconTile ariaLabel="TypeScript">
+        <IconTile ariaLabel="TypeScript" href="https://www.typescriptlang.org/docs/">
           <TypeScript className="h-4 w-4" />
         </IconTile>
-        <IconTile ariaLabel="JavaScript">
+        <IconTile ariaLabel="JavaScript" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
           <JavaScript className="h-4 w-4" />
         </IconTile>
       </div>
