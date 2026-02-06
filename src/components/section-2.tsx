@@ -1,5 +1,6 @@
 import { About } from "./section2/about";
 import { Experience } from "./section2/experience";
+import { Projects } from "./section2/projects";
 
 export function Section2() {
   return (
@@ -15,6 +16,12 @@ export function Section2() {
           Experience
         </div>
         <Experience />
+      </div>
+      <div className="pt-6">
+        <div className="w-full bg-black py-2 pl-6 pr-4 text-sm font-medium uppercase tracking-wide text-white md:pl-10">
+          Projects
+        </div>
+        <Projects />
       </div>
     </section>
   );
