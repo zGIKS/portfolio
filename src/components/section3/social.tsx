@@ -12,8 +12,8 @@ export function Links() {
         <span className="text-base font-semibold text-black">4</span>
       </div>
       <div className="mt-3 grid grid-cols-4 gap-2 px-4">
-        <IconTile ariaLabel="LinkedIn" className="text-[#0A66C2]">
-          <LinkedinIcon className="h-4 w-4" />
+        <IconTile ariaLabel="LinkedIn">
+          <LinkedinIcon className="h-4 w-4 text-[#0A66C2]" />
         </IconTile>
         <IconTile ariaLabel="GitHub" className="text-black">
           <GithubIcon className="h-4 w-4" />
@@ -21,8 +21,8 @@ export function Links() {
         <IconTile ariaLabel="Twitter" className="text-black">
           <XIcon className="h-4 w-4" />
         </IconTile>
-        <IconTile ariaLabel="YouTube" className="text-[#FF0000]">
-          <YoutubeIcon className="h-4 w-4" />
+        <IconTile ariaLabel="YouTube">
+          <YoutubeIcon className="h-4 w-4 text-[#FF0000]" />
         </IconTile>
       </div>
 

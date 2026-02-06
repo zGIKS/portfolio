@@ -1,6 +1,7 @@
 import { CurrentOnline } from "./section3/time-zone";
 import { Links } from "./section3/social";
 import { Languages } from "./section3/languages";
+import { Frontend } from "./section3/frontend";
 
 export function Section3() {
   return (
@@ -9,6 +10,7 @@ export function Section3() {
         <CurrentOnline />
         <Links />
         <Languages />
+        <Frontend />
       </div>
     </section>
   );

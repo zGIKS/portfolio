@@ -15,8 +15,8 @@ export function Languages() {
         <span className="text-base font-semibold text-black">7</span>
       </div>
       <div className="mt-3 grid grid-cols-4 gap-2 px-4">
-        <IconTile ariaLabel="Go" className="text-[#00ADD8]">
-          <Go className="h-5 w-5" />
+        <IconTile ariaLabel="Go">
+          <Go className="h-5 w-5 text-[#00ADD8]" />
         </IconTile>
         <IconTile ariaLabel="Rust" className="text-black">
           <Rust className="h-5 w-5" />
