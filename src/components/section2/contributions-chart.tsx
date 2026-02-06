@@ -6,7 +6,6 @@ import { MonthLabels } from "./contributions-chart/month-labels";
 import { Legend } from "./contributions-chart/legend";
 import { LoadingState } from "./contributions-chart/loading-state";
 import { ErrorState } from "./contributions-chart/error-state";
-import { createDateFormatter } from "./contributions-chart/date-utils";
 import { useContributions } from "./contributions-chart/use-contributions";
 import { calculateMonthLabels } from "./contributions-chart/month-utils";
 import { processWeeks } from "./contributions-chart/week-utils";
@@ -37,8 +36,6 @@ export function ContributionsChart() {
   const chartPadding = 8;
   const chartWidth =
     weeks.length * cellSize + (weeks.length - 1) * cellGap + 28 + chartPadding;
-  const formatTooltipDate = createDateFormatter();
-
   return (
     <div className="inline-block" style={{ width: chartWidth, paddingRight: chartPadding }}>
       <MonthLabels monthLabels={monthLabels} />
@@ -48,7 +45,6 @@ export function ContributionsChart() {
             key={week.firstDay}
             week={week}
             cellSize={cellSize}
-            formatTooltipDate={formatTooltipDate}
           />
         ))}
       </div>
