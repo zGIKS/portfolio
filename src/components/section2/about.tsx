@@ -42,7 +42,7 @@ export function About() {
         </li>
       </ul>
       <div className="mt-8 bg-black/95 p-4 text-white">
-        <div className="w-full max-w-full overflow-visible">
+        <div className="w-full max-w-full overflow-hidden">
           <ContributionsChart />
         </div>
       </div>
