@@ -1,4 +1,5 @@
 import { SectionBody } from "../section-shared/section-body";
+import { cn, typography } from "@/lib/utils";
 
 const experiences = [
   {
@@ -32,25 +33,25 @@ const experiences = [
 export function Experience() {
   return (
     <SectionBody>
-      <div className="space-y-6 text-sm leading-relaxed text-black">
+      <div className="space-y-6 leading-relaxed text-black">
         {experiences.map((experience) => (
           <div
             key={experience.title}
             className="border-l-2 border-black/15 pl-4"
           >
             <div className="flex flex-wrap items-center justify-between gap-2">
-              <h3 className="text-base font-semibold">{experience.title}</h3>
-              <span className="text-xs uppercase tracking-wide text-black/70">
+              <h3 className={cn(typography.h4, "text-base")}>{experience.title}</h3>
+              <span className={cn(typography.small, "uppercase tracking-wide text-black/70")}>
                 {experience.period}
               </span>
             </div>
             {experience.company && (
-              <p className="text-xs text-gray-600 mt-1">{experience.company}</p>
+              <p className={cn(typography.muted, "mt-1 text-gray-600")}>{experience.company}</p>
             )}
             {experience.subtitle && (
-              <p className="text-xs text-gray-500 mt-1">{experience.subtitle}</p>
+              <p className={cn(typography.muted, "mt-1 text-gray-500")}>{experience.subtitle}</p>
             )}
-            <ul className="mt-3 list-disc space-y-2 pl-5">
+            <ul className={cn(typography.ul, "mt-3 space-y-2 pl-5 text-sm")}>
               {experience.highlights.map((highlight) => (
                 <li key={highlight}>{highlight}</li>
               ))}

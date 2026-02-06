@@ -1,4 +1,5 @@
 import { CONTRIBUTION_COLORS } from "./color-utils";
+import { cn, typography } from "@/lib/utils";
 
 interface LegendProps {
   totalContributions: number;
@@ -6,7 +7,7 @@ interface LegendProps {
 
 export function Legend({ totalContributions }: LegendProps) {
   return (
-    <div className="mt-3 flex items-center justify-between text-[10px] text-white/60">
+    <div className={cn("mt-3 flex items-center justify-between text-[10px] text-white/60", typography.small)}>
       <span>
         {totalContributions.toLocaleString()} contributions in the last year on{" "}
         <a

@@ -4,6 +4,7 @@ import { Link as LinkIcon } from "lucide-react";
 import { SectionBody } from "../section-shared/section-body";
 import { ProjectCard } from "./project-card";
 import { projects } from "./projects-data";
+import { cn, typography } from "@/lib/utils";
 
 export function Projects() {
   return (
@@ -26,7 +27,7 @@ export function Projects() {
                 <div className="h-16 w-40 bg-black" />
               )
             }
-            meta={<p className="text-sm text-black/70">{project.description}</p>}
+            meta={<p className={cn(typography.muted, "text-black/70")}>{project.description}</p>}
             progressLabel="Progress"
             progressValue={project.progress}
             actions={
@@ -36,7 +37,10 @@ export function Projects() {
                     href={project.codeUrl ?? "#"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 border border-black/20 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-black"
+                    className={cn(
+                      typography.small,
+                      "flex items-center gap-2 border border-black/20 px-3 py-1 uppercase tracking-wide text-black"
+                    )}
                   >
                     <GithubIcon className="h-3.5 w-3.5" />
                     Code
@@ -45,7 +49,10 @@ export function Projects() {
                     href={project.previewUrl ?? "#"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 border border-black/20 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-black"
+                    className={cn(
+                      typography.small,
+                      "flex items-center gap-2 border border-black/20 px-3 py-1 uppercase tracking-wide text-black"
+                    )}
                   >
                     <LinkIcon className="h-3.5 w-3.5" />
                     Preview

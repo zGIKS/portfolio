@@ -5,6 +5,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { cn, typography } from "@/lib/utils";
 
 interface IconTileProps {
   ariaLabel: string;
@@ -38,7 +39,7 @@ export function IconTile({ ariaLabel, children, className, href }: IconTileProps
       <Tooltip>
         <TooltipTrigger asChild>{content}</TooltipTrigger>
         <TooltipContent>
-          <p>{ariaLabel}</p>
+          <p className={cn(typography.small, "text-xs")}>{ariaLabel}</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>

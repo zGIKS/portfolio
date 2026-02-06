@@ -1,8 +1,10 @@
+import { cn, typography } from "@/lib/utils";
+
 export function Level() {
   return (
     <div className="flex w-full items-center justify-center gap-3 bg-muted px-4 py-3 h-[58px] md:justify-start">
-      <span className="text-lg">Level</span>
-      <span className="relative inline-flex h-7 w-7 items-center justify-center text-[10px] font-semibold text-red-500">
+      <span className={cn(typography.large, "text-lg")}>Level</span>
+      <span className={cn(typography.small, "relative inline-flex h-7 w-7 items-center justify-center text-[10px] text-red-500")}>
         <svg
           viewBox="0 0 100 100"
           className="absolute inset-0 h-full w-full"

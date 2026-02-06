@@ -1,10 +1,12 @@
+import { cn, typography } from "@/lib/utils";
+
 interface MonthLabelsProps {
   monthLabels: string[];
 }
 
 export function MonthLabels({ monthLabels }: MonthLabelsProps) {
   return (
-    <div className="grid gap-[2px] text-[10px] text-white/60" style={{
+    <div className={cn(typography.small, "grid gap-[2px] text-[10px] text-white/60")} style={{
       gridTemplateColumns: `28px repeat(${monthLabels.length}, 8px)`,
     }}>
       <div />
