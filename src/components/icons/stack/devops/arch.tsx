@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils"
 
-interface ArchIconProps extends React.SVGProps<SVGSVGElement> {}
+type ArchIconProps = React.SVGProps<SVGSVGElement>;
 
 export const ArchIcon = ({ className, ...props }: ArchIconProps) => (
   <svg

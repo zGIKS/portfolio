@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils"
 
-interface UbuntuIconProps extends React.SVGProps<SVGSVGElement> {}
+type UbuntuIconProps = React.SVGProps<SVGSVGElement>;
 
 export const UbuntuIcon = ({ className, ...props }: UbuntuIconProps) => (
   <svg

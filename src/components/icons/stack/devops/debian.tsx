@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils"
 
-interface DebianIconProps extends React.SVGProps<SVGSVGElement> {}
+type DebianIconProps = React.SVGProps<SVGSVGElement>;
 
 export const DebianIcon = ({ className, ...props }: DebianIconProps) => (
   <svg

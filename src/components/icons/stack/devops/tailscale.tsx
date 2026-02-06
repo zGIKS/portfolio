@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-interface TailscaleIconProps extends React.SVGProps<SVGSVGElement> {}
+type TailscaleIconProps = React.SVGProps<SVGSVGElement>;
 
 export function TailscaleIcon({ className, ...props }: TailscaleIconProps) {
   return (
