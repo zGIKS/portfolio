@@ -1,3 +1,5 @@
+import { ContributionsChart } from "./contributions-chart/contributions-chart";
+
 export function About() {
   return (
     <div className="px-6 pb-10 pt-6 md:px-10">
@@ -39,6 +41,11 @@ export function About() {
           systems.
         </li>
       </ul>
+      <div className="mt-8 bg-black/95 p-4 text-white">
+        <div className="w-full max-w-full overflow-visible">
+          <ContributionsChart />
+        </div>
+      </div>
     </div>
   );
 }
