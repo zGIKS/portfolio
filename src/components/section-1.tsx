@@ -29,12 +29,6 @@ export function Section1() {
         <div className="max-w-sm rounded-md bg-muted px-4 py-3 text-sm text-muted-foreground">
           You can feature one of your Badges here. Select one from your edit profile page.
         </div>
-        <button
-          type="button"
-          className="rounded-md bg-secondary px-4 py-2 text-sm font-medium text-secondary-foreground"
-        >
-          Edit Profile
-        </button>
       </div>
     </section>
   );
