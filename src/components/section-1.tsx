@@ -42,7 +42,7 @@ export function Section1() {
             <Arbi className="h-10 w-10 shrink-0" />
             <div className="flex flex-col leading-tight">
               <span className="text-sm font-semibold text-white">1.º Arbimaster</span>
-              <span className="text-xs text-white/70">#2035</span>
+              <span className="text-xs text-white">2035 XP</span>
             </div>
           </div>
         </div>
