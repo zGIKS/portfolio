@@ -7,7 +7,8 @@ export const DebianIcon = ({ className, ...props }: DebianIconProps) => (
     role="img"
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
-    className={cn("h-4 w-4", className)}
+    className={cn("h-4 w-4 text-[#CE0056]", className)}
+    fill="currentColor"
     {...props}
   >
     <title>Debian</title>

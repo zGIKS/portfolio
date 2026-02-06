@@ -7,7 +7,8 @@ export const ArchIcon = ({ className, ...props }: ArchIconProps) => (
     role="img"
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
-    className={cn("h-4 w-4", className)}
+    className={cn("h-4 w-4 text-[#1793D1]", className)}
+    fill="currentColor"
     {...props}
   >
     <title>Arch Linux</title>

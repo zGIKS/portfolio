@@ -1,7 +1,6 @@
 import { CurrentOnline } from "./section3/time-zone";
 import { Links } from "./section3/social";
-import { Languages } from "./section3/languages";
-import { Frontend } from "./section3/frontend";
+import { Stack } from "./section3/stack";
 
 export function Section3() {
   return (
@@ -9,8 +8,7 @@ export function Section3() {
       <div className="pt-6">
         <CurrentOnline />
         <Links />
-        <Languages />
-        <Frontend />
+        <Stack />
       </div>
     </section>
   );
