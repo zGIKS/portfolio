@@ -1,9 +1,9 @@
-import { ArchIcon } from "../icons/stack/arch";
-import { DebianIcon } from "../icons/stack/debian";
-import { UbuntuIcon } from "../icons/stack/ubuntu";
-import { Docker } from "../icons/stack/docker";
-import { MicrosoftAzure } from "../icons/stack/azure";
-import { GoogleCloud } from "../icons/stack/googlecloud";
+import { ArchIcon } from "../icons/stack/devops/arch";
+import { DebianIcon } from "../icons/stack/devops/debian";
+import { UbuntuIcon } from "../icons/stack/devops/ubuntu";
+import { Docker } from "../icons/stack/devops/docker";
+import { MicrosoftAzure } from "../icons/stack/devops/azure";
+import { GoogleCloud } from "../icons/stack/devops/googlecloud";
 import { IconTile } from "./icon-tile";
 
 export function DevOpsCloud() {

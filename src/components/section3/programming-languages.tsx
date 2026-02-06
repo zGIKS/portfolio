@@ -1,9 +1,9 @@
-import { Go } from "../icons/stack/go";
-import { Rust } from "../icons/stack/rust";
-import { Java } from "../icons/stack/java";
-import { Python } from "../icons/stack/python";
-import { TypeScript } from "../icons/stack/typescript";
-import { JavaScript } from "../icons/stack/javascript";
+import { Go } from "../icons/stack/languages/go";
+import { Rust } from "../icons/stack/languages/rust";
+import { Java } from "../icons/stack/languages/java";
+import { Python } from "../icons/stack/languages/python";
+import { TypeScript } from "../icons/stack/languages/typescript";
+import { JavaScript } from "../icons/stack/languages/javascript";
 import { IconTile } from "./icon-tile";
 
 export function ProgrammingLanguages() {

@@ -1,8 +1,8 @@
-import { React } from "../icons/stack/react";
-import { Nextjs } from "../icons/stack/nextjs";
-import { TailwindCSS } from "../icons/stack/tailwind";
-import { RadixUI } from "../icons/stack/radixui";
-import { ShadcnUI } from "../icons/stack/shadcn";
+import { React } from "../icons/stack/frontend/react";
+import { Nextjs } from "../icons/stack/frontend/nextjs";
+import { TailwindCSS } from "../icons/stack/frontend/tailwind";
+import { RadixUI } from "../icons/stack/frontend/radixui";
+import { ShadcnUI } from "../icons/stack/frontend/shadcn";
 import { IconTile } from "./icon-tile";
 
 export function FrontendUI() {

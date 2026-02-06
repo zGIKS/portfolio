@@ -1,7 +1,7 @@
-import { PostgreSQL } from "../icons/stack/postgresql";
-import { Redis } from "../icons/stack/redis";
-import { MySQL } from "../icons/stack/mysql";
-import { MongoDB } from "../icons/stack/mongo";
+import { PostgreSQL } from "../icons/stack/databases/postgresql";
+import { Redis } from "../icons/stack/databases/redis";
+import { MySQL } from "../icons/stack/databases/mysql";
+import { MongoDB } from "../icons/stack/databases/mongo";
 import { IconTile } from "./icon-tile";
 
 export function DatabasesStorage() {
