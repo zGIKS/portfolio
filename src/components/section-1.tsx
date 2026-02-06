@@ -1,3 +1,6 @@
+import { Arbi } from "./icons/arbi";
+import { Tenno } from "./icons/tenno";
+
 export function Section1() {
   return (
     <section className="flex w-full flex-col gap-6 bg-muted px-6 py-6 text-card-foreground md:flex-row md:items-center md:justify-between md:px-10">
@@ -19,17 +22,21 @@ export function Section1() {
         </div>
       </div>
 
-      <div className="flex flex-col items-start gap-3 md:items-end">
-        <div className="flex items-center gap-2 text-lg">
-          <span>Level</span>
-          <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-border text-sm">
-            5
+        <div className="flex flex-col items-start gap-3 md:items-end">
+          <div className="flex items-center gap-2 text-lg">
+          <span>LR1</span>
+          <span className="inline-flex h-7 w-7 items-center justify-center overflow-hidden rounded-full border border-border">
+            <Tenno className="h-full w-full" />
           </span>
+          </div>
+          <div className="flex items-center gap-3">
+            <Arbi className="h-10 w-10 shrink-0" />
+            <div className="flex flex-col leading-tight">
+              <span className="text-sm font-semibold text-foreground">1.º Arbimaster</span>
+              <span className="text-xs text-muted-foreground">#2035</span>
+            </div>
+          </div>
         </div>
-        <div className="max-w-sm rounded-md bg-muted px-4 py-3 text-sm text-muted-foreground">
-          You can feature one of your Badges here. Select one from your edit profile page.
-        </div>
-      </div>
     </section>
   );
 }
