@@ -2,6 +2,7 @@ import { GithubIcon } from "../icons/github";
 import { LinkedinIcon } from "../icons/linkedin";
 import { XIcon } from "../icons/x";
 import { YoutubeIcon } from "../icons/youtube";
+import { IconTile } from "./icon-tile";
 
 export function Links() {
   return (
@@ -11,35 +12,20 @@ export function Links() {
         <span className="text-base font-semibold text-black">4</span>
       </div>
       <div className="mt-3 grid grid-cols-4 gap-2 px-4">
-        <button
-          type="button"
-          className="flex h-8 w-8 items-center justify-center bg-black text-white"
-          aria-label="LinkedIn"
-        >
+        <IconTile ariaLabel="LinkedIn" className="text-[#0A66C2]">
           <LinkedinIcon className="h-4 w-4" />
-        </button>
-        <button
-          type="button"
-          className="flex h-8 w-8 items-center justify-center bg-black text-white"
-          aria-label="GitHub"
-        >
+        </IconTile>
+        <IconTile ariaLabel="GitHub" className="text-black">
           <GithubIcon className="h-4 w-4" />
-        </button>
-        <button
-          type="button"
-          className="flex h-8 w-8 items-center justify-center bg-black text-white"
-          aria-label="Twitter"
-        >
+        </IconTile>
+        <IconTile ariaLabel="Twitter" className="text-black">
           <XIcon className="h-4 w-4" />
-        </button>
-        <button
-          type="button"
-          className="flex h-8 w-8 items-center justify-center bg-black text-white"
-          aria-label="YouTube"
-        >
+        </IconTile>
+        <IconTile ariaLabel="YouTube" className="text-[#FF0000]">
           <YoutubeIcon className="h-4 w-4" />
-        </button>
+        </IconTile>
       </div>
+
     </>
   );
 }
