@@ -21,14 +21,14 @@ export function ProjectCard({
 
   return (
     <div className="border border-black/10 bg-white p-4">
-      <div className="flex items-start justify-between gap-4">
+      <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
         <div>{media}</div>
         <div className="flex-1">
           <h3 className="text-base font-bold text-black">{title}</h3>
-          {meta && <div className="mt-2">{meta}</div>}
         </div>
         {actions && <div className="flex shrink-0 items-start">{actions}</div>}
       </div>
+      {meta && <div className="mt-3">{meta}</div>}
       <div className="mt-4">
         <div className="text-xs font-medium text-black/70">
           {progressLabel ?? "Progress"}: {percent}%

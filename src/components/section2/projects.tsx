@@ -23,10 +23,16 @@ export function Projects() {
             />
           </div>
         }
+        meta={
+          <p className="text-sm text-black/70">
+            Sistema de inicio de sesión y control de accesos que protege cuentas, datos y
+            sesiones de usuarios.
+          </p>
+        }
         progressLabel="Progress"
         progressValue={100}
         actions={
-          <div className="flex flex-col items-end gap-2">
+          <div className="flex w-full flex-col gap-2 md:w-auto md:items-end">
             <div className="flex items-center gap-2">
               <a
                 href="https://github.com/zGIKS/iam-demo"
