@@ -33,7 +33,7 @@ const experiences = [
 export function Experience() {
   return (
     <SectionBody>
-      <div className="space-y-6 leading-relaxed text-black">
+      <div className="space-y-6 text-sm leading-relaxed text-black">
         {experiences.map((experience) => (
           <div
             key={experience.title}
@@ -51,7 +51,7 @@ export function Experience() {
             {experience.subtitle && (
               <p className={cn(typography.muted, "mt-1 text-gray-500")}>{experience.subtitle}</p>
             )}
-            <ul className={cn(typography.ul, "mt-3 space-y-2 pl-5 text-sm")}>
+            <ul className="mt-3 list-disc space-y-2 pl-5">
               {experience.highlights.map((highlight) => (
                 <li key={highlight}>{highlight}</li>
               ))}

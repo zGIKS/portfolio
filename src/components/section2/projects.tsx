@@ -27,7 +27,7 @@ export function Projects() {
                 <div className="h-16 w-40 bg-black" />
               )
             }
-            meta={<p className={cn(typography.muted, "text-black/70")}>{project.description}</p>}
+            meta={<p className="text-sm text-black/70">{project.description}</p>}
             progressLabel="Progress"
             progressValue={project.progress}
             actions={
