@@ -11,7 +11,7 @@ export function Links() {
         <span>Links</span>
         <span className="text-base font-semibold text-black">4</span>
       </div>
-      <div className="mt-3 grid grid-cols-4 gap-2 px-4">
+      <div className="mt-3 flex gap-1 px-4 md:grid md:grid-cols-4 md:gap-2">
         <IconTile ariaLabel="LinkedIn">
           <LinkedinIcon className="h-4 w-4 text-[#0A66C2]" />
         </IconTile>

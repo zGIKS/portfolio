@@ -27,7 +27,7 @@ export function Stack() {
         <span>Stack</span>
         <span className="text-base font-semibold text-black">20</span>
       </div>
-      <div className="mt-3 grid grid-cols-4 gap-2 px-4">
+      <div className="mt-3 grid grid-cols-4 gap-2 px-4 pb-6">
         <IconTile ariaLabel="Arch Linux">
           <ArchIcon className="h-5 w-5" />
         </IconTile>

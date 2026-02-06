@@ -6,7 +6,7 @@ export function HomeCard() {
   return (
     <div className="min-h-screen w-full bg-black text-white shadow-xl md:max-w-[55.249245rem]">
       <Section1 />
-      <div className="flex w-full">
+      <div className="flex w-full flex-col-reverse md:flex-row">
         <Section2 />
         <Section3 />
       </div>
