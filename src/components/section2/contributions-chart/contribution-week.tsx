@@ -4,10 +4,9 @@ import { ContributionCell } from "./contribution-cell";
 interface ContributionWeekProps {
   week: ContributionWeek;
   cellSize: number;
-  formatTooltipDate: (date: string) => string;
 }
 
-export function ContributionWeekComponent({ week, cellSize, formatTooltipDate }: ContributionWeekProps) {
+export function ContributionWeekComponent({ week, cellSize }: ContributionWeekProps) {
   return (
     <div key={week.firstDay} className="flex flex-col gap-[2px]">
       {week.contributionDays.map((day) => (
@@ -15,7 +14,6 @@ export function ContributionWeekComponent({ week, cellSize, formatTooltipDate }:
           key={day.date}
           day={day}
           cellSize={cellSize}
-          formatTooltipDate={formatTooltipDate}
         />
       ))}
     </div>

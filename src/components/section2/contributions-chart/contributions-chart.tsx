@@ -6,7 +6,6 @@ import { MonthLabels } from "./month-labels";
 import { Legend } from "./legend";
 import { LoadingState } from "./loading-state";
 import { ErrorState } from "./error-state";
-import { createDateFormatter } from "./date-utils";
 import { useContributions } from "./use-contributions";
 import { calculateMonthLabels } from "./month-utils";
 import { processWeeks } from "./week-utils";
@@ -50,7 +49,6 @@ export function ContributionsChart() {
   const chartPadding = 8;
   const chartWidth =
     weeks.length * cellSize + (weeks.length - 1) * cellGap + 28 + chartPadding;
-  const formatTooltipDate = createDateFormatter();
   const scale =
     containerWidth && chartWidth > 0
       ? Math.min(1, containerWidth / chartWidth)
@@ -74,7 +72,6 @@ export function ContributionsChart() {
               key={week.firstDay}
               week={week}
               cellSize={cellSize}
-              formatTooltipDate={formatTooltipDate}
             />
           ))}
         </div>
