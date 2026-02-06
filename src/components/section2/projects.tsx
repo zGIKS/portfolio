@@ -5,9 +5,15 @@ import { IconTile } from "../section3/icon-tile";
 import { Link as LinkIcon } from "lucide-react";
 import { SectionBody } from "../section-shared/section-body";
 import { ProjectCard } from "./project-card";
-import { Cloudflare } from "../icons/stack/devops/cloudflare";
-import { TailscaleIcon } from "../icons/stack/devops/tailscale";
-import { DebianIcon } from "../icons/stack/devops/debian";
+import { Go } from "../icons/stack/languages/go";
+import { Python } from "../icons/stack/languages/python";
+import { React } from "../icons/stack/frontend/react";
+import { PostgreSQL } from "../icons/stack/databases/postgresql";
+import { Redis } from "../icons/stack/databases/redis";
+import { TailwindCSS } from "../icons/stack/frontend/tailwind";
+import { ShadcnUI } from "../icons/stack/frontend/shadcn";
+import { Java } from "../icons/stack/languages/java";
+import { MongoDB } from "../icons/stack/databases/mongo";
 
 export function Projects() {
   return (
@@ -60,14 +66,152 @@ export function Projects() {
               <IconTile ariaLabel="Next.js">
                 <Nextjs className="h-4 w-4" />
               </IconTile>
-              <IconTile ariaLabel="Cloudflare">
-                <Cloudflare className="h-4 w-4" />
+              <IconTile ariaLabel="PostgreSQL">
+                <PostgreSQL className="h-4 w-4" />
               </IconTile>
-              <IconTile ariaLabel="Tailscale">
-                <TailscaleIcon className="h-4 w-4" />
+              <IconTile ariaLabel="Redis">
+                <Redis className="h-4 w-4" />
               </IconTile>
-              <IconTile ariaLabel="Debian" className="text-[#D70A53]">
-                <DebianIcon className="h-4 w-4" />
+            </div>
+          </div>
+        }
+      />
+      <div className="mt-5" />
+      <ProjectCard
+        title="LevelUp Journey"
+        media={<div className="h-16 w-40 bg-black" />}
+        meta={
+          <p className="text-sm text-black/70">
+            Plataforma educativa colaborativa que ayuda a estudiantes a practicar
+            programación y docentes a seguir avances.
+          </p>
+        }
+        progressLabel="Progress"
+        progressValue={100}
+        actions={
+          <div className="flex w-full flex-col gap-2 md:w-auto md:items-end">
+            <div className="flex items-center gap-2">
+              <a
+                href="#"
+                className="flex items-center gap-2 border border-black/20 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-black"
+              >
+                <GithubIcon className="h-3.5 w-3.5" />
+                Code
+              </a>
+              <a
+                href="#"
+                className="flex items-center gap-2 border border-black/20 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-black"
+              >
+                <LinkIcon className="h-3.5 w-3.5" />
+                Preview
+              </a>
+            </div>
+            <div className="flex items-center gap-1">
+              <IconTile ariaLabel="Java">
+                <Java className="h-4 w-4" />
+              </IconTile>
+              <IconTile ariaLabel="PostgreSQL">
+                <PostgreSQL className="h-4 w-4" />
+              </IconTile>
+              <IconTile ariaLabel="MongoDB">
+                <MongoDB className="h-4 w-4" />
+              </IconTile>
+              <IconTile ariaLabel="Next.js">
+                <Nextjs className="h-4 w-4" />
+              </IconTile>
+            </div>
+          </div>
+        }
+      />
+      <div className="mt-5" />
+      <ProjectCard
+        title="Mortgage Calculator"
+        media={<div className="h-16 w-40 bg-black" />}
+        meta={
+          <p className="text-sm text-black/70">
+            Herramienta web que simula créditos hipotecarios y compara opciones bancarias
+            para tomar mejores decisiones.
+          </p>
+        }
+        progressLabel="Progress"
+        progressValue={100}
+        actions={
+          <div className="flex w-full flex-col gap-2 md:w-auto md:items-end">
+            <div className="flex items-center gap-2">
+              <a
+                href="#"
+                className="flex items-center gap-2 border border-black/20 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-black"
+              >
+                <GithubIcon className="h-3.5 w-3.5" />
+                Code
+              </a>
+              <a
+                href="#"
+                className="flex items-center gap-2 border border-black/20 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-black"
+              >
+                <LinkIcon className="h-3.5 w-3.5" />
+                Preview
+              </a>
+            </div>
+            <div className="flex items-center gap-1">
+              <IconTile ariaLabel="Go">
+                <Go className="h-4 w-4 text-[#00ADD8]" />
+              </IconTile>
+              <IconTile ariaLabel="Python">
+                <Python className="h-4 w-4" />
+              </IconTile>
+              <IconTile ariaLabel="React">
+                <React className="h-4 w-4" />
+              </IconTile>
+              <IconTile ariaLabel="PostgreSQL">
+                <PostgreSQL className="h-4 w-4" />
+              </IconTile>
+            </div>
+          </div>
+        }
+      />
+      <div className="mt-5" />
+      <ProjectCard
+        title="Mapa de Grafos"
+        media={<div className="h-16 w-40 bg-black" />}
+        meta={
+          <p className="text-sm text-black/70">
+            Aplicación interactiva que muestra mapas, rutas óptimas y permite explorar datos
+            mediante visualizaciones e IA.
+          </p>
+        }
+        progressLabel="Progress"
+        progressValue={100}
+        actions={
+          <div className="flex w-full flex-col gap-2 md:w-auto md:items-end">
+            <div className="flex items-center gap-2">
+              <a
+                href="#"
+                className="flex items-center gap-2 border border-black/20 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-black"
+              >
+                <GithubIcon className="h-3.5 w-3.5" />
+                Code
+              </a>
+              <a
+                href="#"
+                className="flex items-center gap-2 border border-black/20 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-black"
+              >
+                <LinkIcon className="h-3.5 w-3.5" />
+                Preview
+              </a>
+            </div>
+            <div className="flex items-center gap-1">
+              <IconTile ariaLabel="Python">
+                <Python className="h-4 w-4" />
+              </IconTile>
+              <IconTile ariaLabel="React">
+                <React className="h-4 w-4" />
+              </IconTile>
+              <IconTile ariaLabel="Tailwind CSS">
+                <TailwindCSS className="h-4 w-4" />
+              </IconTile>
+              <IconTile ariaLabel="shadcn/ui">
+                <ShadcnUI className="h-4 w-4" />
               </IconTile>
             </div>
           </div>
