@@ -24,7 +24,7 @@ export function ProjectCard({
       <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
         <div>{media}</div>
         <div className="flex-1">
-          <h3 className="text-base font-bold text-black">{title}</h3>
+          <h3 className="text-sm font-bold text-black">{title}</h3>
         </div>
         {actions && <div className="flex shrink-0 items-start">{actions}</div>}
       </div>
