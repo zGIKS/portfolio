@@ -1,3 +1,5 @@
+import { SectionBody } from "../section-shared/section-body";
+
 const experiences = [
   {
     title: "Technical Staff / Platform Moderation",
@@ -29,7 +31,7 @@ const experiences = [
 
 export function Experience() {
   return (
-    <div className="px-6 pb-10 pt-6 md:px-10">
+    <SectionBody>
       <div className="space-y-6 text-sm leading-relaxed text-black">
         {experiences.map((experience) => (
           <div
@@ -56,6 +58,6 @@ export function Experience() {
           </div>
         ))}
       </div>
-    </div>
+    </SectionBody>
   );
 }

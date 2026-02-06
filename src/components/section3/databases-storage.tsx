@@ -3,15 +3,14 @@ import { Redis } from "../icons/stack/databases/redis";
 import { MySQL } from "../icons/stack/databases/mysql";
 import { MongoDB } from "../icons/stack/databases/mongo";
 import { IconTile } from "./icon-tile";
+import { SectionHeader } from "../section-shared/section-header";
+import { IconGrid } from "../section-shared/icon-grid";
 
 export function DatabasesStorage() {
   return (
     <>
-      <div className="mt-6 flex items-center gap-2 pl-4 text-xs font-medium uppercase tracking-wide text-black/60">
-        <span>Databases</span>
-        <span className="text-base font-semibold text-black">4</span>
-      </div>
-      <div className="mt-3 flex gap-1 px-4 md:grid md:grid-cols-4 md:gap-2">
+      <SectionHeader title="Databases" count={4} className="mt-6" />
+      <IconGrid>
         <IconTile ariaLabel="PostgreSQL" href="https://www.postgresql.org/docs/">
           <PostgreSQL className="h-4 w-4" />
         </IconTile>
@@ -24,7 +23,7 @@ export function DatabasesStorage() {
         <IconTile ariaLabel="Redis" href="https://redis.io/documentation">
           <Redis className="h-4 w-4" />
         </IconTile>
-      </div>
+      </IconGrid>
     </>
   );
 }

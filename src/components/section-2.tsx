@@ -1,26 +1,21 @@
 import { About } from "./section2/about";
 import { Experience } from "./section2/experience";
 import { Projects } from "./section2/projects";
+import { SectionHeader } from "./section-shared/section-header";
 
 export function Section2() {
   return (
     <section className="min-h-screen min-w-0 flex-1 bg-white text-white">
       <div className="pt-6">
-        <div className="w-full bg-black py-2 pl-6 pr-4 text-sm font-medium uppercase tracking-wide text-white md:pl-10">
-          About
-        </div>
+        <SectionHeader title="About" variant="bar" />
         <About />
       </div>
       <div className="pt-6">
-        <div className="w-full bg-black py-2 pl-6 pr-4 text-sm font-medium uppercase tracking-wide text-white md:pl-10">
-          Experience
-        </div>
+        <SectionHeader title="Experience" variant="bar" />
         <Experience />
       </div>
       <div className="pt-6">
-        <div className="w-full bg-black py-2 pl-6 pr-4 text-sm font-medium uppercase tracking-wide text-white md:pl-10">
-          Projects
-        </div>
+        <SectionHeader title="Projects" variant="bar" />
         <Projects />
       </div>
     </section>

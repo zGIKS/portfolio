@@ -1,8 +1,9 @@
 import { ContributionsChart } from "./contributions-chart/contributions-chart";
+import { SectionBody } from "../section-shared/section-body";
 
 export function About() {
   return (
-    <div className="px-6 pb-10 pt-6 md:px-10">
+    <SectionBody>
       <div className="space-y-4 text-sm leading-relaxed text-black">
         <p>Hi 👋🏼 I’m Dante Mateo Alemán Romano (aka giks).</p>
         <p>
@@ -36,6 +37,6 @@ export function About() {
           <ContributionsChart />
         </div>
       </div>
-    </div>
+    </SectionBody>
   );
 }

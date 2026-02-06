@@ -1,7 +1,10 @@
+import { SectionHeader } from "../section-shared/section-header";
+
 export function CurrentOnline() {
   return (
-    <div className="mb-4 py-2 pl-4 text-sm font-medium uppercase tracking-wide text-cyan-600">
-      Currently Online
-    </div>
+    <SectionHeader
+      title="Currently Online"
+      className="mb-4 text-cyan-600"
+    />
   );
 }
