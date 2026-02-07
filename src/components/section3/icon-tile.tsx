@@ -1,20 +1,16 @@
 import { type ReactNode } from "react";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
+import { DesktopTooltip } from "./desktop-tooltip";
 
 interface IconTileProps {
   ariaLabel: string;
+  tooltipLabel?: ReactNode;
   children: ReactNode;
   className?: string;
   href?: string;
 }
 
-export function IconTile({ ariaLabel, children, className, href }: IconTileProps) {
+export function IconTile({ ariaLabel, tooltipLabel, children, className, href }: IconTileProps) {
   const content = href ? (
     <a
       href={href}
@@ -25,6 +21,7 @@ export function IconTile({ ariaLabel, children, className, href }: IconTileProps
         className
       )}
       aria-label={ariaLabel}
+      title={ariaLabel}
     >
       {children}
     </a>
@@ -35,19 +32,15 @@ export function IconTile({ ariaLabel, children, className, href }: IconTileProps
         className
       )}
       aria-label={ariaLabel}
+      title={ariaLabel}
     >
       {children}
     </div>
   );
 
   return (
-    <TooltipProvider>
-      <Tooltip>
-        <TooltipTrigger asChild>{content}</TooltipTrigger>
-        <TooltipContent>
-          <p className="text-xs font-medium">{ariaLabel}</p>
-        </TooltipContent>
-      </Tooltip>
-    </TooltipProvider>
+    <DesktopTooltip label={tooltipLabel ?? ariaLabel}>
+      {content}
+    </DesktopTooltip>
   );
 }
