@@ -6,7 +6,7 @@ import { ArbiComponent } from "./profile/arbi";
 
 export function Section1() {
   return (
-    <CardHeader className="flex w-full flex-col gap-6 bg-muted px-6 py-6 backdrop-blur-md md:flex-row md:items-center md:justify-between md:px-10">
+    <CardHeader className="flex w-full flex-col gap-6 bg-muted px-6 py-6 backdrop-blur-md md:flex-row md:items-center md:justify-between md:pl-10 md:pr-0">
       <div className="flex items-center gap-4">
         <Photo />
         <NameAndCountry />
