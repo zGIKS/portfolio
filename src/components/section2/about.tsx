@@ -32,7 +32,7 @@ export function About() {
           long-term maintainability matter.
         </p>
       </div>
-      <div className="mt-8 bg-primary p-4 text-primary-foreground">
+      <div className="mt-8 bg-primary px-3 py-2 text-primary-foreground">
         <div className="w-full max-w-full overflow-hidden">
           <ContributionsChart />
         </div>

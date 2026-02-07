@@ -6,7 +6,7 @@ interface LegendProps {
 
 export function Legend({ totalContributions }: LegendProps) {
   return (
-    <div className="mt-3 flex items-center justify-between text-[10px] font-medium leading-none text-primary-foreground/60">
+    <div className="mt-2 flex items-center justify-between text-[10px] font-medium leading-none text-primary-foreground/60">
       <span>
         {totalContributions.toLocaleString()} contributions in the last year on{" "}
         <a

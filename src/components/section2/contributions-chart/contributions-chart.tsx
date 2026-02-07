@@ -46,7 +46,7 @@ export function ContributionsChart() {
 
   const cellSize = 8;
   const cellGap = 2;
-  const chartPadding = 8;
+  const chartPadding = 4;
   const chartWidth =
     weeks.length * cellSize + (weeks.length - 1) * cellGap + 28 + chartPadding;
   const scale =
@@ -66,7 +66,7 @@ export function ContributionsChart() {
         }}
       >
         <MonthLabels monthLabels={monthLabels} />
-        <div className="mt-2 flex gap-[2px]">
+        <div className="mt-1 flex gap-[2px]">
           {weeks.map((week) => (
             <ContributionWeekComponent
               key={week.firstDay}
