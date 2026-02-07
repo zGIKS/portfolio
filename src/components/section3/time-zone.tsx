@@ -4,7 +4,7 @@ export function CurrentOnline() {
   return (
     <SectionHeader
       title="Currently Online"
-      className="mb-4 text-cyan-600"
+      className="mb-4 text-chart-2"
     />
   );
 }

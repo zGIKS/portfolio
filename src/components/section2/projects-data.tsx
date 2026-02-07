@@ -43,7 +43,7 @@ export const projects: ProjectItem[] = [
     codeUrl: "https://github.com/zGIKS/auth-service",
     previewUrl: "https://iam-demo.vercel.app/",
     icons: [
-      { label: "Rust", Icon: Rust, tileClassName: "text-black" },
+      { label: "Rust", Icon: Rust, tileClassName: "text-foreground" },
       { label: "Next.js", Icon: Nextjs },
       { label: "PostgreSQL", Icon: PostgreSQL },
       { label: "Redis", Icon: Redis },

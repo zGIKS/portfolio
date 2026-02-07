@@ -14,10 +14,10 @@ export function Links() {
         <IconTile ariaLabel="LinkedIn">
           <LinkedinIcon className="h-4 w-4 text-[#0A66C2]" />
         </IconTile>
-        <IconTile ariaLabel="GitHub" className="text-black">
+        <IconTile ariaLabel="GitHub" className="text-foreground">
           <GithubIcon className="h-4 w-4" />
         </IconTile>
-        <IconTile ariaLabel="Twitter" className="text-black">
+        <IconTile ariaLabel="Twitter" className="text-foreground">
           <XIcon className="h-4 w-4" />
         </IconTile>
         <IconTile ariaLabel="YouTube">

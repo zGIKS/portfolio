@@ -16,7 +16,7 @@ export function ProgrammingLanguages() {
         <IconTile ariaLabel="Go" href="https://go.dev/doc/">
           <Go className="h-4 w-4 text-[#00ADD8]" />
         </IconTile>
-        <IconTile ariaLabel="Rust" className="text-black" href="https://doc.rust-lang.org/">
+        <IconTile ariaLabel="Rust" className="text-foreground" href="https://doc.rust-lang.org/">
           <Rust className="h-4 w-4" />
         </IconTile>
         <IconTile ariaLabel="Java" href="https://docs.oracle.com/en/java/">
