@@ -1,5 +1,6 @@
 import { ContributionsChart } from "./contributions-chart/contributions-chart";
 import { SectionBody } from "../section-shared/section-body";
+import { ArchConfig } from "./arch-config";
 
 export function About() {
   return (
@@ -37,6 +38,7 @@ export function About() {
           <ContributionsChart />
         </div>
       </div>
+      <ArchConfig />
     </SectionBody>
   );
 }
