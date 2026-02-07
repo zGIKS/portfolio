@@ -5,7 +5,7 @@ export function About() {
   return (
     <SectionBody>
       <div className="space-y-4 text-sm leading-relaxed text-card-foreground">
-        <p>Hi I&apos;m Dante Mateo Aleman Romano (aka giks).</p>
+        <p>Hi I&apos;m Mateo (aka giks).</p>
         <p>
           I&apos;m a software engineering student based in Peru, focused on building
           backend systems, infrastructure, and security-critical services. I
