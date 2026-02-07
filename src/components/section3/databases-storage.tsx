@@ -1,0 +1,29 @@
+import { PostgreSQL } from "../icons/stack/databases/postgresql";
+import { Redis } from "../icons/stack/databases/redis";
+import { MySQL } from "../icons/stack/databases/mysql";
+import { MongoDB } from "../icons/stack/databases/mongo";
+import { IconTile } from "./icon-tile";
+import { SectionHeader } from "../section-shared/section-header";
+import { IconGrid } from "../section-shared/icon-grid";
+
+export function DatabasesStorage() {
+  return (
+    <>
+      <SectionHeader title="Databases" count={4} className="mt-6" />
+      <IconGrid>
+        <IconTile ariaLabel="PostgreSQL" href="https://www.postgresql.org/docs/">
+          <PostgreSQL className="h-4 w-4" />
+        </IconTile>
+        <IconTile ariaLabel="MySQL" className="text-[#00758F]" href="https://dev.mysql.com/doc/">
+          <MySQL className="h-4 w-4" />
+        </IconTile>
+        <IconTile ariaLabel="MongoDB" href="https://docs.mongodb.com/">
+          <MongoDB className="h-4 w-4" />
+        </IconTile>
+        <IconTile ariaLabel="Redis" href="https://redis.io/documentation">
+          <Redis className="h-4 w-4" />
+        </IconTile>
+      </IconGrid>
+    </>
+  );
+}
