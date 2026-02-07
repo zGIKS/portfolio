@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import { ContributionWeekComponent } from "./contribution-week";
 import { MonthLabels } from "./month-labels";
 import { Legend } from "./legend";
@@ -55,28 +56,30 @@ export function ContributionsChart() {
       : 1;
 
   return (
-    <div ref={containerRef} className="w-full">
-      <div
-        className="inline-block"
-        style={{
-          width: chartWidth,
-          paddingRight: chartPadding,
-          transform: `scale(${scale})`,
-          transformOrigin: "left top",
-        }}
-      >
-        <MonthLabels monthLabels={monthLabels} />
-        <div className="mt-1 flex gap-[2px]">
-          {weeks.map((week) => (
-            <ContributionWeekComponent
-              key={week.firstDay}
-              week={week}
-              cellSize={cellSize}
-            />
-          ))}
+    <TooltipProvider>
+      <div ref={containerRef} className="w-full">
+        <div
+          className="inline-block"
+          style={{
+            width: chartWidth,
+            paddingRight: chartPadding,
+            transform: `scale(${scale})`,
+            transformOrigin: "left top",
+          }}
+        >
+          <MonthLabels monthLabels={monthLabels} />
+          <div className="mt-1 flex gap-[2px]">
+            {weeks.map((week) => (
+              <ContributionWeekComponent
+                key={week.firstDay}
+                week={week}
+                cellSize={cellSize}
+              />
+            ))}
+          </div>
+          <Legend totalContributions={calendar.totalContributions} />
         </div>
-        <Legend totalContributions={calendar.totalContributions} />
       </div>
-    </div>
+    </TooltipProvider>
   );
 }
