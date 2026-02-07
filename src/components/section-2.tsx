@@ -5,7 +5,7 @@ import { SectionHeader } from "./section-shared/section-header";
 
 export function Section2() {
   return (
-    <section className="min-h-screen min-w-0 flex-1 bg-white text-white">
+    <section className="min-w-0 flex-1 bg-white text-white md:min-h-full">
       <div className="pt-6">
         <SectionHeader title="About" variant="bar" />
         <About />

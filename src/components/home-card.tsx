@@ -4,9 +4,9 @@ import { Section3 } from "./section-3";
 
 export function HomeCard() {
   return (
-    <div className="min-h-screen w-full bg-black text-white shadow-xl md:max-w-[55.249245rem]">
+    <div className="flex w-full flex-col bg-black text-white shadow-xl md:max-w-[55.249245rem]">
       <Section1 />
-      <div className="flex w-full flex-col-reverse md:flex-row">
+      <div className="flex w-full flex-1 flex-col-reverse md:flex-row">
         <Section2 />
         <Section3 />
       </div>
