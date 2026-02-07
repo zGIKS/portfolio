@@ -1,5 +1,8 @@
+"use client";
+
 import type { ReactNode } from "react";
-import { cn, typography } from "@/lib/utils";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
 
 interface ProjectCardProps {
   title: string;
@@ -21,23 +24,25 @@ export function ProjectCard({
   const percent = Math.max(0, Math.min(100, progressValue ?? 0));
 
   return (
-    <div className="border border-black/10 bg-white p-4">
-      <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+    <Card className="gap-0 rounded-none border-border bg-card p-4 backdrop-blur-sm">
+      <CardHeader className="flex flex-col gap-4 p-0 md:flex-row md:items-start md:justify-between">
         <div>{media}</div>
         <div className="flex-1">
-          <h3 className="text-sm font-semibold text-black">{title}</h3>
+          <CardTitle className="text-sm text-card-foreground">{title}</CardTitle>
         </div>
         {actions && <div className="flex shrink-0 items-start">{actions}</div>}
-      </div>
-      {meta && <div className="mt-3">{meta}</div>}
-      <div className="mt-4">
-        <div className={cn(typography.small, "text-black/70")}>
+      </CardHeader>
+      {meta && (
+        <CardContent className="mt-3 p-0">
+          <CardDescription>{meta}</CardDescription>
+        </CardContent>
+      )}
+      <CardContent className="mt-4 p-0">
+        <div className="text-sm font-medium leading-none text-muted-foreground">
           {progressLabel ?? "Progress"}: {percent}%
         </div>
-        <div className="mt-2 h-2 w-full rounded-full bg-black/10">
-          <div className="h-full rounded-full bg-black" style={{ width: `${percent}%` }} />
-        </div>
-      </div>
-    </div>
+        <Progress value={percent} className="mt-2 h-2 rounded-full bg-muted" />
+      </CardContent>
+    </Card>
   );
 }

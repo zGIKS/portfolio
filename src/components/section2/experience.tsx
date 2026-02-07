@@ -1,12 +1,11 @@
 import { SectionBody } from "../section-shared/section-body";
-import { cn, typography } from "@/lib/utils";
 
 const experiences = [
   {
     title: "Technical Staff / Platform Moderation",
     period: "2021 - 2022",
     company: "Ghostly Network",
-    subtitle: "Community Project | Trainee → Senior Moderator",
+    subtitle: "Community Project | Trainee -> Senior Moderator",
     highlights: [
       "User and chat monitoring; detection of unauthorized behaviors and application of sanctions.",
       "Supervision of anti-cheat systems and investigation of unauthorized software (modified clients, processes, DLLs).",
@@ -33,23 +32,29 @@ const experiences = [
 export function Experience() {
   return (
     <SectionBody>
-      <div className="space-y-6 text-sm leading-relaxed text-black">
+      <div className="space-y-6 text-sm leading-relaxed text-card-foreground">
         {experiences.map((experience) => (
           <div
             key={experience.title}
-            className="border-l-2 border-black/15 pl-4"
+            className="border-l-2 border-border pl-4"
           >
             <div className="flex flex-wrap items-center justify-between gap-2">
-              <h3 className={cn(typography.h4, "text-base")}>{experience.title}</h3>
-              <span className={cn(typography.small, "uppercase tracking-wide text-black/70")}>
+              <h3 className="scroll-m-20 text-base font-semibold tracking-tight">
+                {experience.title}
+              </h3>
+              <span className="text-sm font-medium uppercase tracking-wide text-muted-foreground">
                 {experience.period}
               </span>
             </div>
             {experience.company && (
-              <p className={cn(typography.muted, "mt-1 text-gray-600")}>{experience.company}</p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {experience.company}
+              </p>
             )}
             {experience.subtitle && (
-              <p className={cn(typography.muted, "mt-1 text-gray-500")}>{experience.subtitle}</p>
+              <p className="mt-1 text-sm text-muted-foreground/70">
+                {experience.subtitle}
+              </p>
             )}
             <ul className="mt-3 list-disc space-y-2 pl-5">
               {experience.highlights.map((highlight) => (

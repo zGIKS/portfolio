@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { cn, typography } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 type SectionHeaderVariant = "bar" | "inline";
 
@@ -18,30 +18,32 @@ export function SectionHeader({
 }: SectionHeaderProps) {
   if (variant === "bar") {
     return (
-      <div className={cn(
-        "w-full bg-black py-2 pl-6 pr-4 md:pl-10",
-        typography.small,
-        "uppercase tracking-wide text-white",
-        className
-      )}>
+      <div
+        className={cn(
+          "w-full bg-primary py-2 pl-6 pr-4 text-sm font-medium uppercase tracking-wide text-primary-foreground md:pl-10",
+          className
+        )}
+      >
         <span>{title}</span>
         {typeof count === "number" && (
-          <span className={cn("ml-2", typography.large, "text-white")}>{count}</span>
+          <span className="ml-2 text-lg font-semibold text-primary-foreground">
+            {count}
+          </span>
         )}
       </div>
     );
   }
 
   return (
-    <div className={cn(
-      "flex items-center gap-2 pl-4",
-      typography.small,
-      "uppercase tracking-wide text-black/60",
-      className
-    )}>
+    <div
+      className={cn(
+        "flex items-center gap-2 pl-4 text-sm font-medium uppercase tracking-wide text-muted-foreground",
+        className
+      )}
+    >
       <span>{title}</span>
       {typeof count === "number" && (
-        <span className={cn(typography.large, "text-black")}>{count}</span>
+        <span className="text-lg font-semibold text-foreground">{count}</span>
       )}
     </div>
   );

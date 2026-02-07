@@ -1,14 +1,13 @@
 import { ContributionsChart } from "./contributions-chart/contributions-chart";
 import { SectionBody } from "../section-shared/section-body";
-import { cn, typography } from "@/lib/utils";
 
 export function About() {
   return (
     <SectionBody>
-      <div className="space-y-4 text-sm leading-relaxed text-black">
-        <p>Hi 👋🏼 I'm Dante Mateo Alemán Romano (aka giks).</p>
+      <div className="space-y-4 text-sm leading-relaxed text-card-foreground">
+        <p>Hi I&apos;m Dante Mateo Aleman Romano (aka giks).</p>
         <p>
-          I'm a software engineering student based in Peru, focused on building
+          I&apos;m a software engineering student based in Peru, focused on building
           backend systems, infrastructure, and security-critical services. I
           mainly work in Unix-like environments, using Arch Linux as my daily
           setup and Debian/Ubuntu for servers and production systems.
@@ -19,7 +18,7 @@ export function About() {
           backend services, identity and access management, and infrastructure
           that prioritizes low attack surface and scalability.
         </p>
-        <p>Some of the areas and projects I've worked on include:</p>
+        <p>Some of the areas and projects I&apos;ve worked on include:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>Backend services and microservices, including IAM and authentication systems</li>
           <li>API gateways and event-driven architectures</li>
@@ -28,12 +27,12 @@ export function About() {
           <li>Rust-based services with a strong focus on correctness and security</li>
         </ul>
         <p>
-          I'm especially interested in backend platform engineering,
+          I&apos;m especially interested in backend platform engineering,
           infrastructure, and security-focused roles, where system design and
           long-term maintainability matter.
         </p>
       </div>
-      <div className="mt-8 bg-black/95 p-4 text-white">
+      <div className="mt-8 bg-primary p-4 text-primary-foreground">
         <div className="w-full max-w-full overflow-hidden">
           <ContributionsChart />
         </div>

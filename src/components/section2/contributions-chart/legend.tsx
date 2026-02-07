@@ -1,5 +1,4 @@
 import { CONTRIBUTION_COLORS } from "./color-utils";
-import { cn, typography } from "@/lib/utils";
 
 interface LegendProps {
   totalContributions: number;
@@ -7,12 +6,12 @@ interface LegendProps {
 
 export function Legend({ totalContributions }: LegendProps) {
   return (
-    <div className={cn("mt-3 flex items-center justify-between text-[10px] text-white/60", typography.small)}>
+    <div className="mt-3 flex items-center justify-between text-[10px] font-medium leading-none text-primary-foreground/60">
       <span>
         {totalContributions.toLocaleString()} contributions in the last year on{" "}
         <a
           href="https://github.com/zGIKS"
-          className="text-white/80 underline underline-offset-2"
+          className="text-primary-foreground/80 underline underline-offset-2"
           target="_blank"
           rel="noreferrer"
         >
@@ -26,7 +25,7 @@ export function Legend({ totalContributions }: LegendProps) {
           {CONTRIBUTION_COLORS.map((color) => (
             <span
               key={color}
-              className="h-3 w-3 border border-white/5"
+              className="h-3 w-3 border border-primary-foreground/5"
               style={{ backgroundColor: color }}
             />
           ))}

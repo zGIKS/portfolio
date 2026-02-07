@@ -1,10 +1,10 @@
-import { cn, typography } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge";
 
 export function Level() {
   return (
-    <div className="flex w-full items-center justify-center gap-3 bg-muted px-4 py-3 h-[58px] md:justify-start">
-      <span className={cn(typography.large, "text-lg")}>Level</span>
-      <span className={cn(typography.small, "relative inline-flex h-7 w-7 items-center justify-center text-[10px] text-red-500")}>
+    <div className="flex h-[58px] w-full items-center justify-center gap-3 bg-muted px-4 py-3 backdrop-blur-sm md:justify-start">
+      <span className="text-lg font-semibold text-foreground">Level</span>
+      <Badge variant="outline" className="relative inline-flex h-7 w-7 items-center justify-center rounded-none border-0 bg-transparent p-0 text-[10px] text-destructive">
         <svg
           viewBox="0 0 100 100"
           className="absolute inset-0 h-full w-full"
@@ -18,7 +18,7 @@ export function Level() {
           />
         </svg>
         666
-      </span>
+      </Badge>
     </div>
   );
 }

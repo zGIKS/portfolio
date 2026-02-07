@@ -5,7 +5,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { cn, typography } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 interface IconTileProps {
   ariaLabel: string;
@@ -15,21 +15,27 @@ interface IconTileProps {
 }
 
 export function IconTile({ ariaLabel, children, className, href }: IconTileProps) {
-  const classes = ["flex h-9 w-9 items-center justify-center bg-white"];
-  if (className) classes.push(className);
-
   const content = href ? (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={classes.join(" ")}
+      className={cn(
+        "flex h-9 w-9 items-center justify-center bg-accent text-accent-foreground backdrop-blur-sm",
+        className
+      )}
       aria-label={ariaLabel}
     >
       {children}
     </a>
   ) : (
-    <div className={classes.join(" ")} aria-label={ariaLabel}>
+    <div
+      className={cn(
+        "flex h-9 w-9 items-center justify-center bg-accent text-accent-foreground backdrop-blur-sm",
+        className
+      )}
+      aria-label={ariaLabel}
+    >
       {children}
     </div>
   );
@@ -39,7 +45,7 @@ export function IconTile({ ariaLabel, children, className, href }: IconTileProps
       <Tooltip>
         <TooltipTrigger asChild>{content}</TooltipTrigger>
         <TooltipContent>
-          <p className={cn(typography.small, "text-xs")}>{ariaLabel}</p>
+          <p className="text-xs font-medium">{ariaLabel}</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
