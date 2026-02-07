@@ -1,6 +1,7 @@
 import { CardContent } from "@/components/ui/card";
 import { About } from "./section2/about";
 import { Experience } from "./section2/experience";
+import { Education } from "./section2/education";
 import { Projects } from "./section2/projects";
 import { SectionHeader } from "./section-shared/section-header";
 
@@ -14,6 +15,10 @@ export function Section2() {
       <div className="pt-6">
         <SectionHeader title="Experience" variant="bar" />
         <Experience />
+      </div>
+      <div className="pt-6">
+        <SectionHeader title="Education" variant="bar" />
+        <Education />
       </div>
       <div className="pt-6">
         <SectionHeader title="Projects" variant="bar" />
