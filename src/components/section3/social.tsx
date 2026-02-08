@@ -17,13 +17,7 @@ export function Links() {
         </IconTile>
         <IconTile
           ariaLabel="GitHub"
-          tooltipLabel={
-            <span className="block text-center leading-tight">
-              GitHub
-              <br />
-              @zGIKS
-            </span>
-          }
+          tooltipLabel="@zGIKS"
           className="text-foreground"
           href="https://github.com/zGIKS"
         >
