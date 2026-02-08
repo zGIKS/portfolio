@@ -1,15 +1,14 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { type Locale } from "@/lib/i18n";
+import { getDictionary } from "@/lib/dictionaries";
 
 interface ErrorStateProps {
   error: string;
-  locale?: "en" | "es";
+  locale?: Locale;
 }
 
 export function ErrorState({ error, locale = "en" }: ErrorStateProps) {
-  const hint =
-    locale === "es"
-      ? "Inténtalo nuevamente más tarde."
-      : "Please try again later.";
+  const hint = getDictionary(locale).contributions.errorHint;
 
   return (
     <Card className="border-destructive/50 bg-destructive/10 shadow-none">

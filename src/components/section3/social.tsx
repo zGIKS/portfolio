@@ -7,13 +7,14 @@ import { SectionHeader } from "../section-shared/section-header";
 import { IconGrid } from "../section-shared/icon-grid";
 import { CopyEmailTile } from "./copy-email-tile";
 import { type Locale } from "@/lib/i18n";
+import { getDictionary } from "@/lib/dictionaries";
 
 interface LinksProps {
   locale: Locale;
 }
 
 export function Links({ locale }: LinksProps) {
-  const title = locale === "es" ? "Enlaces" : "Links";
+  const title = getDictionary(locale).section3.linksTitle;
 
   return (
     <>

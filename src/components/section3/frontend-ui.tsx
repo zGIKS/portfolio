@@ -7,13 +7,14 @@ import { IconTile } from "./icon-tile";
 import { SectionHeader } from "../section-shared/section-header";
 import { IconGrid } from "../section-shared/icon-grid";
 import { type Locale } from "@/lib/i18n";
+import { getDictionary } from "@/lib/dictionaries";
 
 interface FrontendUIProps {
   locale: Locale;
 }
 
 export function FrontendUI({ locale }: FrontendUIProps) {
-  const title = locale === "es" ? "Frontend" : "Frontend";
+  const title = getDictionary(locale).section3.frontendTitle;
 
   return (
     <>

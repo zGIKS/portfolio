@@ -7,6 +7,7 @@ import { ProjectCard } from "./project-card";
 import { getProjects } from "./projects-data";
 import { Button } from "@/components/ui/button";
 import { type Locale } from "@/lib/i18n";
+import { getDictionary } from "@/lib/dictionaries";
 
 interface ProjectsProps {
   locale: Locale;
@@ -14,10 +15,7 @@ interface ProjectsProps {
 
 export function Projects({ locale }: ProjectsProps) {
   const projects = getProjects(locale);
-  const labels =
-    locale === "es"
-      ? { progress: "Progreso", code: "Código", preview: "Vista previa" }
-      : { progress: "Progress", code: "Code", preview: "Preview" };
+  const labels = getDictionary(locale).section2.projects.labels;
 
   return (
     <SectionBody>

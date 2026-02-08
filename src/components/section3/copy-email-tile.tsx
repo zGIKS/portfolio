@@ -5,6 +5,7 @@ import { Check, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { DesktopTooltip } from "./desktop-tooltip";
 import { type Locale } from "@/lib/i18n";
+import { getDictionary } from "@/lib/dictionaries";
 
 const EMAIL = "mateo.aleman.romano@gmail.com";
 
@@ -15,7 +16,7 @@ interface CopyEmailTileProps {
 export function CopyEmailTile({ locale }: CopyEmailTileProps) {
   const [copied, setCopied] = useState(false);
   const resetTimer = useRef<number | null>(null);
-  const copiedLabel = locale === "es" ? "Copiado!" : "Copied!";
+  const copiedLabel = getDictionary(locale).section3.copiedLabel;
 
   const handleCopy = async () => {
     try {

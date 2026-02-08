@@ -1,12 +1,13 @@
 import { SectionHeader } from "../section-shared/section-header";
 import { type Locale } from "@/lib/i18n";
+import { getDictionary } from "@/lib/dictionaries";
 
 interface CurrentOnlineProps {
   locale: Locale;
 }
 
 export function CurrentOnline({ locale }: CurrentOnlineProps) {
-  const title = locale === "es" ? "En línea ahora" : "Currently Online";
+  const title = getDictionary(locale).section3.currentOnlineTitle;
 
   return (
     <SectionHeader

@@ -1,0 +1,141 @@
+{
+  "header": {
+    "portfolio": "Portfólio",
+    "blog": "Blog",
+    "desktops": "Desktops",
+    "languageSelectorAria": "Seletor de idioma",
+    "language": "Idioma",
+    "languages": {
+      "en": "English",
+      "es": "Español",
+      "pt": "Português"
+    }
+  },
+  "footer": {
+    "repoLabel": "Repositório GitHub",
+    "title": "Portfólio zGIKS"
+  },
+  "section1": {
+    "yearsOldLabel": "Anos"
+  },
+  "section2": {
+    "titles": {
+      "about": "Sobre mim",
+      "experience": "Experiência",
+      "education": "Educação",
+      "projects": "Projetos"
+    },
+    "about": {
+      "paragraphs": [
+        "Olá, sou Mateo (aka giks).",
+        "Sou estudante de engenharia de software no Peru, focado em construir sistemas backend, infraestrutura e serviços críticos de segurança. Trabalho principalmente em ambientes tipo Unix, usando Arch Linux no dia a dia e Debian/Ubuntu para servidores e produção.",
+        "Gosto de projetar sistemas do zero, com foco em confiabilidade, segurança e arquitetura clara. Meu trabalho normalmente envolve serviços backend, gestão de identidade e acesso, e infraestrutura que prioriza baixa superfície de ataque e escalabilidade.",
+        "Algumas áreas e projetos em que trabalhei incluem:",
+        "Tenho interesse especial em funções de engenharia de plataforma backend, infraestrutura e segurança, onde o design de sistemas e a manutenção de longo prazo são importantes."
+      ],
+      "bullets": [
+        "Serviços backend e microsserviços, incluindo IAM e sistemas de autenticação",
+        "API gateways e arquiteturas orientadas a eventos",
+        "Plataformas web seguras usadas em contextos acadêmicos e de pequenos negócios",
+        "Plataformas educacionais usadas por mais de 150 estudantes",
+        "Serviços em Rust com forte foco em correção e segurança"
+      ]
+    },
+    "archConfigTitle": "Minha configuração do Arch Linux",
+    "experience": [
+      {
+        "title": "Equipe Técnica / Moderação de Plataforma",
+        "period": "2021 - 2022",
+        "company": "Ghostly Network",
+        "subtitle": "Projeto comunitário | Trainee -> Moderador Sênior",
+        "highlights": [
+          "Monitoramento de usuários e chat; detecção de comportamentos não autorizados e aplicação de sanções.",
+          "Supervisão de sistemas anti-cheat e investigação de software não autorizado (clientes modificados, processos, DLLs).",
+          "Suporte técnico e validação de transações por sistema de tickets."
+        ]
+      },
+      {
+        "title": "Desenvolvedor Web (Freelance)",
+        "period": "2023 - Presente",
+        "company": "Desenvolvimento Web para PMEs",
+        "highlights": [
+          "Desenvolvimento e implementação de sites e landing pages para PMEs e negócios locais.",
+          "Aplicação de design responsivo, estrutura orientada a serviços e boas práticas de usabilidade.",
+          "Implementação de boas práticas de segurança e hardening, incluindo revisão da exposição de portas e serviços em ambientes de desenvolvimento e implantação (testes básicos autorizados).",
+          "Implantação segura de aplicações usando Cloudflare Tunnel, evitando exposição direta de IPs e portas públicas.",
+          "Comunicação interna entre serviços por VPN privada com Tailscale, reduzindo superfície de ataque e melhorando o isolamento.",
+          "Implementação e consumo do Azure Event Hub para comunicação assíncrona entre serviços.",
+          "Implantação e administração básica de máquinas virtuais no Azure com Debian e Ubuntu.",
+          "Manutenção pós-entrega e suporte técnico, com foco em estabilidade e disponibilidade."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "institution": "Universidade Peruana de Ciências Aplicadas (UPC)",
+        "location": "San Isidro, Peru",
+        "program": "Engenharia de Software (6º semestre)",
+        "period": "2023 - Presente",
+        "details": [
+          "Formação em desenvolvimento de software, estruturas de dados, algoritmos e arquitetura de sistemas.",
+          "Participação em projetos acadêmicos colaborativos voltados para aplicações web e backend."
+        ]
+      },
+      {
+        "institution": "Davy College",
+        "location": "Cajamarca, Peru",
+        "program": "Bacharelado Internacional (IB - International Baccalaureate)",
+        "period": "",
+        "details": [
+          "Formação pré-universitária com foco em pensamento crítico, pesquisa e resolução de problemas.",
+          "Desenvolvimento de habilidades analíticas, trabalho acadêmico rigoroso e projetos interdisciplinares."
+        ]
+      }
+    ],
+    "projects": {
+      "labels": {
+        "progress": "Progresso",
+        "code": "Código",
+        "preview": "Prévia"
+      },
+      "items": {
+        "iam": {
+          "description": "Sistema de login e controle de acesso que protege contas, dados e sessões de usuários."
+        },
+        "levelUp": {
+          "description": "Plataforma educacional colaborativa que ajuda estudantes a praticar programação e professores a acompanhar o progresso."
+        },
+        "mortgage": {
+          "description": "Ferramenta web que simula crédito imobiliário e compara opções bancárias para apoiar melhores decisões."
+        },
+        "graphMap": {
+          "title": "Mapa de Grafos",
+          "description": "Aplicação interativa que mostra mapas, rotas otimizadas e permite explorar dados com visualizações e IA."
+        }
+      }
+    }
+  },
+  "section3": {
+    "currentOnlineTitle": "Online agora",
+    "linksTitle": "Links",
+    "languagesTitle": "Linguagens",
+    "frontendTitle": "Frontend",
+    "devOpsTitle": "DevOps",
+    "databasesTitle": "Bancos de dados",
+    "copiedLabel": "Copiado!"
+  },
+  "contributions": {
+    "none": "Sem contribuições",
+    "one": "1 contribuição",
+    "many": "{count} contribuições",
+    "onLabel": "em",
+    "legend": {
+      "summary": "{count} contribuições no último ano no ",
+      "less": "Menos",
+      "more": "Mais"
+    },
+    "errorHint": "Tente novamente mais tarde.",
+    "dateLocale": "pt-BR",
+    "monthLocale": "pt-BR"
+  }
+}

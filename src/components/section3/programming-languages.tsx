@@ -8,13 +8,14 @@ import { IconTile } from "./icon-tile";
 import { SectionHeader } from "../section-shared/section-header";
 import { IconGrid } from "../section-shared/icon-grid";
 import { type Locale } from "@/lib/i18n";
+import { getDictionary } from "@/lib/dictionaries";
 
 interface ProgrammingLanguagesProps {
   locale: Locale;
 }
 
 export function ProgrammingLanguages({ locale }: ProgrammingLanguagesProps) {
-  const title = locale === "es" ? "Lenguajes" : "Languages";
+  const title = getDictionary(locale).section3.languagesTitle;
 
   return (
     <>

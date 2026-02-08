@@ -12,6 +12,7 @@ import { ShadcnUI } from "../icons/stack/frontend/shadcn";
 import { Java } from "../icons/stack/languages/java";
 import { MongoDB } from "../icons/stack/databases/mongo";
 import { type Locale } from "@/lib/i18n";
+import { getDictionary } from "@/lib/dictionaries";
 
 type SvgIcon = ComponentType<SVGProps<SVGSVGElement>>;
 
@@ -34,15 +35,12 @@ export interface ProjectItem {
 }
 
 export function getProjects(locale: Locale): ProjectItem[] {
-  const isSpanish = locale === "es";
+  const texts = getDictionary(locale).section2.projects.items;
 
   return [
   {
     title: "Identity & Access Management",
-    description:
-      isSpanish
-        ? "Sistema de inicio de sesión y control de accesos que protege cuentas, datos y sesiones de usuarios."
-        : "Authentication and access control platform that secures user accounts, data, and sessions.",
+    description: texts.iam.description,
     imageSrc: "/assets/IAM.webp",
     imageAlt: "Identity & Access Management",
     progress: 100,
@@ -57,10 +55,7 @@ export function getProjects(locale: Locale): ProjectItem[] {
   },
   {
     title: "LevelUp Journey",
-    description:
-      isSpanish
-        ? "Plataforma educativa colaborativa que ayuda a estudiantes a practicar programación y docentes a seguir avances."
-        : "Collaborative learning platform that helps students practice programming and helps teachers track progress.",
+    description: texts.levelUp.description,
     progress: 100,
     codeUrl: "https://github.com/LevelUp-Journey",
     previewUrl: "#",
@@ -73,10 +68,7 @@ export function getProjects(locale: Locale): ProjectItem[] {
   },
   {
     title: "Mortgage Calculator",
-    description:
-      isSpanish
-        ? "Herramienta web que simula créditos hipotecarios y compara opciones bancarias para tomar mejores decisiones."
-        : "Web tool that simulates mortgage loans and compares banking options to support better decisions.",
+    description: texts.mortgage.description,
     progress: 100,
     codeUrl: "https://github.com/zGIKS/mortgage-calculator",
     previewUrl: "https://mortgage-ui-sable.vercel.app",
@@ -88,11 +80,8 @@ export function getProjects(locale: Locale): ProjectItem[] {
     ],
   },
   {
-    title: isSpanish ? "Mapa de Grafos" : "Graph Map",
-    description:
-      isSpanish
-        ? "Aplicación interactiva que muestra mapas, rutas óptimas y permite explorar datos mediante visualizaciones e IA."
-        : "Interactive app for maps and optimal routes, with data exploration through visualizations and AI.",
+    title: texts.graphMap.title,
+    description: texts.graphMap.description,
     progress: 100,
     codeUrl: "https://github.com/zGIKS/GraphMap-Backend",
     previewUrl: "https://graph-map-frontend.vercel.app",

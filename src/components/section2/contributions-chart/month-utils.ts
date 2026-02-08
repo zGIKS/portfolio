@@ -1,14 +1,18 @@
 import { ContributionCalendar } from "./types";
 import { type Locale } from "@/lib/i18n";
+import { getDictionary } from "@/lib/dictionaries";
 
 export function calculateMonthLabels(calendar: ContributionCalendar, locale: Locale) {
   const labels = Array(calendar.weeks.length).fill("");
   if (calendar.weeks.length === 0) return labels;
 
-  const monthFormatter = new Intl.DateTimeFormat(locale === "es" ? "es-PE" : "en-US", {
+  const monthFormatter = new Intl.DateTimeFormat(
+    getDictionary(locale).contributions.monthLocale,
+    {
     timeZone: "America/Lima",
     month: "short",
-  });
+    },
+  );
 
   for (const month of calendar.months) {
     const monthDate = new Date(`${month.firstDay}T12:00:00Z`);

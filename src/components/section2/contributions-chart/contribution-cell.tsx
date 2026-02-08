@@ -7,6 +7,7 @@ import { ContributionDay } from "./types";
 import { getContributionColor } from "./color-utils";
 import { createDateFormatter } from "./date-utils";
 import { type Locale } from "@/lib/i18n";
+import { getDictionary } from "@/lib/dictionaries";
 
 interface ContributionCellProps {
   day: ContributionDay;
@@ -16,21 +17,14 @@ interface ContributionCellProps {
 
 export function ContributionCell({ day, cellSize, locale }: ContributionCellProps) {
   const formatDate = createDateFormatter(locale);
+  const t = getDictionary(locale).contributions;
 
   const contributionText =
     day.contributionCount === 0
-      ? locale === "es"
-        ? "Sin contribuciones"
-        : "No contributions"
+      ? t.none
       : day.contributionCount === 1
-        ? locale === "es"
-          ? "1 contribución"
-          : "1 contribution"
-        : locale === "es"
-          ? `${day.contributionCount} contribuciones`
-          : `${day.contributionCount} contributions`;
-
-  const onLabel = locale === "es" ? "el" : "on";
+        ? t.one
+        : t.many.replace("{count}", String(day.contributionCount));
 
   return (
     <Tooltip>
@@ -46,7 +40,7 @@ export function ContributionCell({ day, cellSize, locale }: ContributionCellProp
       </TooltipTrigger>
       <TooltipContent>
         <p>
-          {contributionText} {onLabel} {formatDate(day.date)}
+          {contributionText} {t.onLabel} {formatDate(day.date)}
         </p>
       </TooltipContent>
     </Tooltip>

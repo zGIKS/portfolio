@@ -10,19 +10,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { locales, type Locale } from "@/lib/i18n";
-
-const labels = {
-  en: {
-    portfolio: "Portfolio",
-    blog: "Blog",
-    desktops: "Desktops",
-  },
-  es: {
-    portfolio: "Portafolio",
-    blog: "Blog",
-    desktops: "Escritorios",
-  },
-} as const;
+import { getDictionary } from "@/lib/dictionaries";
 
 interface HeaderProps {
   locale: Locale;
@@ -31,7 +19,7 @@ interface HeaderProps {
 export function Header({ locale }: HeaderProps) {
   const router = useRouter();
   const pathname = usePathname();
-  const t = labels[locale];
+  const t = getDictionary(locale).header;
 
   const handleLocaleChange = (nextLocale: string) => {
     if (!locales.includes(nextLocale as Locale) || nextLocale === locale) return;
@@ -86,15 +74,16 @@ export function Header({ locale }: HeaderProps) {
           <div className="ml-auto self-start pt-2 md:ml-0 md:flex md:w-[13.875rem] md:justify-end">
             <Select value={locale} onValueChange={handleLocaleChange}>
               <SelectTrigger
-                aria-label="Language selector"
+                aria-label={t.languageSelectorAria}
                 data-size="sm"
                 className="h-auto min-h-0 w-auto gap-1 border-0 bg-transparent px-0 py-0.5 text-xs leading-tight text-white/60 shadow-none hover:text-white focus-visible:ring-0"
               >
-                <SelectValue placeholder="Language" />
+                <SelectValue placeholder={t.language} />
               </SelectTrigger>
               <SelectContent className="border-white/10 bg-black/90 text-white">
-                <SelectItem value="en">English</SelectItem>
-                <SelectItem value="es">Español</SelectItem>
+                <SelectItem value="en">{t.languages.en}</SelectItem>
+                <SelectItem value="es">{t.languages.es}</SelectItem>
+                <SelectItem value="pt">{t.languages.pt}</SelectItem>
               </SelectContent>
             </Select>
           </div>

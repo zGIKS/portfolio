@@ -6,13 +6,14 @@ import { IconTile } from "./icon-tile";
 import { SectionHeader } from "../section-shared/section-header";
 import { IconGrid } from "../section-shared/icon-grid";
 import { type Locale } from "@/lib/i18n";
+import { getDictionary } from "@/lib/dictionaries";
 
 interface DatabasesStorageProps {
   locale: Locale;
 }
 
 export function DatabasesStorage({ locale }: DatabasesStorageProps) {
-  const title = locale === "es" ? "Bases de datos" : "Databases";
+  const title = getDictionary(locale).section3.databasesTitle;
 
   return (
     <>

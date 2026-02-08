@@ -1,5 +1,6 @@
 import { CONTRIBUTION_COLORS } from "./color-utils";
 import { type Locale } from "@/lib/i18n";
+import { getDictionary } from "@/lib/dictionaries";
 
 interface LegendProps {
   totalContributions: number;
@@ -7,12 +8,8 @@ interface LegendProps {
 }
 
 export function Legend({ totalContributions, locale }: LegendProps) {
-  const summary =
-    locale === "es"
-      ? `${totalContributions.toLocaleString()} contribuciones durante el último año en `
-      : `${totalContributions.toLocaleString()} contributions in the last year on `;
-  const lessLabel = locale === "es" ? "Menos" : "Less";
-  const moreLabel = locale === "es" ? "Más" : "More";
+  const t = getDictionary(locale).contributions.legend;
+  const summary = t.summary.replace("{count}", totalContributions.toLocaleString());
 
   return (
     <div className="mt-2 flex w-full items-center justify-between text-[10px] font-medium leading-none text-primary-foreground/60">
@@ -29,7 +26,7 @@ export function Legend({ totalContributions, locale }: LegendProps) {
         .
       </span>
       <div className="flex shrink-0 items-center gap-2">
-        <span>{lessLabel}</span>
+        <span>{t.less}</span>
         <div className="flex items-center gap-1">
           {CONTRIBUTION_COLORS.map((color) => (
             <span
@@ -39,7 +36,7 @@ export function Legend({ totalContributions, locale }: LegendProps) {
             />
           ))}
         </div>
-        <span>{moreLabel}</span>
+        <span>{t.more}</span>
       </div>
     </div>
   );

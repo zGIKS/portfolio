@@ -1,59 +1,13 @@
 import { SectionBody } from "../section-shared/section-body";
 import { type Locale } from "@/lib/i18n";
-
-const educationByLocale = {
-  en: [
-    {
-      institution: "Peruvian University of Applied Sciences (UPC)",
-      location: "San Isidro, Peru",
-      program: "Software Engineering (6th Semester)",
-      period: "2023 - Present",
-      details: [
-        "Training in software development, data structures, algorithms, and systems architecture.",
-        "Participation in collaborative academic projects focused on web and backend applications.",
-      ],
-    },
-    {
-      institution: "Davy College",
-      location: "Cajamarca, Peru",
-      program: "International Baccalaureate (IB)",
-      period: "",
-      details: [
-        "Pre-university training focused on critical thinking, research, and problem-solving.",
-        "Development of analytical skills, rigorous academic work, and interdisciplinary projects.",
-      ],
-    },
-  ],
-  es: [
-    {
-      institution: "Universidad Peruana de Ciencias Aplicadas (UPC)",
-      location: "San Isidro, Perú",
-      program: "Ingeniería de Software (Sexto ciclo)",
-      period: "2023 - Presente",
-      details: [
-        "Formación en desarrollo de software, estructuras de datos, algoritmos y arquitectura de sistemas.",
-        "Participación en proyectos académicos colaborativos orientados a aplicaciones web y backend.",
-      ],
-    },
-    {
-      institution: "Davy College",
-      location: "Cajamarca, Perú",
-      program: "Bachillerato Internacional (IB - International Baccalaureate)",
-      period: "",
-      details: [
-        "Formación preuniversitaria con enfoque en pensamiento crítico, investigación y resolución de problemas.",
-        "Desarrollo de habilidades analíticas, trabajo académico riguroso y proyectos interdisciplinarios.",
-      ],
-    },
-  ],
-} as const;
+import { getDictionary } from "@/lib/dictionaries";
 
 interface EducationProps {
   locale: Locale;
 }
 
 export function Education({ locale }: EducationProps) {
-  const education = educationByLocale[locale];
+  const education = getDictionary(locale).section2.education;
 
   return (
     <SectionBody>

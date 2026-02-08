@@ -10,13 +10,14 @@ import { IconTile } from "./icon-tile";
 import { SectionHeader } from "../section-shared/section-header";
 import { IconGrid } from "../section-shared/icon-grid";
 import { type Locale } from "@/lib/i18n";
+import { getDictionary } from "@/lib/dictionaries";
 
 interface DevOpsCloudProps {
   locale: Locale;
 }
 
 export function DevOpsCloud({ locale }: DevOpsCloudProps) {
-  const title = locale === "es" ? "DevOps" : "DevOps";
+  const title = getDictionary(locale).section3.devOpsTitle;
 
   return (
     <>

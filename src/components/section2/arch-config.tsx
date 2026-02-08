@@ -1,10 +1,18 @@
 import Image from "next/image";
+import { type Locale } from "@/lib/i18n";
+import { getDictionary } from "@/lib/dictionaries";
 
-export function ArchConfig() {
+interface ArchConfigProps {
+  locale: Locale;
+}
+
+export function ArchConfig({ locale }: ArchConfigProps) {
+  const title = getDictionary(locale).section2.archConfigTitle;
+
   return (
     <div className="mt-4 bg-primary px-3 py-2">
       <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-primary-foreground/70">
-        My Arch Linux configuration
+        {title}
       </h3>
       <div className="relative w-full overflow-hidden">
         <Image
