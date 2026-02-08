@@ -84,7 +84,7 @@ export function getProjects(locale: Locale): ProjectItem[] {
     description: texts.graphMap.description,
     progress: 100,
     codeUrl: "https://github.com/zGIKS/GraphMap-Backend",
-    previewUrl: "https://graph-map-frontend.vercel.app",
+    previewUrl: "https://graphmap.giks.net/",
     icons: [
       { label: "Python", Icon: Python },
       { label: "React", Icon: React },
