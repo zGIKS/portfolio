@@ -85,8 +85,9 @@ export async function GET(request: Request) {
   }
 
   if (!token) {
+    console.error("Contributions endpoint misconfigured: missing token.");
     return NextResponse.json(
-      { error: "Missing GITHUB_TOKEN server env var." },
+      { error: "Service temporarily unavailable." },
       { status: 500, headers: errorHeaders },
     );
   }
@@ -107,9 +108,13 @@ export async function GET(request: Request) {
   const payload = await response.json();
 
   if (!response.ok || payload.errors) {
+    console.error("Contributions upstream error.", {
+      status: response.status,
+      errors: payload?.errors,
+    });
     return NextResponse.json(
       {
-        error: "GitHub API error.",
+        error: "Failed to load contribution data.",
         status: response.status,
       },
       { status: 502, headers: errorHeaders },
@@ -120,8 +125,9 @@ export async function GET(request: Request) {
     payload?.data?.user?.contributionsCollection?.contributionCalendar ?? null;
 
   if (!calendar) {
+    console.error("Contributions calendar missing in upstream response.");
     return NextResponse.json(
-      { error: "No contribution calendar found." },
+      { error: "No contribution data available." },
       { status: 404, headers: errorHeaders },
     );
   }

@@ -15,8 +15,8 @@ export function Legend({ totalContributions, locale }: LegendProps) {
   const moreLabel = locale === "es" ? "Más" : "More";
 
   return (
-    <div className="mt-2 flex items-center gap-6 text-[10px] font-medium leading-none text-primary-foreground/60">
-      <span>
+    <div className="mt-2 flex w-full items-center justify-between text-[10px] font-medium leading-none text-primary-foreground/60">
+      <span className="pr-4">
         {summary}
         <a
           href="https://github.com/zGIKS"
@@ -28,7 +28,7 @@ export function Legend({ totalContributions, locale }: LegendProps) {
         </a>
         .
       </span>
-      <div className="flex items-center gap-2">
+      <div className="flex shrink-0 items-center gap-2">
         <span>{lessLabel}</span>
         <div className="flex items-center gap-1">
           {CONTRIBUTION_COLORS.map((color) => (

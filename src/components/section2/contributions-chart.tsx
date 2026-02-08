@@ -39,8 +39,9 @@ export function ContributionsChart({ locale }: ContributionsChartProps) {
   const cellSize = 8;
   const cellGap = 2;
   const chartPadding = 24;
+  const gridWidth = weeks.length * cellSize + (weeks.length - 1) * cellGap;
   const chartWidth =
-    weeks.length * cellSize + (weeks.length - 1) * cellGap + chartPadding;
+    gridWidth + chartPadding;
   return (
     <div className="inline-block" style={{ width: chartWidth, paddingRight: chartPadding }}>
       <MonthLabels monthLabels={monthLabels} />
@@ -54,7 +55,9 @@ export function ContributionsChart({ locale }: ContributionsChartProps) {
           />
         ))}
       </div>
-      <Legend totalContributions={calendar.totalContributions} locale={locale} />
+      <div style={{ width: gridWidth }}>
+        <Legend totalContributions={calendar.totalContributions} locale={locale} />
+      </div>
     </div>
   );
 }

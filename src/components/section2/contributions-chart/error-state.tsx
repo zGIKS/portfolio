@@ -8,8 +8,8 @@ interface ErrorStateProps {
 export function ErrorState({ error, locale = "en" }: ErrorStateProps) {
   const hint =
     locale === "es"
-      ? "Revisa tu token de GitHub."
-      : "Check your GitHub token.";
+      ? "Inténtalo nuevamente más tarde."
+      : "Please try again later.";
 
   return (
     <Card className="border-destructive/50 bg-destructive/10 shadow-none">

@@ -9,31 +9,13 @@ export function calculateMonthLabels(calendar: ContributionCalendar, locale: Loc
     timeZone: "America/Lima",
     month: "short",
   });
-  const keyFormatter = new Intl.DateTimeFormat("en-US", {
-    timeZone: "America/Lima",
-    month: "2-digit",
-    year: "numeric",
-  });
 
-  let previousMonthKey = "";
-
-  for (let i = 0; i < calendar.weeks.length; i += 1) {
-    const date = new Date(calendar.weeks[i].firstDay);
-    const key = getYearMonthKey(date, keyFormatter);
-
-    if (i === 0 || key !== previousMonthKey) {
-      labels[i] = getMonthName(date, monthFormatter);
-      previousMonthKey = key;
-    }
-  }
-
-  // GitHub-like edge case: if range starts and ends in the same month name (e.g. Feb ... Feb),
-  // force the right-edge label so the closing month is visible too.
-  const firstLabel = labels.find((value) => value !== "") ?? "";
-  const lastDate = new Date(calendar.weeks[calendar.weeks.length - 1].firstDay);
-  const lastLabel = getMonthName(lastDate, monthFormatter);
-  if (labels[labels.length - 1] === "" && firstLabel === lastLabel) {
-    labels[labels.length - 1] = lastLabel;
+  for (const month of calendar.months) {
+    const monthDate = new Date(`${month.firstDay}T12:00:00Z`);
+    const label = getMonthName(monthDate, monthFormatter);
+    const monthWeekIndex = findWeekIndexForMonth(calendar, month.firstDay);
+    if (monthWeekIndex === -1) continue;
+    labels[monthWeekIndex] = label;
   }
 
   return labels;
@@ -45,9 +27,22 @@ function getMonthName(date: Date, formatter: Intl.DateTimeFormat) {
   return raw.replace(/\./g, "").trim();
 }
 
-function getYearMonthKey(date: Date, formatter: Intl.DateTimeFormat) {
-  const parts = formatter.formatToParts(date);
-  const year = parts.find((part) => part.type === "year")?.value ?? "";
-  const month = parts.find((part) => part.type === "month")?.value ?? "";
-  return `${year}-${month}`;
+function findWeekIndexForMonth(calendar: ContributionCalendar, date: string) {
+  const targetMonthKey = date.slice(0, 7); // YYYY-MM
+
+  // Prefer the exact first day of month when it is visible.
+  for (let weekIndex = 0; weekIndex < calendar.weeks.length; weekIndex += 1) {
+    const week = calendar.weeks[weekIndex];
+    const hasExactDate = week.contributionDays.some((day) => day.date === date);
+    if (hasExactDate) return weekIndex;
+  }
+
+  // Fallback for partial months: use the first visible week that contains that month.
+  for (let weekIndex = 0; weekIndex < calendar.weeks.length; weekIndex += 1) {
+    const week = calendar.weeks[weekIndex];
+    const hasMonth = week.contributionDays.some((day) => day.date.slice(0, 7) === targetMonthKey);
+    if (hasMonth) return weekIndex;
+  }
+
+  return -1;
 }
