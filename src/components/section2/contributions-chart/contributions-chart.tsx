@@ -10,16 +10,21 @@ import { ErrorState } from "./error-state";
 import { useContributions } from "./use-contributions";
 import { calculateMonthLabels } from "./month-utils";
 import { processWeeks } from "./week-utils";
+import { type Locale } from "@/lib/i18n";
 
-export function ContributionsChart() {
+interface ContributionsChartProps {
+  locale: Locale;
+}
+
+export function ContributionsChart({ locale }: ContributionsChartProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [containerWidth, setContainerWidth] = useState<number | null>(null);
   const { calendar, error } = useContributions();
 
   const monthLabels = useMemo(() => {
     if (!calendar) return [];
-    return calculateMonthLabels(calendar);
-  }, [calendar]);
+    return calculateMonthLabels(calendar, locale);
+  }, [calendar, locale]);
 
   const weeks = useMemo(() => {
     if (!calendar) return [];
@@ -38,7 +43,7 @@ export function ContributionsChart() {
   }, []);
 
   if (error) {
-    return <ErrorState error={error} />;
+    return <ErrorState error={error} locale={locale} />;
   }
 
   if (!calendar) {
@@ -47,9 +52,9 @@ export function ContributionsChart() {
 
   const cellSize = 8;
   const cellGap = 2;
-  const chartPadding = 4;
+  const chartPadding = 24;
   const chartWidth =
-    weeks.length * cellSize + (weeks.length - 1) * cellGap + 28 + chartPadding;
+    weeks.length * cellSize + (weeks.length - 1) * cellGap + chartPadding;
   const scale =
     containerWidth && chartWidth > 0
       ? Math.min(1, containerWidth / chartWidth)
@@ -74,10 +79,11 @@ export function ContributionsChart() {
                 key={week.firstDay}
                 week={week}
                 cellSize={cellSize}
+                locale={locale}
               />
             ))}
           </div>
-          <Legend totalContributions={calendar.totalContributions} />
+          <Legend totalContributions={calendar.totalContributions} locale={locale} />
         </div>
       </div>
     </TooltipProvider>

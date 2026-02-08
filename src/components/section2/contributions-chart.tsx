@@ -9,14 +9,19 @@ import { ErrorState } from "./contributions-chart/error-state";
 import { useContributions } from "./contributions-chart/use-contributions";
 import { calculateMonthLabels } from "./contributions-chart/month-utils";
 import { processWeeks } from "./contributions-chart/week-utils";
+import { type Locale } from "@/lib/i18n";
 
-export function ContributionsChart() {
+interface ContributionsChartProps {
+  locale: Locale;
+}
+
+export function ContributionsChart({ locale }: ContributionsChartProps) {
   const { calendar, error } = useContributions();
 
   const monthLabels = useMemo(() => {
     if (!calendar) return [];
-    return calculateMonthLabels(calendar);
-  }, [calendar]);
+    return calculateMonthLabels(calendar, locale);
+  }, [calendar, locale]);
 
   const weeks = useMemo(() => {
     if (!calendar) return [];
@@ -24,7 +29,7 @@ export function ContributionsChart() {
   }, [calendar]);
 
   if (error) {
-    return <ErrorState error={error} />;
+    return <ErrorState error={error} locale={locale} />;
   }
 
   if (!calendar) {
@@ -33,9 +38,9 @@ export function ContributionsChart() {
 
   const cellSize = 8;
   const cellGap = 2;
-  const chartPadding = 8;
+  const chartPadding = 24;
   const chartWidth =
-    weeks.length * cellSize + (weeks.length - 1) * cellGap + 28 + chartPadding;
+    weeks.length * cellSize + (weeks.length - 1) * cellGap + chartPadding;
   return (
     <div className="inline-block" style={{ width: chartWidth, paddingRight: chartPadding }}>
       <MonthLabels monthLabels={monthLabels} />
@@ -45,10 +50,11 @@ export function ContributionsChart() {
             key={week.firstDay}
             week={week}
             cellSize={cellSize}
+            locale={locale}
           />
         ))}
       </div>
-      <Legend totalContributions={calendar.totalContributions} />
+      <Legend totalContributions={calendar.totalContributions} locale={locale} />
     </div>
   );
 }

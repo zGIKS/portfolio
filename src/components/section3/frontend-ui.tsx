@@ -6,11 +6,18 @@ import { ShadcnUI } from "../icons/stack/frontend/shadcn";
 import { IconTile } from "./icon-tile";
 import { SectionHeader } from "../section-shared/section-header";
 import { IconGrid } from "../section-shared/icon-grid";
+import { type Locale } from "@/lib/i18n";
 
-export function FrontendUI() {
+interface FrontendUIProps {
+  locale: Locale;
+}
+
+export function FrontendUI({ locale }: FrontendUIProps) {
+  const title = locale === "es" ? "Frontend" : "Frontend";
+
   return (
     <>
-      <SectionHeader title="Frontend" count={5} className="mt-6" />
+      <SectionHeader title={title} count={5} className="mt-6" />
       <IconGrid>
         <IconTile ariaLabel="React" href="https://react.dev/">
           <React className="h-4 w-4" />

@@ -1,5 +1,7 @@
-export function createDateFormatter() {
-  const dateFormatter = new Intl.DateTimeFormat("en-GB", {
+import { type Locale } from "@/lib/i18n";
+
+export function createDateFormatter(locale: Locale) {
+  const dateFormatter = new Intl.DateTimeFormat(locale === "es" ? "es-PE" : "en-GB", {
     timeZone: "America/Lima",
     year: "numeric",
     month: "2-digit",

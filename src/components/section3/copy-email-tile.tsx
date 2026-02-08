@@ -4,12 +4,18 @@ import { useRef, useState } from "react";
 import { Check, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { DesktopTooltip } from "./desktop-tooltip";
+import { type Locale } from "@/lib/i18n";
 
 const EMAIL = "mateo.aleman.romano@gmail.com";
 
-export function CopyEmailTile() {
+interface CopyEmailTileProps {
+  locale: Locale;
+}
+
+export function CopyEmailTile({ locale }: CopyEmailTileProps) {
   const [copied, setCopied] = useState(false);
   const resetTimer = useRef<number | null>(null);
+  const copiedLabel = locale === "es" ? "Copiado!" : "Copied!";
 
   const handleCopy = async () => {
     try {
@@ -28,7 +34,7 @@ export function CopyEmailTile() {
   };
 
   return (
-    <DesktopTooltip label={copied ? "Copied!" : EMAIL}>
+    <DesktopTooltip label={copied ? copiedLabel : EMAIL}>
       <button
         type="button"
         onClick={handleCopy}

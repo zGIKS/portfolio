@@ -2,9 +2,15 @@ import { Card, CardContent } from "@/components/ui/card";
 
 interface ErrorStateProps {
   error: string;
+  locale?: "en" | "es";
 }
 
-export function ErrorState({ error }: ErrorStateProps) {
+export function ErrorState({ error, locale = "en" }: ErrorStateProps) {
+  const hint =
+    locale === "es"
+      ? "Revisa tu token de GitHub."
+      : "Check your GitHub token.";
+
   return (
     <Card className="border-destructive/50 bg-destructive/10 shadow-none">
       <CardContent className="flex items-center gap-2 text-xs text-destructive">
@@ -21,7 +27,7 @@ export function ErrorState({ error }: ErrorStateProps) {
           />
         </svg>
         <span>
-          {error} Check your GitHub token.
+          {error} {hint}
         </span>
       </CardContent>
     </Card>

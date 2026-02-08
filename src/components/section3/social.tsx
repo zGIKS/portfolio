@@ -6,11 +6,18 @@ import { IconTile } from "./icon-tile";
 import { SectionHeader } from "../section-shared/section-header";
 import { IconGrid } from "../section-shared/icon-grid";
 import { CopyEmailTile } from "./copy-email-tile";
+import { type Locale } from "@/lib/i18n";
 
-export function Links() {
+interface LinksProps {
+  locale: Locale;
+}
+
+export function Links({ locale }: LinksProps) {
+  const title = locale === "es" ? "Enlaces" : "Links";
+
   return (
     <>
-      <SectionHeader title="Links" count={5} />
+      <SectionHeader title={title} count={5} />
       <IconGrid>
         <IconTile ariaLabel="LinkedIn">
           <LinkedinIcon className="h-4 w-4 text-[#0A66C2]" />
@@ -29,7 +36,7 @@ export function Links() {
         <IconTile ariaLabel="YouTube">
           <YoutubeIcon className="h-4 w-4 text-[#FF0000]" />
         </IconTile>
-        <CopyEmailTile />
+        <CopyEmailTile locale={locale} />
       </IconGrid>
 
     </>

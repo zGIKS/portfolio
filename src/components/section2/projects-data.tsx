@@ -11,6 +11,7 @@ import { TailwindCSS } from "../icons/stack/frontend/tailwind";
 import { ShadcnUI } from "../icons/stack/frontend/shadcn";
 import { Java } from "../icons/stack/languages/java";
 import { MongoDB } from "../icons/stack/databases/mongo";
+import { type Locale } from "@/lib/i18n";
 
 type SvgIcon = ComponentType<SVGProps<SVGSVGElement>>;
 
@@ -32,11 +33,16 @@ export interface ProjectItem {
   icons: ProjectIcon[];
 }
 
-export const projects: ProjectItem[] = [
+export function getProjects(locale: Locale): ProjectItem[] {
+  const isSpanish = locale === "es";
+
+  return [
   {
     title: "Identity & Access Management",
     description:
-      "Sistema de inicio de sesión y control de accesos que protege cuentas, datos y sesiones de usuarios.",
+      isSpanish
+        ? "Sistema de inicio de sesión y control de accesos que protege cuentas, datos y sesiones de usuarios."
+        : "Authentication and access control platform that secures user accounts, data, and sessions.",
     imageSrc: "/assets/IAM.webp",
     imageAlt: "Identity & Access Management",
     progress: 100,
@@ -52,7 +58,9 @@ export const projects: ProjectItem[] = [
   {
     title: "LevelUp Journey",
     description:
-      "Plataforma educativa colaborativa que ayuda a estudiantes a practicar programación y docentes a seguir avances.",
+      isSpanish
+        ? "Plataforma educativa colaborativa que ayuda a estudiantes a practicar programación y docentes a seguir avances."
+        : "Collaborative learning platform that helps students practice programming and helps teachers track progress.",
     progress: 100,
     codeUrl: "https://github.com/LevelUp-Journey",
     previewUrl: "#",
@@ -66,7 +74,9 @@ export const projects: ProjectItem[] = [
   {
     title: "Mortgage Calculator",
     description:
-      "Herramienta web que simula créditos hipotecarios y compara opciones bancarias para tomar mejores decisiones.",
+      isSpanish
+        ? "Herramienta web que simula créditos hipotecarios y compara opciones bancarias para tomar mejores decisiones."
+        : "Web tool that simulates mortgage loans and compares banking options to support better decisions.",
     progress: 100,
     codeUrl: "https://github.com/zGIKS/mortgage-calculator",
     previewUrl: "https://mortgage-ui-sable.vercel.app",
@@ -78,9 +88,11 @@ export const projects: ProjectItem[] = [
     ],
   },
   {
-    title: "Mapa de Grafos",
+    title: isSpanish ? "Mapa de Grafos" : "Graph Map",
     description:
-      "Aplicación interactiva que muestra mapas, rutas óptimas y permite explorar datos mediante visualizaciones e IA.",
+      isSpanish
+        ? "Aplicación interactiva que muestra mapas, rutas óptimas y permite explorar datos mediante visualizaciones e IA."
+        : "Interactive app for maps and optimal routes, with data exploration through visualizations and AI.",
     progress: 100,
     codeUrl: "https://github.com/zGIKS/GraphMap-Backend",
     previewUrl: "https://graph-map-frontend.vercel.app",
@@ -91,4 +103,5 @@ export const projects: ProjectItem[] = [
       { label: "shadcn/ui", Icon: ShadcnUI },
     ],
   },
-];
+  ];
+}
