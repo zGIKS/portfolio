@@ -1,4 +1,13 @@
+"use client";
+
 import Link from "next/link";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export function Header() {
   return (
@@ -40,20 +49,20 @@ export function Header() {
             </nav>
           </div>
           <div className="ml-auto self-start pt-2 md:ml-0 md:flex md:w-[13.875rem] md:justify-end">
-            <button
-              type="button"
-              className="inline-flex items-center gap-1 text-xs leading-none text-white/60 transition-colors hover:text-white"
-              aria-label="Language selector"
-            >
-              language
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 12 12"
-                className="h-2.5 w-2.5 fill-current"
+            <Select defaultValue="en">
+              <SelectTrigger
+                aria-label="Language selector"
+                data-size="sm"
+                className="h-auto min-h-0 w-auto gap-1 border-0 bg-transparent px-0 py-0.5 text-xs leading-tight text-white/60 shadow-none hover:text-white focus-visible:ring-0"
               >
-                <path d="M2.25 4.5 6 8.25 9.75 4.5z" />
-              </svg>
-            </button>
+                <SelectValue placeholder="language" />
+              </SelectTrigger>
+              <SelectContent className="border-white/10 bg-black/90 text-white">
+                <SelectItem value="en">English</SelectItem>
+                <SelectItem value="es">Español</SelectItem>
+                <SelectItem value="pt">Português</SelectItem>
+              </SelectContent>
+            </Select>
           </div>
         </div>
       </div>

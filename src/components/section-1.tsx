@@ -2,7 +2,7 @@ import { CardHeader } from "@/components/ui/card";
 import { Photo } from "./profile/photo";
 import { NameAndCountry } from "./profile/name-country";
 import { Level } from "./profile/level";
-import { ArbiComponent } from "./profile/arbi";
+import { ArbiComponent } from "./profile/trophy";
 
 export function Section1() {
   return (
