@@ -5,11 +5,19 @@ import { MongoDB } from "../icons/stack/databases/mongo";
 import { IconTile } from "./icon-tile";
 import { SectionHeader } from "../section-shared/section-header";
 import { IconGrid } from "../section-shared/icon-grid";
+import { type Locale } from "@/lib/i18n";
+import { getDictionary } from "@/lib/dictionaries";
 
-export function DatabasesStorage() {
+interface DatabasesStorageProps {
+  locale: Locale;
+}
+
+export function DatabasesStorage({ locale }: DatabasesStorageProps) {
+  const title = getDictionary(locale).section3.databasesTitle;
+
   return (
     <>
-      <SectionHeader title="Databases" count={4} className="mt-6" />
+      <SectionHeader title={title} count={4} className="mt-6" />
       <IconGrid>
         <IconTile ariaLabel="PostgreSQL" href="https://www.postgresql.org/docs/">
           <PostgreSQL className="h-4 w-4" />

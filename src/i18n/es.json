@@ -1,0 +1,141 @@
+{
+  "header": {
+    "portfolio": "Portafolio",
+    "blog": "Blog",
+    "desktops": "Escritorios",
+    "languageSelectorAria": "Selector de idioma",
+    "language": "Idioma",
+    "languages": {
+      "en": "English",
+      "es": "Español",
+      "pt": "Português"
+    }
+  },
+  "footer": {
+    "repoLabel": "Repositorio GitHub",
+    "title": "Portafolio zGIKS"
+  },
+  "section1": {
+    "yearsOldLabel": "Años"
+  },
+  "section2": {
+    "titles": {
+      "about": "Sobre mí",
+      "experience": "Experiencia",
+      "education": "Educación",
+      "projects": "Proyectos"
+    },
+    "about": {
+      "paragraphs": [
+        "Hola, soy Mateo (aka giks).",
+        "Soy estudiante de ingeniería de software en Perú, enfocado en construir sistemas backend, infraestructura y servicios críticos para seguridad. Trabajo principalmente en entornos tipo Unix, usando Arch Linux en mi entorno diario y Debian/Ubuntu para servidores y producción.",
+        "Disfruto diseñar sistemas desde cero, con énfasis en confiabilidad, seguridad y arquitectura clara. Mi trabajo suele involucrar servicios backend, gestión de identidad y accesos, e infraestructura que prioriza una baja superficie de ataque y escalabilidad.",
+        "Algunas áreas y proyectos en los que he trabajado:",
+        "Me interesan especialmente roles de backend platform engineering, infraestructura y seguridad, donde el diseño de sistemas y la mantenibilidad a largo plazo importan."
+      ],
+      "bullets": [
+        "Servicios backend y microservicios, incluyendo IAM y sistemas de autenticación",
+        "API gateways y arquitecturas orientadas a eventos",
+        "Plataformas web seguras usadas en contextos académicos y de pequeños negocios",
+        "Plataformas educativas usadas por más de 150 estudiantes",
+        "Servicios en Rust con fuerte enfoque en corrección y seguridad"
+      ]
+    },
+    "archConfigTitle": "Mi configuración de Arch Linux",
+    "experience": [
+      {
+        "title": "Staff Técnico / Moderación de Plataforma",
+        "period": "2021 - 2022",
+        "company": "Ghostly Network",
+        "subtitle": "Proyecto comunitario | Trainee -> Moderador Senior",
+        "highlights": [
+          "Monitoreo de usuarios y chat; detección de comportamientos no autorizados y aplicación de sanciones.",
+          "Supervisión de sistemas anti-cheat e investigación de software no autorizado (clientes modificados, procesos, DLLs).",
+          "Soporte técnico y validación de transacciones mediante sistema de tickets."
+        ]
+      },
+      {
+        "title": "Desarrollador Web (Freelance)",
+        "period": "2023 - Presente",
+        "company": "Desarrollo Web para PYMEs",
+        "highlights": [
+          "Desarrollo e implementación de sitios web y landing pages para PYMEs y negocios locales.",
+          "Aplicación de diseño responsive, estructura orientada a servicios y buenas prácticas de usabilidad.",
+          "Implementación de buenas prácticas de seguridad y hardening, incluyendo revisión de exposición de puertos y servicios en entornos de desarrollo y despliegue (pruebas básicas autorizadas).",
+          "Despliegue seguro de aplicaciones usando Cloudflare Tunnel, evitando exposición directa de IPs y puertos públicos.",
+          "Comunicación interna entre servicios mediante VPN privada con Tailscale, reduciendo superficie de ataque y mejorando el aislamiento.",
+          "Implementación y consumo de Azure Event Hub para comunicación asíncrona entre servicios.",
+          "Despliegue y administración básica de máquinas virtuales en Azure con Debian y Ubuntu.",
+          "Mantenimiento post-entrega y soporte técnico, con enfoque en estabilidad y disponibilidad."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "institution": "Universidad Peruana de Ciencias Aplicadas (UPC)",
+        "location": "San Isidro, Perú",
+        "program": "Ingeniería de Software (Sexto ciclo)",
+        "period": "2023 - Presente",
+        "details": [
+          "Formación en desarrollo de software, estructuras de datos, algoritmos y arquitectura de sistemas.",
+          "Participación en proyectos académicos colaborativos orientados a aplicaciones web y backend."
+        ]
+      },
+      {
+        "institution": "Davy College",
+        "location": "Cajamarca, Perú",
+        "program": "Bachillerato Internacional (IB - International Baccalaureate)",
+        "period": "",
+        "details": [
+          "Formación preuniversitaria con enfoque en pensamiento crítico, investigación y resolución de problemas.",
+          "Desarrollo de habilidades analíticas, trabajo académico riguroso y proyectos interdisciplinarios."
+        ]
+      }
+    ],
+    "projects": {
+      "labels": {
+        "progress": "Progreso",
+        "code": "Código",
+        "preview": "Vista previa"
+      },
+      "items": {
+        "iam": {
+          "description": "Sistema de inicio de sesión y control de accesos que protege cuentas, datos y sesiones de usuarios."
+        },
+        "levelUp": {
+          "description": "Plataforma educativa colaborativa que ayuda a estudiantes a practicar programación y docentes a seguir avances."
+        },
+        "mortgage": {
+          "description": "Herramienta web que simula créditos hipotecarios y compara opciones bancarias para tomar mejores decisiones."
+        },
+        "graphMap": {
+          "title": "Mapa de Grafos",
+          "description": "Aplicación interactiva que muestra mapas, rutas óptimas y permite explorar datos mediante visualizaciones e IA."
+        }
+      }
+    }
+  },
+  "section3": {
+    "currentOnlineTitle": "En línea ahora",
+    "linksTitle": "Enlaces",
+    "languagesTitle": "Lenguajes",
+    "frontendTitle": "Frontend",
+    "devOpsTitle": "DevOps",
+    "databasesTitle": "Bases de datos",
+    "copiedLabel": "Copiado!"
+  },
+  "contributions": {
+    "none": "Sin contribuciones",
+    "one": "1 contribución",
+    "many": "{count} contribuciones",
+    "onLabel": "el",
+    "legend": {
+      "summary": "{count} contribuciones durante el último año en ",
+      "less": "Menos",
+      "more": "Más"
+    },
+    "errorHint": "Inténtalo nuevamente más tarde.",
+    "dateLocale": "es-PE",
+    "monthLocale": "es-PE"
+  }
+}

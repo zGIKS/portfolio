@@ -9,11 +9,19 @@ import { Cloudflare } from "../icons/stack/devops/cloudflare";
 import { IconTile } from "./icon-tile";
 import { SectionHeader } from "../section-shared/section-header";
 import { IconGrid } from "../section-shared/icon-grid";
+import { type Locale } from "@/lib/i18n";
+import { getDictionary } from "@/lib/dictionaries";
 
-export function DevOpsCloud() {
+interface DevOpsCloudProps {
+  locale: Locale;
+}
+
+export function DevOpsCloud({ locale }: DevOpsCloudProps) {
+  const title = getDictionary(locale).section3.devOpsTitle;
+
   return (
     <>
-      <SectionHeader title="DevOps" count={8} className="mt-6" />
+      <SectionHeader title={title} count={8} className="mt-6" />
       <IconGrid className="pb-6">
         <IconTile ariaLabel="Arch Linux" href="https://wiki.archlinux.org/">
           <ArchIcon className="h-4 w-4" />

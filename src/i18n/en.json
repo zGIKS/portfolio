@@ -1,0 +1,141 @@
+{
+  "header": {
+    "portfolio": "Portfolio",
+    "blog": "Blog",
+    "desktops": "Desktops",
+    "languageSelectorAria": "Language selector",
+    "language": "Language",
+    "languages": {
+      "en": "English",
+      "es": "Español",
+      "pt": "Português"
+    }
+  },
+  "footer": {
+    "repoLabel": "GitHub Repo",
+    "title": "zGIKS Portfolio"
+  },
+  "section1": {
+    "yearsOldLabel": "Years old"
+  },
+  "section2": {
+    "titles": {
+      "about": "About",
+      "experience": "Experience",
+      "education": "Education",
+      "projects": "Projects"
+    },
+    "about": {
+      "paragraphs": [
+        "Hi I'm Mateo (aka giks).",
+        "I'm a software engineering student based in Peru, focused on building backend systems, infrastructure, and security-critical services. I mainly work in Unix-like environments, using Arch Linux as my daily setup and Debian/Ubuntu for servers and production systems.",
+        "I enjoy designing systems from the ground up, with an emphasis on reliability, security, and clear architecture. My work often involves backend services, identity and access management, and infrastructure that prioritizes low attack surface and scalability.",
+        "Some of the areas and projects I've worked on include:",
+        "I'm especially interested in backend platform engineering, infrastructure, and security-focused roles, where system design and long-term maintainability matter."
+      ],
+      "bullets": [
+        "Backend services and microservices, including IAM and authentication systems",
+        "API gateways and event-driven architectures",
+        "Secure web platforms used in real academic and small-business contexts",
+        "Educational platforms used by 150+ students",
+        "Rust-based services with a strong focus on correctness and security"
+      ]
+    },
+    "archConfigTitle": "My Arch Linux configuration",
+    "experience": [
+      {
+        "title": "Technical Staff / Platform Moderation",
+        "period": "2021 - 2022",
+        "company": "Ghostly Network",
+        "subtitle": "Community Project | Trainee -> Senior Moderator",
+        "highlights": [
+          "User and chat monitoring; detection of unauthorized behaviors and application of sanctions.",
+          "Supervision of anti-cheat systems and investigation of unauthorized software (modified clients, processes, DLLs).",
+          "Technical support and transaction validation through ticket system."
+        ]
+      },
+      {
+        "title": "Web Developer (Freelance)",
+        "period": "2023 - Present",
+        "company": "Web Development for SMEs",
+        "highlights": [
+          "Development and implementation of websites and landing pages for SMEs and local businesses.",
+          "Application of responsive design, service-oriented structure and good usability practices.",
+          "Implementation of security best practices and hardening, including review of port and service exposure in development and deployment environments (authorized basic tests).",
+          "Secure deployment of applications using Cloudflare Tunnel, avoiding direct exposure of public IPs and ports.",
+          "Internal communication between services through private VPN with Tailscale, reducing attack surface and improving isolation.",
+          "Implementation and consumption of Azure Event Hub for asynchronous communication between services.",
+          "Deployment and basic administration of virtual machines in Azure with Debian and Ubuntu.",
+          "Post-delivery maintenance and technical support, with focus on stability and availability."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "institution": "Peruvian University of Applied Sciences (UPC)",
+        "location": "San Isidro, Peru",
+        "program": "Software Engineering (6th Semester)",
+        "period": "2023 - Present",
+        "details": [
+          "Training in software development, data structures, algorithms, and systems architecture.",
+          "Participation in collaborative academic projects focused on web and backend applications."
+        ]
+      },
+      {
+        "institution": "Davy College",
+        "location": "Cajamarca, Peru",
+        "program": "International Baccalaureate (IB)",
+        "period": "",
+        "details": [
+          "Pre-university training focused on critical thinking, research, and problem-solving.",
+          "Development of analytical skills, rigorous academic work, and interdisciplinary projects."
+        ]
+      }
+    ],
+    "projects": {
+      "labels": {
+        "progress": "Progress",
+        "code": "Code",
+        "preview": "Preview"
+      },
+      "items": {
+        "iam": {
+          "description": "Authentication and access control platform that secures user accounts, data, and sessions."
+        },
+        "levelUp": {
+          "description": "Collaborative learning platform that helps students practice programming and helps teachers track progress."
+        },
+        "mortgage": {
+          "description": "Web tool that simulates mortgage loans and compares banking options to support better decisions."
+        },
+        "graphMap": {
+          "title": "Graph Map",
+          "description": "Interactive app for maps and optimal routes, with data exploration through visualizations and AI."
+        }
+      }
+    }
+  },
+  "section3": {
+    "currentOnlineTitle": "Currently Online",
+    "linksTitle": "Links",
+    "languagesTitle": "Languages",
+    "frontendTitle": "Frontend",
+    "devOpsTitle": "DevOps",
+    "databasesTitle": "Databases",
+    "copiedLabel": "Copied!"
+  },
+  "contributions": {
+    "none": "No contributions",
+    "one": "1 contribution",
+    "many": "{count} contributions",
+    "onLabel": "on",
+    "legend": {
+      "summary": "{count} contributions in the last year on ",
+      "less": "Less",
+      "more": "More"
+    },
+    "errorHint": "Please try again later.",
+    "dateLocale": "en-GB",
+    "monthLocale": "en-US"
+  }
+}

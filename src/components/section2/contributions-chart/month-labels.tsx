@@ -7,10 +7,9 @@ export function MonthLabels({ monthLabels }: MonthLabelsProps) {
     <div
       className="grid gap-[2px] text-[10px] font-medium leading-none text-primary-foreground/60"
       style={{
-        gridTemplateColumns: `28px repeat(${monthLabels.length}, 8px)`,
+        gridTemplateColumns: `repeat(${monthLabels.length}, 8px)`,
       }}
     >
-      <div />
       {monthLabels.map((label, index) => (
         <div key={`${label}-${index}`} className="relative h-3">
           {label ? (

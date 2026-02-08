@@ -1,14 +1,20 @@
 import { CONTRIBUTION_COLORS } from "./color-utils";
+import { type Locale } from "@/lib/i18n";
+import { getDictionary } from "@/lib/dictionaries";
 
 interface LegendProps {
   totalContributions: number;
+  locale: Locale;
 }
 
-export function Legend({ totalContributions }: LegendProps) {
+export function Legend({ totalContributions, locale }: LegendProps) {
+  const t = getDictionary(locale).contributions.legend;
+  const summary = t.summary.replace("{count}", totalContributions.toLocaleString());
+
   return (
-    <div className="mt-2 flex items-center gap-6 text-[10px] font-medium leading-none text-primary-foreground/60">
-      <span>
-        {totalContributions.toLocaleString()} contributions in the last year on{" "}
+    <div className="mt-2 flex w-full items-center justify-between text-[10px] font-medium leading-none text-primary-foreground/60">
+      <span className="pr-4">
+        {summary}
         <a
           href="https://github.com/zGIKS"
           className="text-primary-foreground/80 underline underline-offset-2"
@@ -19,8 +25,8 @@ export function Legend({ totalContributions }: LegendProps) {
         </a>
         .
       </span>
-      <div className="flex items-center gap-2">
-        <span>Less</span>
+      <div className="flex shrink-0 items-center gap-2">
+        <span>{t.less}</span>
         <div className="flex items-center gap-1">
           {CONTRIBUTION_COLORS.map((color) => (
             <span
@@ -30,7 +36,7 @@ export function Legend({ totalContributions }: LegendProps) {
             />
           ))}
         </div>
-        <span>More</span>
+        <span>{t.more}</span>
       </div>
     </div>
   );

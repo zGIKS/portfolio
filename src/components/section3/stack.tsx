@@ -2,14 +2,19 @@ import { ProgrammingLanguages } from "./programming-languages";
 import { FrontendUI } from "./frontend-ui";
 import { DatabasesStorage } from "./databases-storage";
 import { DevOpsCloud } from "./devops-cloud";
+import { type Locale } from "@/lib/i18n";
 
-export function Stack() {
+interface StackProps {
+  locale: Locale;
+}
+
+export function Stack({ locale }: StackProps) {
   return (
     <>
-      <ProgrammingLanguages />
-      <FrontendUI />
-      <DatabasesStorage />
-      <DevOpsCloud />
+      <ProgrammingLanguages locale={locale} />
+      <FrontendUI locale={locale} />
+      <DatabasesStorage locale={locale} />
+      <DevOpsCloud locale={locale} />
     </>
   );
 }

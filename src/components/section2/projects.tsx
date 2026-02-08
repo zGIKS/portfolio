@@ -4,10 +4,19 @@ import { IconTile } from "../section3/icon-tile";
 import { Link as LinkIcon } from "lucide-react";
 import { SectionBody } from "../section-shared/section-body";
 import { ProjectCard } from "./project-card";
-import { projects } from "./projects-data";
+import { getProjects } from "./projects-data";
 import { Button } from "@/components/ui/button";
+import { type Locale } from "@/lib/i18n";
+import { getDictionary } from "@/lib/dictionaries";
 
-export function Projects() {
+interface ProjectsProps {
+  locale: Locale;
+}
+
+export function Projects({ locale }: ProjectsProps) {
+  const projects = getProjects(locale);
+  const labels = getDictionary(locale).section2.projects.labels;
+
   return (
     <SectionBody>
       <div className="space-y-5">
@@ -30,7 +39,7 @@ export function Projects() {
               )
             }
             meta={<p className="text-sm text-muted-foreground">{project.description}</p>}
-            progressLabel="Progress"
+            progressLabel={labels.progress}
             progressValue={project.progress}
             actions={
               <div className="flex w-full flex-col gap-2 md:w-auto md:items-end">
@@ -42,7 +51,7 @@ export function Projects() {
                       rel="noopener noreferrer"
                     >
                       <GithubIcon className="h-3.5 w-3.5" />
-                      Code
+                      {labels.code}
                     </a>
                   </Button>
                   <Button variant="outline" size="sm" asChild className="gap-2 uppercase tracking-wide">
@@ -52,7 +61,7 @@ export function Projects() {
                       rel="noopener noreferrer"
                     >
                       <LinkIcon className="h-3.5 w-3.5" />
-                      Preview
+                      {labels.preview}
                     </a>
                   </Button>
                 </div>

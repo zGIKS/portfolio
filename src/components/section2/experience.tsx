@@ -1,35 +1,14 @@
 import { SectionBody } from "../section-shared/section-body";
+import { type Locale } from "@/lib/i18n";
+import { getDictionary } from "@/lib/dictionaries";
 
-const experiences = [
-  {
-    title: "Technical Staff / Platform Moderation",
-    period: "2021 - 2022",
-    company: "Ghostly Network",
-    subtitle: "Community Project | Trainee -> Senior Moderator",
-    highlights: [
-      "User and chat monitoring; detection of unauthorized behaviors and application of sanctions.",
-      "Supervision of anti-cheat systems and investigation of unauthorized software (modified clients, processes, DLLs).",
-      "Technical support and transaction validation through ticket system.",
-    ],
-  },
-  {
-    title: "Web Developer (Freelance)",
-    period: "2023 - Present",
-    company: "Web Development for SMEs",
-    highlights: [
-      "Development and implementation of websites and landing pages for SMEs and local businesses.",
-      "Application of responsive design, service-oriented structure and good usability practices.",
-      "Implementation of security best practices and hardening, including review of port and service exposure in development and deployment environments (authorized basic tests).",
-      "Secure deployment of applications using Cloudflare Tunnel, avoiding direct exposure of public IPs and ports.",
-      "Internal communication between services through private VPN with Tailscale, reducing attack surface and improving isolation.",
-      "Implementation and consumption of Azure Event Hub for asynchronous communication between services.",
-      "Deployment and basic administration of virtual machines in Azure with Debian and Ubuntu.",
-      "Post-delivery maintenance and technical support, with focus on stability and availability.",
-    ],
-  },
-];
+interface ExperienceProps {
+  locale: Locale;
+}
 
-export function Experience() {
+export function Experience({ locale }: ExperienceProps) {
+  const experiences = getDictionary(locale).section2.experience;
+
   return (
     <SectionBody>
       <div className="space-y-6 text-sm leading-relaxed text-card-foreground">

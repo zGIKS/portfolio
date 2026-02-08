@@ -1,10 +1,15 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { type Locale } from "@/lib/i18n";
+import { getDictionary } from "@/lib/dictionaries";
 
 interface ErrorStateProps {
   error: string;
+  locale?: Locale;
 }
 
-export function ErrorState({ error }: ErrorStateProps) {
+export function ErrorState({ error, locale = "en" }: ErrorStateProps) {
+  const hint = getDictionary(locale).contributions.errorHint;
+
   return (
     <Card className="border-destructive/50 bg-destructive/10 shadow-none">
       <CardContent className="flex items-center gap-2 text-xs text-destructive">
@@ -21,7 +26,7 @@ export function ErrorState({ error }: ErrorStateProps) {
           />
         </svg>
         <span>
-          {error} Check your GitHub token.
+          {error} {hint}
         </span>
       </CardContent>
     </Card>
