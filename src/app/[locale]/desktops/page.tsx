@@ -37,7 +37,6 @@ export default async function DesktopsPage({ params }: DesktopsPageProps) {
   }
 
   const activeLocale: Locale = locale;
-  const t = getDictionary(locale);
 
   return (
     <main className="relative flex min-h-screen flex-col bg-background">
