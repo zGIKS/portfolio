@@ -1,6 +1,14 @@
 import { PeruFlag } from "../icons/peru";
+import { type Locale } from "@/lib/i18n";
+import { getDictionary } from "@/lib/dictionaries";
 
-export function NameAndCountry() {
+interface NameAndCountryProps {
+  locale: Locale;
+}
+
+export function NameAndCountry({ locale }: NameAndCountryProps) {
+  const countryLabel = getDictionary(locale).section1.country;
+
   return (
     <div className="flex flex-col gap-1">
       <div className="flex items-center gap-2">
@@ -11,7 +19,7 @@ export function NameAndCountry() {
       <div className="flex items-center gap-2 text-sm text-muted-foreground">
         <span>Mateo Aleman</span>
         <PeruFlag className="h-3 w-4" />
-        <span>Perú</span>
+        <span>{countryLabel}</span>
       </div>
     </div>
   );
