@@ -82,6 +82,8 @@ export function getProjects(locale: Locale): ProjectItem[] {
   {
     title: texts.graphMap.title,
     description: texts.graphMap.description,
+    imageSrc: "/assets/graphmap.png",
+    imageAlt: "Graph Map",
     progress: 100,
     codeUrl: "https://github.com/zGIKS/GraphMap-Backend",
     previewUrl: "https://graphmap.giks.net/",

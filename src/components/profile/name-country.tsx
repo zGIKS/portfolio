@@ -11,7 +11,7 @@ export function NameAndCountry() {
       <div className="flex items-center gap-2 text-sm text-muted-foreground">
         <span>Mateo Aleman</span>
         <PeruFlag className="h-3 w-4" />
-        <span>Peru</span>
+        <span>Perú</span>
       </div>
     </div>
   );
