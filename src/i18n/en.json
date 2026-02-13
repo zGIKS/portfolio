@@ -11,12 +11,23 @@
       "pt": "Português"
     }
   },
+  "desktops": {
+    "title": "My Arch Linux Configuration",
+    "description": "My personal Arch Linux setup and configuration.",
+    "additionalConfig": "Portfolio Development",
+    "freshEditorFrontend": "Docker Development Setup",
+    "sampleApp": {
+      "title": "Sample Desktop App",
+      "description": "Description of the desktop application."
+    }
+  },
   "footer": {
     "repoLabel": "GitHub Repo",
     "title": "zGIKS Portfolio"
   },
   "section1": {
-    "yearsOldLabel": "Years old"
+    "yearsOldLabel": "Years old",
+    "country": "Peru"
   },
   "section2": {
     "titles": {
@@ -100,17 +111,24 @@
       },
       "items": {
         "iam": {
-          "description": "Authentication and access control platform that secures user accounts, data, and sessions."
+          "title": "Identity & Access Management",
+          "description": "Authentication and access control platform that secures user accounts, data, and sessions.",
+          "preview": "https://iam-demo.vercel.app/"
         },
         "levelUp": {
-          "description": "Collaborative learning platform that helps students practice programming and helps teachers track progress."
+          "title": "LevelUp Journey",
+          "description": "Collaborative learning platform that helps students practice programming and helps teachers track progress.",
+          "preview": "https://web-app-dusky-one.vercel.app/"
         },
         "mortgage": {
-          "description": "Web tool that simulates mortgage loans and compares banking options to support better decisions."
+          "title": "Mortgage Calculator",
+          "description": "Web tool that simulates mortgage loans and compares banking options to support better decisions.",
+          "preview": "https://mortgage-ui-sable.vercel.app"
         },
         "graphMap": {
           "title": "Graph Map",
-          "description": "Interactive app for maps and optimal routes, with data exploration through visualizations and AI."
+          "description": "Interactive app for maps and optimal routes, with data exploration through visualizations and AI.",
+          "preview": "https://graphmap.giks.net/"
         }
       }
     }

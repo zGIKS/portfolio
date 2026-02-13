@@ -26,8 +26,6 @@ export interface ProjectIcon {
 export interface ProjectItem {
   title: string;
   description: string;
-  imageSrc?: string;
-  imageAlt?: string;
   progress: number;
   codeUrl?: string;
   previewUrl?: string;
@@ -38,59 +36,57 @@ export function getProjects(locale: Locale): ProjectItem[] {
   const texts = getDictionary(locale).section2.projects.items;
 
   return [
-  {
-    title: "Identity & Access Management",
-    description: texts.iam.description,
-    imageSrc: "/assets/IAM.webp",
-    imageAlt: "Identity & Access Management",
-    progress: 100,
-    codeUrl: "https://github.com/zGIKS/auth-service",
-    previewUrl: "https://iam-demo.vercel.app/",
-    icons: [
-      { label: "Rust", Icon: Rust, tileClassName: "text-foreground" },
-      { label: "Next.js", Icon: Nextjs },
-      { label: "PostgreSQL", Icon: PostgreSQL },
-      { label: "Redis", Icon: Redis },
-    ],
-  },
-  {
-    title: "LevelUp Journey",
-    description: texts.levelUp.description,
-    progress: 100,
-    codeUrl: "https://github.com/LevelUp-Journey",
-    previewUrl: "#",
-    icons: [
-      { label: "Java", Icon: Java },
-      { label: "PostgreSQL", Icon: PostgreSQL },
-      { label: "MongoDB", Icon: MongoDB },
-      { label: "Next.js", Icon: Nextjs },
-    ],
-  },
-  {
-    title: "Mortgage Calculator",
-    description: texts.mortgage.description,
-    progress: 100,
-    codeUrl: "https://github.com/zGIKS/mortgage-calculator",
-    previewUrl: "https://mortgage-ui-sable.vercel.app",
-    icons: [
-      { label: "Go", Icon: Go, iconClassName: "text-[#00ADD8]" },
-      { label: "Python", Icon: Python },
-      { label: "React", Icon: React },
-      { label: "PostgreSQL", Icon: PostgreSQL },
-    ],
-  },
-  {
-    title: texts.graphMap.title,
-    description: texts.graphMap.description,
-    progress: 100,
-    codeUrl: "https://github.com/zGIKS/GraphMap-Backend",
-    previewUrl: "https://graph-map-frontend.vercel.app",
-    icons: [
-      { label: "Python", Icon: Python },
-      { label: "React", Icon: React },
-      { label: "Tailwind CSS", Icon: TailwindCSS },
-      { label: "shadcn/ui", Icon: ShadcnUI },
-    ],
-  },
+    {
+      title: texts.iam.title,
+      description: texts.iam.description,
+      progress: 100,
+      codeUrl: "https://github.com/zGIKS/auth-service",
+      previewUrl: texts.iam.preview,
+      icons: [
+        { label: "Rust", Icon: Rust, tileClassName: "text-foreground" },
+        { label: "Next.js", Icon: Nextjs },
+        { label: "PostgreSQL", Icon: PostgreSQL },
+        { label: "Redis", Icon: Redis },
+      ],
+    },
+    {
+      title: texts.levelUp.title,
+      description: texts.levelUp.description,
+      progress: 100,
+      codeUrl: "https://github.com/LevelUp-Journey",
+      previewUrl: texts.levelUp.preview,
+      icons: [
+        { label: "Java", Icon: Java },
+        { label: "PostgreSQL", Icon: PostgreSQL },
+        { label: "MongoDB", Icon: MongoDB },
+        { label: "Next.js", Icon: Nextjs },
+      ],
+    },
+    {
+      title: texts.mortgage.title,
+      description: texts.mortgage.description,
+      progress: 100,
+      codeUrl: "https://github.com/zGIKS/mortgage-calculator",
+      previewUrl: texts.mortgage.preview,
+      icons: [
+        { label: "Go", Icon: Go, iconClassName: "text-[#00ADD8]" },
+        { label: "Python", Icon: Python },
+        { label: "React", Icon: React },
+        { label: "PostgreSQL", Icon: PostgreSQL },
+      ],
+    },
+    {
+      title: texts.graphMap.title,
+      description: texts.graphMap.description,
+      progress: 100,
+      codeUrl: "https://github.com/zGIKS/GraphMap-Backend",
+      previewUrl: texts.graphMap.preview,
+      icons: [
+        { label: "Python", Icon: Python },
+        { label: "React", Icon: React },
+        { label: "Tailwind CSS", Icon: TailwindCSS },
+        { label: "shadcn/ui", Icon: ShadcnUI },
+      ],
+    },
   ];
 }

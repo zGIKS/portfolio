@@ -11,12 +11,23 @@
       "pt": "Português"
     }
   },
+  "desktops": {
+    "title": "Minha configuração do Arch Linux",
+    "description": "Minha configuração pessoal do Arch Linux.",
+    "additionalConfig": "Desenvolvimento de Portfólio",
+    "freshEditorFrontend": "Configuração do Docker para Desenvolvimento",
+    "sampleApp": {
+      "title": "Aplicação de Desktop de Exemplo",
+      "description": "Descrição da aplicação de desktop."
+    }
+  },
   "footer": {
     "repoLabel": "Repositório GitHub",
     "title": "Portfólio zGIKS"
   },
   "section1": {
-    "yearsOldLabel": "Anos"
+    "yearsOldLabel": "Anos",
+    "country": "Peru"
   },
   "section2": {
     "titles": {
@@ -100,17 +111,24 @@
       },
       "items": {
         "iam": {
-          "description": "Sistema de login e controle de acesso que protege contas, dados e sessões de usuários."
+          "title": "Gestão de Identidade e Acesso",
+          "description": "Sistema de login e controle de acesso que protege contas, dados e sessões de usuários.",
+          "preview": "https://iam-demo.vercel.app/"
         },
         "levelUp": {
-          "description": "Plataforma educacional colaborativa que ajuda estudantes a praticar programação e professores a acompanhar o progresso."
+          "title": "LevelUp Journey",
+          "description": "Plataforma educacional colaborativa que ajuda estudantes a praticar programação e professores a acompanhar o progresso.",
+          "preview": "https://web-app-dusky-one.vercel.app/"
         },
         "mortgage": {
-          "description": "Ferramenta web que simula crédito imobiliário e compara opções bancárias para apoiar melhores decisões."
+          "title": "Calculadora de Hipoteca",
+          "description": "Ferramenta web que simula crédito imobiliário e compara opções bancárias para apoiar melhores decisões.",
+          "preview": "https://mortgage-ui-sable.vercel.app"
         },
         "graphMap": {
           "title": "Mapa de Grafos",
-          "description": "Aplicação interativa que mostra mapas, rotas otimizadas e permite explorar dados com visualizações e IA."
+          "description": "Aplicação interativa que mostra mapas, rotas otimizadas e permite explorar dados com visualizações e IA.",
+          "preview": "https://graphmap.giks.net/"
         }
       }
     }
