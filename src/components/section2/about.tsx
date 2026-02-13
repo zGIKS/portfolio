@@ -1,6 +1,5 @@
 import { ContributionsChart } from "./contributions-chart/contributions-chart";
 import { SectionBody } from "../section-shared/section-body";
-import { ArchConfig } from "./arch-config";
 import { type Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionaries";
 
@@ -30,7 +29,6 @@ export function About({ locale }: AboutProps) {
           <ContributionsChart locale={locale} />
         </div>
       </div>
-      <ArchConfig locale={locale} />
     </SectionBody>
   );
 }

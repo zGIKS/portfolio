@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { GithubIcon } from "../icons/github";
 import { IconTile } from "../section3/icon-tile";
 import { Link as LinkIcon } from "lucide-react";
@@ -24,20 +23,6 @@ export function Projects({ locale }: ProjectsProps) {
           <ProjectCard
             key={project.title}
             title={project.title}
-            media={
-              project.imageSrc ? (
-                <div className="relative h-16 w-40 overflow-hidden bg-primary">
-                  <Image
-                    src={project.imageSrc}
-                    alt={project.imageAlt ?? project.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              ) : (
-                <div className="h-16 w-40 bg-primary" />
-              )
-            }
             meta={<p className="text-sm text-muted-foreground">{project.description}</p>}
             progressLabel={labels.progress}
             progressValue={project.progress}

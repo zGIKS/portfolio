@@ -11,6 +11,16 @@
       "pt": "Português"
     }
   },
+  "desktops": {
+    "title": "Minha configuração do Arch Linux",
+    "description": "Minha configuração pessoal do Arch Linux.",
+    "additionalConfig": "Desenvolvimento de Portfólio",
+    "freshEditorFrontend": "Configuração do Docker para Desenvolvimento",
+    "sampleApp": {
+      "title": "Aplicação de Desktop de Exemplo",
+      "description": "Descrição da aplicação de desktop."
+    }
+  },
   "footer": {
     "repoLabel": "Repositório GitHub",
     "title": "Portfólio zGIKS"
@@ -104,7 +114,8 @@
           "description": "Sistema de login e controle de acesso que protege contas, dados e sessões de usuários."
         },
         "levelUp": {
-          "description": "Plataforma educacional colaborativa que ajuda estudantes a praticar programação e professores a acompanhar o progresso."
+          "description": "Plataforma educacional colaborativa que ajuda estudantes a praticar programação e professores a acompanhar o progresso.",
+          "preview": "https://web-app-dusky-one.vercel.app/"
         },
         "mortgage": {
           "description": "Ferramenta web que simula crédito imobiliário e compara opções bancárias para apoiar melhores decisões."

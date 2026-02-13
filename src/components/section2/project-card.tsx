@@ -6,7 +6,7 @@ import { Progress } from "@/components/ui/progress";
 
 interface ProjectCardProps {
   title: string;
-  media: ReactNode;
+  media?: ReactNode;
   actions?: ReactNode;
   progressLabel?: string;
   progressValue?: number;
@@ -26,7 +26,7 @@ export function ProjectCard({
   return (
     <Card className="gap-0 rounded-none border-border bg-card p-4 backdrop-blur-sm">
       <CardHeader className="flex flex-col gap-4 p-0 md:flex-row md:items-start md:justify-between">
-        <div>{media}</div>
+        {media && <div>{media}</div>}
         <div className="flex-1">
           <CardTitle className="text-sm text-card-foreground">{title}</CardTitle>
         </div>

@@ -87,7 +87,7 @@ export function Header({ locale }: HeaderProps) {
                   </SheetClose>
                   <SheetClose asChild>
                     <Link
-                      href={`/${locale}#contact`}
+                      href={`/${locale}/desktops`}
                       className="rounded-md px-3 py-2 text-white/85 transition-colors hover:bg-white/10 hover:text-white"
                     >
                       {t.desktops}
@@ -181,7 +181,7 @@ export function Header({ locale }: HeaderProps) {
                   {t.blog}
                 </Link>
                 <Link
-                  href={`/${locale}#contact`}
+                  href={`/${locale}/desktops`}
                   className="hidden text-white/60 transition-colors hover:text-white sm:inline-flex"
                 >
                   {t.desktops}
