@@ -37,11 +37,11 @@ export function getProjects(locale: Locale): ProjectItem[] {
 
   return [
     {
-      title: "Identity & Access Management",
+      title: texts.iam.title,
       description: texts.iam.description,
       progress: 100,
       codeUrl: "https://github.com/zGIKS/auth-service",
-      previewUrl: "https://iam-demo.vercel.app/",
+      previewUrl: texts.iam.preview,
       icons: [
         { label: "Rust", Icon: Rust, tileClassName: "text-foreground" },
         { label: "Next.js", Icon: Nextjs },
@@ -50,11 +50,11 @@ export function getProjects(locale: Locale): ProjectItem[] {
       ],
     },
     {
-      title: "LevelUp Journey",
+      title: texts.levelUp.title,
       description: texts.levelUp.description,
       progress: 100,
       codeUrl: "https://github.com/LevelUp-Journey",
-      previewUrl: "#",
+      previewUrl: texts.levelUp.preview,
       icons: [
         { label: "Java", Icon: Java },
         { label: "PostgreSQL", Icon: PostgreSQL },
@@ -63,11 +63,11 @@ export function getProjects(locale: Locale): ProjectItem[] {
       ],
     },
     {
-      title: "Mortgage Calculator",
+      title: texts.mortgage.title,
       description: texts.mortgage.description,
       progress: 100,
       codeUrl: "https://github.com/zGIKS/mortgage-calculator",
-      previewUrl: "https://mortgage-ui-sable.vercel.app",
+      previewUrl: texts.mortgage.preview,
       icons: [
         { label: "Go", Icon: Go, iconClassName: "text-[#00ADD8]" },
         { label: "Python", Icon: Python },
@@ -80,7 +80,7 @@ export function getProjects(locale: Locale): ProjectItem[] {
       description: texts.graphMap.description,
       progress: 100,
       codeUrl: "https://github.com/zGIKS/GraphMap-Backend",
-      previewUrl: "https://graphmap.giks.net/",
+      previewUrl: texts.graphMap.preview,
       icons: [
         { label: "Python", Icon: Python },
         { label: "React", Icon: React },

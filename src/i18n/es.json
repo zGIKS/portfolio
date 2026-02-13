@@ -111,18 +111,24 @@
       },
       "items": {
         "iam": {
-          "description": "Sistema de inicio de sesión y control de accesos que protege cuentas, datos y sesiones de usuarios."
+          "title": "Gestión de Identidad y Acceso",
+          "description": "Sistema de inicio de sesión y control de accesos que protege cuentas, datos y sesiones de usuarios.",
+          "preview": "https://iam-demo.vercel.app/"
         },
         "levelUp": {
+          "title": "LevelUp Journey",
           "description": "Plataforma educativa colaborativa que ayuda a estudiantes a practicar programación y docentes a seguir avances.",
           "preview": "https://web-app-dusky-one.vercel.app/"
         },
         "mortgage": {
-          "description": "Herramienta web que simula créditos hipotecarios y compara opciones bancarias para tomar mejores decisiones."
+          "title": "Calculadora Hipotecaria",
+          "description": "Herramienta web que simula créditos hipotecarios y compara opciones bancarias para tomar mejores decisiones.",
+          "preview": "https://mortgage-ui-sable.vercel.app"
         },
         "graphMap": {
           "title": "Mapa de Grafos",
-          "description": "Aplicación interactiva que muestra mapas, rutas óptimas y permite explorar datos mediante visualizaciones e IA."
+          "description": "Aplicación interactiva que muestra mapas, rutas óptimas y permite explorar datos mediante visualizaciones e IA.",
+          "preview": "https://graphmap.giks.net/"
         }
       }
     }
