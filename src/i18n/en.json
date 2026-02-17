@@ -1,24 +1,11 @@
 {
   "header": {
-    "portfolio": "Portfolio",
-    "blog": "Blog",
-    "desktops": "Desktops",
     "languageSelectorAria": "Language selector",
     "language": "Language",
     "languages": {
       "en": "English",
       "es": "Español",
       "pt": "Português"
-    }
-  },
-  "desktops": {
-    "title": "My Arch Linux Configuration",
-    "description": "My personal Arch Linux setup and configuration.",
-    "additionalConfig": "Portfolio Development",
-    "freshEditorFrontend": "Docker Development Setup",
-    "sampleApp": {
-      "title": "Sample Desktop App",
-      "description": "Description of the desktop application."
     }
   },
   "footer": {
@@ -136,6 +123,7 @@
   "section3": {
     "currentOnlineTitle": "Currently Online",
     "linksTitle": "Links",
+    "techStackTitle": "Tech Stack",
     "languagesTitle": "Languages",
     "frontendTitle": "Frontend",
     "devOpsTitle": "DevOps",

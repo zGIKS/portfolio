@@ -1,24 +1,11 @@
 {
   "header": {
-    "portfolio": "Portfólio",
-    "blog": "Blog",
-    "desktops": "Desktops",
     "languageSelectorAria": "Seletor de idioma",
     "language": "Idioma",
     "languages": {
       "en": "English",
       "es": "Español",
       "pt": "Português"
-    }
-  },
-  "desktops": {
-    "title": "Minha configuração do Arch Linux",
-    "description": "Minha configuração pessoal do Arch Linux.",
-    "additionalConfig": "Desenvolvimento de Portfólio",
-    "freshEditorFrontend": "Configuração do Docker para Desenvolvimento",
-    "sampleApp": {
-      "title": "Aplicação de Desktop de Exemplo",
-      "description": "Descrição da aplicação de desktop."
     }
   },
   "footer": {
@@ -136,6 +123,7 @@
   "section3": {
     "currentOnlineTitle": "Online agora",
     "linksTitle": "Links",
+    "techStackTitle": "Tech Stack",
     "languagesTitle": "Linguagens",
     "frontendTitle": "Frontend",
     "devOpsTitle": "DevOps",
