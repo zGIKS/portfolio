@@ -20,11 +20,11 @@ export function Stack({ locale }: StackProps) {
       <div className="mt-6 flex items-center gap-2 pl-4">
         <Link
           href={`/${locale}/stack`}
-          className="text-sm font-medium uppercase tracking-wide text-muted-foreground hover:text-foreground transition-colors"
+          className="text-sm font-medium uppercase tracking-wide text-foreground hover:text-muted-foreground transition-colors"
         >
           {t.section3.techStackTitle}
         </Link>
-        <span className="text-lg font-semibold text-foreground">23</span>
+        <span className="text-lg font-semibold text-muted-foreground">23</span>
       </div>
       <IconGrid>
         <IconTile ariaLabel="Go" href="https://go.dev/doc/">

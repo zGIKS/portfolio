@@ -18,7 +18,7 @@ export function Links({ locale }: LinksProps) {
 
   return (
     <>
-      <SectionHeader title={title} count={4} />
+      <SectionHeader title={title} count={4} className="mt-6" />
       <IconGrid>
         <IconTile ariaLabel="LinkedIn">
           <LinkedinIcon className="h-4 w-4 text-[#0A66C2]" />
@@ -34,7 +34,6 @@ export function Links({ locale }: LinksProps) {
         <CopyDiscordTile locale={locale} />
         <CopyEmailTile locale={locale} />
       </IconGrid>
-
     </>
   );
 }
