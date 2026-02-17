@@ -116,7 +116,7 @@ export function StackCard({ locale }: StackCardProps) {
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex min-h-[128px] flex-col items-center justify-center gap-2 rounded-md bg-gradient-to-br from-zinc-600/60 via-zinc-700/50 to-zinc-800/65 p-2.5 text-zinc-100 transition-all hover:scale-[1.01] hover:from-zinc-500/70 hover:to-zinc-700/70 sm:min-h-[140px]"
+                className="flex min-h-[128px] flex-col items-center justify-center gap-2 rounded-md bg-gradient-to-br from-zinc-600/60 via-zinc-700/50 to-zinc-800/65 p-2.5 text-zinc-100 sm:min-h-[140px]"
                 aria-label={item.name}
               >
                 <div className="text-zinc-100">{item.icon}</div>
