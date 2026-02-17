@@ -26,6 +26,7 @@ import { Cloudflare } from "./icons/stack/devops/cloudflare";
 import type { ReactNode } from "react";
 import { type Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionaries";
+import { DesktopTooltip } from "./section3/desktop-tooltip";
 
 interface StackCardProps {
   locale: Locale;
@@ -110,18 +111,18 @@ export function StackCard({ locale }: StackCardProps) {
 
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-7">
           {items.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex min-h-[128px] flex-col items-center justify-center gap-2 rounded-md bg-gradient-to-br from-zinc-600/60 via-zinc-700/50 to-zinc-800/65 p-2.5 text-zinc-100 transition-all hover:scale-[1.01] hover:from-zinc-500/70 hover:to-zinc-700/70 sm:min-h-[140px]"
-              aria-label={item.name}
-              title={item.name}
-            >
-              <div className="text-zinc-100">{item.icon}</div>
-              <span className="text-center text-xs text-zinc-100/90">{item.name}</span>
-            </a>
+            <DesktopTooltip key={item.name} label={item.name}>
+              <a
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex min-h-[128px] flex-col items-center justify-center gap-2 rounded-md bg-gradient-to-br from-zinc-600/60 via-zinc-700/50 to-zinc-800/65 p-2.5 text-zinc-100 transition-all hover:scale-[1.01] hover:from-zinc-500/70 hover:to-zinc-700/70 sm:min-h-[140px]"
+                aria-label={item.name}
+              >
+                <div className="text-zinc-100">{item.icon}</div>
+                <span className="text-center text-xs text-zinc-100/90">{item.name}</span>
+              </a>
+            </DesktopTooltip>
           ))}
         </div>
       </div>
