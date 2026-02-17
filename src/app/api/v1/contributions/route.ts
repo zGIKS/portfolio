@@ -1,8 +1,6 @@
 import { NextResponse } from "next/server";
 
 const GITHUB_API = "https://api.github.com/graphql";
-const CACHE_SECONDS = 3600;
-const STALE_SECONDS = 86400;
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
 const RATE_LIMIT_MAX = 60;
 const rateLimitStore = new Map<string, { count: number; reset: number }>();
@@ -58,7 +56,7 @@ function applyRateLimit(request: Request) {
 }
 
 const successHeaders = {
-  "Cache-Control": `public, s-maxage=${CACHE_SECONDS}, stale-while-revalidate=${STALE_SECONDS}`,
+  "Cache-Control": "no-store",
 };
 
 const errorHeaders = {
@@ -102,7 +100,7 @@ export async function GET(request: Request) {
       query: QUERY,
       variables: { login },
     }),
-    next: { revalidate: CACHE_SECONDS },
+    cache: "no-store",
   });
 
   const payload = await response.json();

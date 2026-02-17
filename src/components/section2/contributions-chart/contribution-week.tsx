@@ -4,18 +4,16 @@ import { type Locale } from "@/lib/i18n";
 
 interface ContributionWeekProps {
   week: ContributionWeek;
-  cellSize: number;
   locale: Locale;
 }
 
-export function ContributionWeekComponent({ week, cellSize, locale }: ContributionWeekProps) {
+export function ContributionWeekComponent({ week, locale }: ContributionWeekProps) {
   return (
-    <div key={week.firstDay} className="flex flex-col gap-[2px]">
+    <div key={week.firstDay} className="flex min-w-0 flex-col gap-[2px]">
       {week.contributionDays.map((day) => (
         <ContributionCell
           key={day.date}
           day={day}
-          cellSize={cellSize}
           locale={locale}
         />
       ))}

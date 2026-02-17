@@ -3,12 +3,9 @@
 import { useMemo } from "react";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ContributionWeekComponent } from "./contribution-week";
-import { MonthLabels } from "./month-labels";
-import { Legend } from "./legend";
 import { LoadingState } from "./loading-state";
 import { ErrorState } from "./error-state";
 import { useContributions } from "./use-contributions";
-import { calculateMonthLabels } from "./month-utils";
 import { processWeeks } from "./week-utils";
 import { type Locale } from "@/lib/i18n";
 
@@ -18,16 +15,17 @@ interface ContributionsChartProps {
 
 export function ContributionsChart({ locale }: ContributionsChartProps) {
   const { calendar, error } = useContributions();
-
-  const monthLabels = useMemo(() => {
-    if (!calendar) return [];
-    return calculateMonthLabels(calendar, locale);
-  }, [calendar, locale]);
+  const DISPLAY_WEEKS = 32;
 
   const weeks = useMemo(() => {
     if (!calendar) return [];
     return processWeeks(calendar);
   }, [calendar]);
+
+  const visibleWeeks = useMemo(
+    () => weeks.slice(Math.max(0, weeks.length - DISPLAY_WEEKS)),
+    [weeks]
+  );
 
   if (error) {
     return <ErrorState error={error} locale={locale} />;
@@ -37,34 +35,22 @@ export function ContributionsChart({ locale }: ContributionsChartProps) {
     return <LoadingState />;
   }
 
-  const cellSize = 8;
-  const cellGap = 2;
-  const chartPadding = 24;
-  const gridWidth = weeks.length * cellSize + (weeks.length - 1) * cellGap;
-  const chartWidth = gridWidth + chartPadding;
-
   return (
     <TooltipProvider>
-      <div
-        className="inline-block min-w-max"
-        style={{
-          width: chartWidth,
-          paddingRight: chartPadding,
-        }}
-      >
-        <MonthLabels monthLabels={monthLabels} />
-        <div className="mt-1 flex gap-[2px]">
-          {weeks.map((week) => (
+      <div className="w-full">
+        <div
+          className="grid w-full gap-[2px]"
+          style={{
+            gridTemplateColumns: `repeat(${Math.max(1, visibleWeeks.length)}, minmax(0, 1fr))`,
+          }}
+        >
+          {visibleWeeks.map((week) => (
             <ContributionWeekComponent
               key={week.firstDay}
               week={week}
-              cellSize={cellSize}
               locale={locale}
             />
           ))}
-        </div>
-        <div style={{ width: gridWidth }}>
-          <Legend totalContributions={calendar.totalContributions} locale={locale} />
         </div>
       </div>
     </TooltipProvider>

@@ -10,7 +10,9 @@ export function createDateFormatter(locale: Locale) {
   });
 
   return function formatTooltipDate(value: string) {
-    const parts = dateFormatter.formatToParts(new Date(value));
+    const [inputYear, inputMonth, inputDay] = value.split("-").map(Number);
+    const safeDate = new Date(Date.UTC(inputYear, inputMonth - 1, inputDay, 12));
+    const parts = dateFormatter.formatToParts(safeDate);
     const day = parts.find((part) => part.type === "day")?.value ?? "";
     const month = parts.find((part) => part.type === "month")?.value ?? "";
     const year = parts.find((part) => part.type === "year")?.value ?? "";

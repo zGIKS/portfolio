@@ -24,8 +24,8 @@ export function About({ locale }: AboutProps) {
         </ul>
         <p>{copy.paragraphs[4]}</p>
       </div>
-      <div className="mt-8 bg-primary px-3 py-2 text-primary-foreground">
-        <div className="w-full max-w-full overflow-x-auto overflow-y-hidden">
+      <div className="mt-8">
+        <div className="w-full">
           <ContributionsChart locale={locale} />
         </div>
       </div>

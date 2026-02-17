@@ -11,11 +11,10 @@ import { getDictionary } from "@/lib/dictionaries";
 
 interface ContributionCellProps {
   day: ContributionDay;
-  cellSize: number;
   locale: Locale;
 }
 
-export function ContributionCell({ day, cellSize, locale }: ContributionCellProps) {
+export function ContributionCell({ day, locale }: ContributionCellProps) {
   const formatDate = createDateFormatter(locale);
   const t = getDictionary(locale).contributions;
 
@@ -30,10 +29,8 @@ export function ContributionCell({ day, cellSize, locale }: ContributionCellProp
     <Tooltip>
       <TooltipTrigger asChild>
         <div
-          className="border border-white/5 cursor-pointer"
+          className="aspect-square w-full cursor-pointer rounded-[2px]"
           style={{
-            width: cellSize,
-            height: cellSize,
             backgroundColor: getContributionColor(day.contributionCount),
           }}
         />

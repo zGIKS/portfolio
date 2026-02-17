@@ -8,7 +8,7 @@ export function useContributions() {
   useEffect(() => {
     let active = true;
 
-    fetch("/api/v1/contributions")
+    fetch("/api/v1/contributions", { cache: "no-store" })
       .then((res) => res.json())
       .then((data) => {
         if (!active) return;
