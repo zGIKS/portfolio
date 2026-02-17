@@ -24,7 +24,7 @@ export function Stack({ locale }: StackProps) {
         >
           {t.section3.techStackTitle}
         </Link>
-        <span className="text-lg font-semibold text-foreground">4</span>
+        <span className="text-lg font-semibold text-foreground">23</span>
       </div>
       <IconGrid>
         <IconTile ariaLabel="Go" href="https://go.dev/doc/">

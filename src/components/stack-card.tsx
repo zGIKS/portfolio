@@ -41,9 +41,9 @@ export function StackCard({ locale }: StackCardProps) {
         <CardTitle className="text-xl">{t.section3.techStackTitle}</CardTitle>
       </CardHeader>
       <CardContent className="p-0">
-        {/* Languages */}
-        <SectionHeader title={t.section3.languagesTitle || "Languages"} count={6} className="mt-6" />
-        <IconGrid>
+        <SectionHeader title={t.section3.techStackTitle} count={23} className="mt-6" />
+        <IconGrid className="pb-6">
+          {/* Languages - 6 */}
           <IconTile ariaLabel="Go" href="https://go.dev/doc/">
             <Go className="h-4 w-4 text-[#00ADD8]" />
           </IconTile>
@@ -62,11 +62,7 @@ export function StackCard({ locale }: StackCardProps) {
           <IconTile ariaLabel="JavaScript" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
             <JavaScript className="h-4 w-4" />
           </IconTile>
-        </IconGrid>
-
-        {/* Frontend */}
-        <SectionHeader title={t.section3.frontendTitle} count={5} className="mt-6" />
-        <IconGrid>
+          {/* Frontend - 5 */}
           <IconTile ariaLabel="React" href="https://react.dev/">
             <React className="h-4 w-4" />
           </IconTile>
@@ -82,11 +78,7 @@ export function StackCard({ locale }: StackCardProps) {
           <IconTile ariaLabel="shadcn/ui" href="https://ui.shadcn.com/">
             <ShadcnUI className="h-4 w-4" />
           </IconTile>
-        </IconGrid>
-
-        {/* Databases */}
-        <SectionHeader title={t.section3.databasesTitle} count={4} className="mt-6" />
-        <IconGrid>
+          {/* Databases - 4 */}
           <IconTile ariaLabel="PostgreSQL" href="https://www.postgresql.org/docs/">
             <PostgreSQL className="h-4 w-4" />
           </IconTile>
@@ -99,11 +91,7 @@ export function StackCard({ locale }: StackCardProps) {
           <IconTile ariaLabel="Redis" href="https://redis.io/documentation">
             <Redis className="h-4 w-4" />
           </IconTile>
-        </IconGrid>
-
-        {/* DevOps */}
-        <SectionHeader title={t.section3.devOpsTitle} count={8} className="mt-6" />
-        <IconGrid className="pb-6">
+          {/* DevOps - 8 */}
           <IconTile ariaLabel="Arch Linux" href="https://wiki.archlinux.org/">
             <ArchIcon className="h-4 w-4" />
           </IconTile>
