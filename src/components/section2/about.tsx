@@ -13,16 +13,16 @@ export function About({ locale }: AboutProps) {
   return (
     <SectionBody>
       <div className="space-y-4 text-sm leading-relaxed text-card-foreground">
-        <p>{copy.paragraphs[0]}</p>
-        <p>{copy.paragraphs[1]}</p>
-        <p>{copy.paragraphs[2]}</p>
-        <p>{copy.paragraphs[3]}</p>
-        <ul className="list-disc space-y-2 pl-5">
-          {copy.bullets.map((bullet) => (
-            <li key={bullet}>{bullet}</li>
-          ))}
-        </ul>
-        <p>{copy.paragraphs[4]}</p>
+        {copy.paragraphs.map((paragraph, index) => (
+          <p key={`${index}-${paragraph.slice(0, 24)}`}>{paragraph}</p>
+        ))}
+        {copy.bullets.length > 0 ? (
+          <ul className="list-disc space-y-2 pl-5">
+            {copy.bullets.map((bullet) => (
+              <li key={bullet}>{bullet}</li>
+            ))}
+          </ul>
+        ) : null}
       </div>
       <div className="mt-8">
         <div className="w-full">

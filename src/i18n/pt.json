@@ -26,18 +26,11 @@
     "about": {
       "paragraphs": [
         "Olá, sou Mateo (aka giks).",
-        "Sou estudante de engenharia de software no Peru, focado em construir sistemas backend, infraestrutura e serviços críticos de segurança. Trabalho principalmente em ambientes tipo Unix, usando Arch Linux no dia a dia e Debian/Ubuntu para servidores e produção.",
-        "Gosto de projetar sistemas do zero, com foco em confiabilidade, segurança e arquitetura clara. Meu trabalho normalmente envolve serviços backend, gestão de identidade e acesso, e infraestrutura que prioriza baixa superfície de ataque e escalabilidade.",
-        "Algumas áreas e projetos em que trabalhei incluem:",
-        "Tenho interesse especial em funções de engenharia de plataforma backend, infraestrutura e segurança, onde o design de sistemas e a manutenção de longo prazo são importantes."
+        "Projeto e construo sistemas backend, infraestrutura e serviços com foco em segurança, com ênfase em correção, confiabilidade, escalabilidade e manutenção de longo prazo.",
+        "Baseado no Peru, trabalho principalmente em ambientes Unix-like (Arch Linux no dia a dia, Debian/Ubuntu para servidores) e foco em engenharia backend, gestão de identidade e acesso, API gateways e arquiteturas orientadas a eventos.",
+        "Tenho interesse especial em engenharia de plataforma backend e sistemas críticos de segurança, onde arquitetura limpa e baixa superfície de ataque realmente importam."
       ],
-      "bullets": [
-        "Serviços backend e microsserviços, incluindo IAM e sistemas de autenticação",
-        "API gateways e arquiteturas orientadas a eventos",
-        "Plataformas web seguras usadas em contextos acadêmicos e de pequenos negócios",
-        "Plataformas educacionais usadas por mais de 150 estudantes",
-        "Serviços em Rust com forte foco em correção e segurança"
-      ]
+      "bullets": []
     },
     "archConfigTitle": "Minha configuração do Arch Linux",
     "experience": [

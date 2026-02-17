@@ -25,19 +25,12 @@
     },
     "about": {
       "paragraphs": [
-        "Hi I'm Mateo (aka giks).",
-        "I'm a software engineering student based in Peru, focused on building backend systems, infrastructure, and security-critical services. I mainly work in Unix-like environments, using Arch Linux as my daily setup and Debian/Ubuntu for servers and production systems.",
-        "I enjoy designing systems from the ground up, with an emphasis on reliability, security, and clear architecture. My work often involves backend services, identity and access management, and infrastructure that prioritizes low attack surface and scalability.",
-        "Some of the areas and projects I've worked on include:",
-        "I'm especially interested in backend platform engineering, infrastructure, and security-focused roles, where system design and long-term maintainability matter."
+        "Hi, I'm Mateo (aka giks).",
+        "I design and build backend systems, infrastructure, and security-focused services with an emphasis on correctness, reliability, scalability, and long-term maintainability.",
+        "Based in Peru, I work primarily in Unix-like environments (Arch Linux daily, Debian/Ubuntu for servers) and focus on backend engineering, identity and access management, API gateways, and event-driven architectures.",
+        "I'm especially interested in backend platform engineering and security-critical systems, where clean architecture and low attack surface truly matter."
       ],
-      "bullets": [
-        "Backend services and microservices, including IAM and authentication systems",
-        "API gateways and event-driven architectures",
-        "Secure web platforms used in real academic and small-business contexts",
-        "Educational platforms used by 150+ students",
-        "Rust-based services with a strong focus on correctness and security"
-      ]
+      "bullets": []
     },
     "archConfigTitle": "My Arch Linux configuration",
     "experience": [
