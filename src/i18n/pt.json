@@ -23,10 +23,11 @@
     },
     "about": {
       "paragraphs": [
-        "Olá, sou Mateo (aka giks).",
-        "Projeto e construo sistemas backend, infraestrutura e serviços com foco em segurança, com ênfase em correção, confiabilidade, escalabilidade e manutenção de longo prazo.",
-        "Baseado no Peru, trabalho principalmente em ambientes Unix-like (Arch Linux no dia a dia, Debian/Ubuntu para servidores) e foco em engenharia backend, gestão de identidade e acesso, API gateways e arquiteturas orientadas a eventos.",
-        "Tenho interesse especial em engenharia de plataforma backend e sistemas críticos de segurança, onde arquitetura limpa e baixa superfície de ataque realmente importam."
+        "Olá, sou Mateo Aleman (aka giks).",
+        "Sou estudante de Engenharia de Software na Universidade Peruana de Ciências Aplicadas (UPC), em Lima, Peru. Atualmente estou no sexto semestre e me especializo no desenvolvimento de sistemas backend, arquitetura de microsserviços e serviços focados em segurança.",
+        "Tenho paixão por projetar e construir sistemas do zero, priorizando segurança, escalabilidade e baixo nível de exposição a riscos. Gosto de trabalhar em ambientes Linux e de desenvolver soluções que integrem boas práticas de infraestrutura, redes privadas e princípios de Zero Trust.",
+        "Ao longo da minha formação, participei de projetos acadêmicos e técnicos, como plataformas educacionais com arquitetura distribuída, sistemas IAM desenvolvidos em Rust, aplicações financeiras e ferramentas de análise de grafos. Tenho interesse especial em backend engineering, infraestrutura, cibersegurança e design de APIs robustas.",
+        "Além do código, gosto de aprender constantemente sobre arquitetura de software, sistemas distribuídos e otimização de deploys na nuvem. Tenho motivação para construir soluções que não apenas funcionem, mas que também sejam bem projetadas e sustentáveis no longo prazo."
       ],
       "bullets": []
     },

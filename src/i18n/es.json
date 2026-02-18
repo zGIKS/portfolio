@@ -23,10 +23,11 @@
     },
     "about": {
       "paragraphs": [
-        "Hola, soy Mateo (aka giks).",
-        "Diseño y construyo sistemas backend, infraestructura y servicios enfocados en seguridad, con énfasis en corrección, confiabilidad, escalabilidad y mantenibilidad a largo plazo.",
-        "Desde Perú, trabajo principalmente en entornos tipo Unix (Arch Linux a diario, Debian/Ubuntu para servidores) y me enfoco en backend engineering, identity and access management, API gateways y arquitecturas orientadas a eventos.",
-        "Me interesan especialmente el backend platform engineering y los sistemas críticos de seguridad, donde una arquitectura limpia y una baja superficie de ataque realmente importan."
+        "Hola, soy Mateo Aleman (aka giks).",
+        "Soy estudiante de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas (UPC), en Lima, Perú. Actualmente curso el sexto ciclo de la carrera y me especializo en el desarrollo de sistemas backend, arquitectura de microservicios y servicios enfocados en seguridad.",
+        "Me apasiona diseñar y construir sistemas desde cero, priorizando la seguridad, la escalabilidad y un bajo nivel de exposición al riesgo. Disfruto trabajar en entornos Linux y desarrollar soluciones que integren buenas prácticas de infraestructura, redes privadas y principios de Zero Trust.",
+        "A lo largo de mi formación, he participado en proyectos académicos y técnicos como plataformas educativas con arquitectura distribuida, sistemas IAM desarrollados en Rust, aplicaciones financieras y herramientas de análisis de grafos. Me interesa especialmente el backend engineering, la infraestructura, la ciberseguridad y el diseño de APIs robustas.",
+        "Más allá del código, disfruto aprender constantemente sobre arquitectura de software, sistemas distribuidos y optimización de despliegues en la nube. Me motiva construir soluciones que no solo funcionen, sino que estén bien diseñadas y sean mantenibles a largo plazo."
       ],
       "bullets": []
     },

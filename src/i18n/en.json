@@ -23,10 +23,11 @@
     },
     "about": {
       "paragraphs": [
-        "Hi, I'm Mateo (aka giks).",
-        "I design and build backend systems, infrastructure, and security-focused services with an emphasis on correctness, reliability, scalability, and long-term maintainability.",
-        "Based in Peru, I work primarily in Unix-like environments (Arch Linux daily, Debian/Ubuntu for servers) and focus on backend engineering, identity and access management, API gateways, and event-driven architectures.",
-        "I'm especially interested in backend platform engineering and security-critical systems, where clean architecture and low attack surface truly matter."
+        "Hi, I'm Mateo Aleman (aka giks).",
+        "I am a Software Engineering student at the Peruvian University of Applied Sciences (UPC) in Lima, Peru. I am currently in my sixth semester and I specialize in backend systems development, microservices architecture, and security-focused services.",
+        "I am passionate about designing and building systems from scratch, prioritizing security, scalability, and a low risk exposure level. I enjoy working in Linux environments and developing solutions that integrate infrastructure best practices, private networking, and Zero Trust principles.",
+        "Throughout my training, I have worked on academic and technical projects such as educational platforms with distributed architecture, IAM systems built in Rust, financial applications, and graph analysis tools. I am especially interested in backend engineering, infrastructure, cybersecurity, and robust API design.",
+        "Beyond coding, I enjoy constantly learning about software architecture, distributed systems, and cloud deployment optimization. I am motivated to build solutions that not only work, but are also well-designed and maintainable in the long term."
       ],
       "bullets": []
     },
