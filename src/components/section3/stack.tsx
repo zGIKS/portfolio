@@ -2,7 +2,6 @@ import { Go } from "../icons/stack/languages/go";
 import { Rust } from "../icons/stack/languages/rust";
 import { Java } from "../icons/stack/languages/java";
 import { Python } from "../icons/stack/languages/python";
-import { SvelteIcon } from "../icons/stack/frontend/svelte";
 import { IconTile } from "./icon-tile";
 import { IconGrid } from "../section-shared/icon-grid";
 import { SidebarLink } from "./sidebar-link";
@@ -37,9 +36,6 @@ export function Stack({ locale }: StackProps) {
         </IconTile>
         <IconTile ariaLabel="Python" href="https://docs.python.org/">
           <Python className="h-4 w-4" />
-        </IconTile>
-        <IconTile ariaLabel="Svelte" href="https://svelte.dev/">
-          <SvelteIcon className="h-4 w-4" />
         </IconTile>
       </IconGrid>
     </>

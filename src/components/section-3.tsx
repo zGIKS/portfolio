@@ -19,7 +19,7 @@ export function Section3({ locale }: Section3Props) {
         <Projects locale={locale} />
         <Stack locale={locale} />
         <Resume />
-        <Blog />
+        <Blog locale={locale} />
         <Links locale={locale} />
       </div>
     </CardContent>

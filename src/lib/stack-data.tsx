@@ -23,6 +23,7 @@ import { MicrosoftAzure } from "@/components/icons/stack/devops/azure";
 import { GoogleCloud } from "@/components/icons/stack/devops/googlecloud";
 import { TailscaleIcon } from "@/components/icons/stack/devops/tailscale";
 import { Cloudflare } from "@/components/icons/stack/devops/cloudflare";
+import { Traefik } from "@/components/icons/stack/devops/traefik";
 
 export interface StackItem {
   name: string;
@@ -64,6 +65,7 @@ export const devops: StackItem[] = [
   { name: "Google Cloud", href: "https://cloud.google.com/docs", icon: (cls) => <GoogleCloud className={cls} /> },
   { name: "Tailscale", href: "https://tailscale.com/docs", icon: (cls) => <TailscaleIcon className={cls} /> },
   { name: "Cloudflare", href: "https://developers.cloudflare.com/", icon: (cls) => <Cloudflare className={cls} /> },
+  { name: "Traefik", href: "https://doc.traefik.io/traefik/", icon: (cls) => <Traefik className={cls} /> },
 ];
 
 export const allStackItems: StackItem[] = [...languages, ...frontend, ...databases, ...devops];

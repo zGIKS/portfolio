@@ -14,7 +14,7 @@ export function Level({ value = 19, label = "Years old" }: LevelProps) {
           {value}
         </div>
       </div>
-      <span className="text-lg font-semibold text-foreground">{label}</span>
+      <span className="text-sm font-medium leading-none text-foreground">{label}</span>
     </div>
   );
 }

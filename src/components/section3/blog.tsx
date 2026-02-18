@@ -1,7 +1,19 @@
-export function Blog() {
+import { SidebarLink } from "./sidebar-link";
+import { type Locale } from "@/lib/i18n";
+import { getDictionary } from "@/lib/dictionaries";
+
+interface BlogProps {
+  locale: Locale;
+}
+
+export function Blog({ locale }: BlogProps) {
+  const t = getDictionary(locale);
+
   return (
-    <div className="mt-6 pl-4 text-sm font-medium uppercase tracking-wide text-foreground">
-      BLOG
-    </div>
+    <SidebarLink
+      locale={locale}
+      href="blog"
+      label={t.section2.titles.blog}
+    />
   );
 }

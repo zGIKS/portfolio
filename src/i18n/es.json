@@ -19,7 +19,8 @@
   "section2": {
     "titles": {
       "about": "Sobre mí",
-      "projects": "Proyectos"
+      "projects": "Proyectos",
+      "blog": "Blog"
     },
     "about": {
       "paragraphs": [

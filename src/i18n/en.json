@@ -19,7 +19,8 @@
   "section2": {
     "titles": {
       "about": "About",
-      "projects": "Projects"
+      "projects": "Projects",
+      "blog": "Blog"
     },
     "about": {
       "paragraphs": [
