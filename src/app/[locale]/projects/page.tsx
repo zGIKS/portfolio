@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
+import { AppShell } from "@/components/app-shell";
 import { ProjectsCard } from "@/components/projects-card";
 import { isValidLocale, locales, type Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionaries";
@@ -39,12 +38,8 @@ export default async function ProjectsPage({ params }: ProjectsPageProps) {
   const activeLocale: Locale = locale;
 
   return (
-    <main className="relative flex min-h-screen flex-col bg-background">
-      <Header locale={activeLocale} />
-      <div className="relative z-10 flex flex-1 justify-center px-0 py-0 md:px-[clamp(2rem,1.0816rem+3.9184vw,5rem)]">
-        <ProjectsCard locale={activeLocale} />
-      </div>
-      <Footer locale={activeLocale} />
-    </main>
+    <AppShell locale={activeLocale} contentClassName="py-0">
+      <ProjectsCard locale={activeLocale} />
+    </AppShell>
   );
 }
