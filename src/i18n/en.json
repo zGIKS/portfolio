@@ -73,6 +73,7 @@
     "copiedLabel": "Copied!"
   },
   "contributions": {
+    "title": "GitHub Contributions",
     "none": "No contributions",
     "one": "1 contribution",
     "many": "{count} contributions",

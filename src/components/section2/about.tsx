@@ -8,7 +8,9 @@ interface AboutProps {
 }
 
 export function About({ locale }: AboutProps) {
-  const copy = getDictionary(locale).section2.about;
+  const dictionary = getDictionary(locale);
+  const copy = dictionary.section2.about;
+  const contributionsTitle = dictionary.contributions.title;
 
   return (
     <SectionBody>
@@ -25,7 +27,10 @@ export function About({ locale }: AboutProps) {
         ) : null}
       </div>
       <div className="mt-8">
-        <div className="w-full">
+        <h3 className="mb-3 text-sm font-medium uppercase tracking-wide text-muted-foreground">
+          {contributionsTitle}
+        </h3>
+        <div className="w-full md:w-[90%]">
           <ContributionsChart locale={locale} />
         </div>
       </div>
