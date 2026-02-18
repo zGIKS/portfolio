@@ -1,5 +1,3 @@
-import Image from "next/image";
-import { Card } from "@/components/ui/card";
 import { Go } from "./icons/stack/languages/go";
 import { Rust } from "./icons/stack/languages/rust";
 import { Java } from "./icons/stack/languages/java";
@@ -28,6 +26,7 @@ import type { ReactNode } from "react";
 import { type Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionaries";
 import { DesktopTooltip } from "./section3/desktop-tooltip";
+import { ProfilePageCard } from "./profile-page-card";
 
 interface StackCardProps {
   locale: Locale;
@@ -86,24 +85,7 @@ export function StackCard({ locale }: StackCardProps) {
   const items = [...languages, ...frontend, ...databases, ...devops];
 
   return (
-    <Card className="relative z-20 w-full overflow-hidden rounded-lg border-white/10 bg-black/40 backdrop-blur-md md:max-w-[55.249245rem]">
-      <header className="border-b border-white/10 bg-white/10 px-4 py-3 sm:px-6">
-        <div className="flex items-center gap-3 sm:gap-4">
-          <Image
-            src="/me.webp"
-            alt="Profile photo"
-            width={84}
-            height={84}
-            className="h-20 w-20 rounded-sm object-cover object-center ring-1 ring-white/20"
-          />
-          <div className="min-w-0">
-            <h1 className="truncate text-2xl font-semibold text-white">Mateo</h1>
-            <p className="truncate text-sm text-white/80">{t.section3.techStackTitle}</p>
-          </div>
-        </div>
-      </header>
-
-      <div className="space-y-4 p-4 sm:p-6">
+    <ProfilePageCard subtitle={t.section3.techStackTitle} contentClassName="space-y-4">
         <div>
           <h2 className="text-sm font-medium uppercase tracking-wide text-muted-foreground">
             {t.section3.techStackTitle}
@@ -127,7 +109,6 @@ export function StackCard({ locale }: StackCardProps) {
             </DesktopTooltip>
           ))}
         </div>
-      </div>
-    </Card>
+    </ProfilePageCard>
   );
 }

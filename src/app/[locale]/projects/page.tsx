@@ -41,7 +41,7 @@ export default async function ProjectsPage({ params }: ProjectsPageProps) {
   return (
     <main className="relative flex min-h-screen flex-col bg-background">
       <Header locale={activeLocale} />
-      <div className="relative z-10 flex flex-1 justify-center px-0 md:px-[clamp(2rem,1.0816rem+3.9184vw,5rem)] py-8">
+      <div className="relative z-10 flex flex-1 justify-center px-0 py-0 md:px-[clamp(2rem,1.0816rem+3.9184vw,5rem)]">
         <ProjectsCard locale={activeLocale} />
       </div>
       <Footer locale={activeLocale} />
