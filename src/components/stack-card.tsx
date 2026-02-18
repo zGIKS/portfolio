@@ -11,6 +11,7 @@ import { Nextjs } from "./icons/stack/frontend/nextjs";
 import { TailwindCSS } from "./icons/stack/frontend/tailwind";
 import { RadixUI } from "./icons/stack/frontend/radixui";
 import { ShadcnUI } from "./icons/stack/frontend/shadcn";
+import { SvelteIcon } from "./icons/stack/frontend/svelte";
 import { PostgreSQL } from "./icons/stack/databases/postgresql";
 import { Redis } from "./icons/stack/databases/redis";
 import { MySQL } from "./icons/stack/databases/mysql";
@@ -58,6 +59,7 @@ export function StackCard({ locale }: StackCardProps) {
   const frontend: StackItem[] = [
     { name: "React", href: "https://react.dev/", icon: <React className={iconSize} /> },
     { name: "Next.js", href: "https://nextjs.org/docs", icon: <Nextjs className={iconSize} /> },
+    { name: "Svelte", href: "https://svelte.dev/", icon: <SvelteIcon className={iconSize} /> },
     { name: "Tailwind CSS", href: "https://tailwindcss.com/docs", icon: <TailwindCSS className={iconSize} /> },
     { name: "Radix UI", href: "https://www.radix-ui.com/", icon: <RadixUI className={iconSize} /> },
     { name: "shadcn/ui", href: "https://ui.shadcn.com/", icon: <ShadcnUI className={iconSize} /> },
