@@ -1,16 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { GiksLogo } from "./header/giks-logo";
+import { LanguageSelect } from "./header/language-select";
 import { locales, type Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionaries";
 
@@ -43,17 +37,7 @@ export function Header({ locale }: HeaderProps) {
         <div className="relative h-[4.5rem] w-full px-6 md:max-w-[55.249245rem] md:pl-10 md:pr-4">
           <div className="flex h-full items-center justify-between md:hidden">
             <div className="h-9 w-9" />
-            <Link
-              href={`/${locale}`}
-              className="giks-glow text-[2rem] font-semibold leading-none text-foreground transition-colors hover:text-white"
-            >
-              <span className="relative inline-block pr-2.5">
-                GIKS
-                <sup className="absolute right-0 top-0 text-[0.525rem] font-medium tracking-wide text-white/80">
-                  TM
-                </sup>
-              </span>
-            </Link>
+            <GiksLogo locale={locale} />
             <button
               type="button"
               className="flex h-9 w-9 items-center justify-center text-white/80 transition-colors hover:text-white"
@@ -66,52 +50,21 @@ export function Header({ locale }: HeaderProps) {
 
           <div className="hidden h-full items-center md:flex">
             <div className="flex min-w-0 flex-1 items-center md:relative md:w-[calc(100%-13.875rem)] md:flex-none">
-              <Link
-                href={`/${locale}`}
-                className="giks-glow text-[2rem] font-semibold leading-none text-foreground transition-colors hover:text-white"
-              >
-                <span className="relative inline-block pr-2.5">
-                  GIKS
-                  <sup className="absolute right-0 top-0 text-[0.525rem] font-medium tracking-wide text-white/80">
-                    TM
-                  </sup>
-                </span>
-              </Link>
+              <GiksLogo locale={locale} />
             </div>
             <div className="ml-auto self-start pt-2 md:ml-0 md:flex md:w-[13.875rem] md:justify-end">
-              <Select value={locale} onValueChange={handleLocaleChange}>
-                <SelectTrigger
-                  aria-label={t.languageSelectorAria}
-                  data-size="sm"
-                  className="h-auto min-h-0 w-auto gap-1 border-0 bg-transparent px-0 py-0.5 text-xs leading-tight text-white/60 shadow-none hover:text-white focus-visible:ring-0"
-                >
-                  <SelectValue placeholder={t.language} />
-                </SelectTrigger>
-                <SelectContent className="border-white/10 bg-black/90 text-white">
-                  <SelectItem value="en">{t.languages.en}</SelectItem>
-                  <SelectItem value="es">{t.languages.es}</SelectItem>
-                  <SelectItem value="pt">{t.languages.pt}</SelectItem>
-                </SelectContent>
-              </Select>
+              <LanguageSelect locale={locale} labels={t} onLocaleChange={handleLocaleChange} />
             </div>
           </div>
 
           {isMobileMenuOpen && (
             <div className="absolute right-4 top-[4.1rem] z-40 w-44 border border-white/10 bg-black/90 p-3 backdrop-blur-md md:hidden">
-              <Select value={locale} onValueChange={handleLocaleChange}>
-                <SelectTrigger
-                  aria-label={t.languageSelectorAria}
-                  data-size="sm"
-                  className="h-auto min-h-0 w-full gap-1 border-white/10 bg-transparent px-2 py-1 text-xs leading-tight text-white/80 shadow-none hover:text-white focus-visible:ring-0"
-                >
-                  <SelectValue placeholder={t.language} />
-                </SelectTrigger>
-                <SelectContent className="border-white/10 bg-black/90 text-white">
-                  <SelectItem value="en">{t.languages.en}</SelectItem>
-                  <SelectItem value="es">{t.languages.es}</SelectItem>
-                  <SelectItem value="pt">{t.languages.pt}</SelectItem>
-                </SelectContent>
-              </Select>
+              <LanguageSelect
+                locale={locale}
+                labels={t}
+                onLocaleChange={handleLocaleChange}
+                triggerClassName="h-auto min-h-0 w-full gap-1 border-white/10 bg-transparent px-2 py-1 text-xs leading-tight text-white/80 shadow-none hover:text-white focus-visible:ring-0"
+              />
             </div>
           )}
         </div>

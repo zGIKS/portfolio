@@ -55,8 +55,11 @@ function applyRateLimit(request: Request) {
   return null;
 }
 
+const CACHE_TTL_SECONDS = 300;
+const STALE_WHILE_REVALIDATE_SECONDS = 600;
+
 const successHeaders = {
-  "Cache-Control": "no-store",
+  "Cache-Control": `public, s-maxage=${CACHE_TTL_SECONDS}, stale-while-revalidate=${STALE_WHILE_REVALIDATE_SECONDS}`,
 };
 
 const errorHeaders = {
@@ -100,7 +103,7 @@ export async function GET(request: Request) {
       query: QUERY,
       variables: { login },
     }),
-    cache: "no-store",
+    next: { revalidate: CACHE_TTL_SECONDS },
   });
 
   const payload = await response.json();

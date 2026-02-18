@@ -6,7 +6,9 @@ import { LoadingState } from "./contributions-chart/loading-state";
 import { ErrorState } from "./contributions-chart/error-state";
 import { useContributions } from "./contributions-chart/use-contributions";
 import { processWeeks } from "./contributions-chart/week-utils";
+import { createDateFormatter } from "./contributions-chart/date-utils";
 import { type Locale } from "@/lib/i18n";
+import { getDictionary } from "@/lib/dictionaries";
 
 interface ContributionsChartProps {
   locale: Locale;
@@ -15,6 +17,8 @@ interface ContributionsChartProps {
 export function ContributionsChart({ locale }: ContributionsChartProps) {
   const { calendar, error } = useContributions();
   const DISPLAY_WEEKS = 32;
+  const formatDate = useMemo(() => createDateFormatter(locale), [locale]);
+  const t = useMemo(() => getDictionary(locale).contributions, [locale]);
 
   const weeks = useMemo(() => {
     if (!calendar) return [];
@@ -46,7 +50,8 @@ export function ContributionsChart({ locale }: ContributionsChartProps) {
           <ContributionWeekComponent
             key={week.firstDay}
             week={week}
-            locale={locale}
+            formatDate={formatDate}
+            t={t}
           />
         ))}
       </div>

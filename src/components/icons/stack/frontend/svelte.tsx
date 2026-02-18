@@ -1,5 +1,3 @@
-import type { SVGProps } from "react";
-
 interface SvelteIconProps {
   className?: string;
 }
