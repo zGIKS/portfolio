@@ -42,7 +42,7 @@
         "iam": {
           "title": "Gestão de Identidade e Acesso",
           "description": "Sistema de login e controle de acesso que protege contas, dados e sessões de usuários.",
-          "preview": "https://iam-demo.vercel.app/"
+          "preview": "https://saas-demo-sable.vercel.app/"
         },
         "levelUp": {
           "title": "LevelUp Journey",

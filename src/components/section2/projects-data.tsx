@@ -29,6 +29,7 @@ export interface ProjectItem {
   progress: number;
   codeUrl?: string;
   previewUrl?: string;
+  image?: string;
   icons: ProjectIcon[];
 }
 
@@ -42,6 +43,7 @@ export function getProjects(locale: Locale): ProjectItem[] {
       progress: 100,
       codeUrl: "https://github.com/zGIKS/auth-service",
       previewUrl: texts.iam.preview,
+      image: "/projects/iam.png",
       icons: [
         { label: "Rust", Icon: Rust, tileClassName: "text-foreground" },
         { label: "Next.js", Icon: Nextjs },
@@ -55,6 +57,7 @@ export function getProjects(locale: Locale): ProjectItem[] {
       progress: 100,
       codeUrl: "https://github.com/LevelUp-Journey",
       previewUrl: texts.levelUp.preview,
+      image: "/projects/level-up.png",
       icons: [
         { label: "Java", Icon: Java },
         { label: "PostgreSQL", Icon: PostgreSQL },
@@ -68,6 +71,7 @@ export function getProjects(locale: Locale): ProjectItem[] {
       progress: 100,
       codeUrl: "https://github.com/zGIKS/mortgage-calculator",
       previewUrl: texts.mortgage.preview,
+      image: "/projects/mortgage.png",
       icons: [
         { label: "Go", Icon: Go, iconClassName: "text-[#00ADD8]" },
         { label: "Python", Icon: Python },
@@ -81,6 +85,7 @@ export function getProjects(locale: Locale): ProjectItem[] {
       progress: 100,
       codeUrl: "https://github.com/zGIKS/GraphMap-Backend",
       previewUrl: texts.graphMap.preview,
+      image: "/projects/graph-map.png",
       icons: [
         { label: "Python", Icon: Python },
         { label: "React", Icon: React },

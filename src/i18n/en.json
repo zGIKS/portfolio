@@ -42,7 +42,7 @@
         "iam": {
           "title": "Identity & Access Management",
           "description": "Authentication and access control platform that secures user accounts, data, and sessions.",
-          "preview": "https://iam-demo.vercel.app/"
+          "preview": "https://saas-demo-sable.vercel.app/"
         },
         "levelUp": {
           "title": "LevelUp Journey",
