@@ -41,7 +41,7 @@ export function CurrentOnline({ locale }: CurrentOnlineProps) {
       <div>
         <SectionHeader
           title={title}
-          className="mb-4 text-chart-2"
+          className="mb-4 text-chart-2 md:pt-2"
         />
       </div>
     </DesktopTooltip>

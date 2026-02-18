@@ -9,7 +9,7 @@
     }
   },
   "footer": {
-    "repoLabel": "Repositório GitHub",
+    "repoLabel": "Source code",
     "title": "Portfólio zGIKS"
   },
   "section1": {
@@ -19,8 +19,6 @@
   "section2": {
     "titles": {
       "about": "Sobre mim",
-      "experience": "Experiência",
-      "education": "Educação",
       "projects": "Projetos"
     },
     "about": {
@@ -33,56 +31,6 @@
       "bullets": []
     },
     "archConfigTitle": "Minha configuração do Arch Linux",
-    "experience": [
-      {
-        "title": "Equipe Técnica / Moderação de Plataforma",
-        "period": "2021 - 2022",
-        "company": "Ghostly Network",
-        "subtitle": "Projeto comunitário | Trainee -> Moderador Sênior",
-        "highlights": [
-          "Monitoramento de usuários e chat; detecção de comportamentos não autorizados e aplicação de sanções.",
-          "Supervisão de sistemas anti-cheat e investigação de software não autorizado (clientes modificados, processos, DLLs).",
-          "Suporte técnico e validação de transações por sistema de tickets."
-        ]
-      },
-      {
-        "title": "Desenvolvedor Web (Freelance)",
-        "period": "2023 - Presente",
-        "company": "Desenvolvimento Web para PMEs",
-        "highlights": [
-          "Desenvolvimento e implementação de sites e landing pages para PMEs e negócios locais.",
-          "Aplicação de design responsivo, estrutura orientada a serviços e boas práticas de usabilidade.",
-          "Implementação de boas práticas de segurança e hardening, incluindo revisão da exposição de portas e serviços em ambientes de desenvolvimento e implantação (testes básicos autorizados).",
-          "Implantação segura de aplicações usando Cloudflare Tunnel, evitando exposição direta de IPs e portas públicas.",
-          "Comunicação interna entre serviços por VPN privada com Tailscale, reduzindo superfície de ataque e melhorando o isolamento.",
-          "Implementação e consumo do Azure Event Hub para comunicação assíncrona entre serviços.",
-          "Implantação e administração básica de máquinas virtuais no Azure com Debian e Ubuntu.",
-          "Manutenção pós-entrega e suporte técnico, com foco em estabilidade e disponibilidade."
-        ]
-      }
-    ],
-    "education": [
-      {
-        "institution": "Universidade Peruana de Ciências Aplicadas (UPC)",
-        "location": "San Isidro, Peru",
-        "program": "Engenharia de Software (6º semestre)",
-        "period": "2023 - Presente",
-        "details": [
-          "Formação em desenvolvimento de software, estruturas de dados, algoritmos e arquitetura de sistemas.",
-          "Participação em projetos acadêmicos colaborativos voltados para aplicações web e backend."
-        ]
-      },
-      {
-        "institution": "Davy College",
-        "location": "Cajamarca, Peru",
-        "program": "Bacharelado Internacional (IB - International Baccalaureate)",
-        "period": "",
-        "details": [
-          "Formação pré-universitária com foco em pensamento crítico, pesquisa e resolução de problemas.",
-          "Desenvolvimento de habilidades analíticas, trabalho acadêmico rigoroso e projetos interdisciplinares."
-        ]
-      }
-    ],
     "projects": {
       "labels": {
         "progress": "Progresso",
