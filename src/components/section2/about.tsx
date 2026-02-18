@@ -8,24 +8,29 @@ interface AboutProps {
 }
 
 export function About({ locale }: AboutProps) {
-  const copy = getDictionary(locale).section2.about;
+  const dictionary = getDictionary(locale);
+  const copy = dictionary.section2.about;
+  const contributionsTitle = dictionary.contributions.title;
 
   return (
     <SectionBody>
       <div className="space-y-4 text-sm leading-relaxed text-card-foreground">
-        <p>{copy.paragraphs[0]}</p>
-        <p>{copy.paragraphs[1]}</p>
-        <p>{copy.paragraphs[2]}</p>
-        <p>{copy.paragraphs[3]}</p>
-        <ul className="list-disc space-y-2 pl-5">
-          {copy.bullets.map((bullet) => (
-            <li key={bullet}>{bullet}</li>
-          ))}
-        </ul>
-        <p>{copy.paragraphs[4]}</p>
+        {copy.paragraphs.map((paragraph, index) => (
+          <p key={`${index}-${paragraph.slice(0, 24)}`}>{paragraph}</p>
+        ))}
+        {copy.bullets.length > 0 ? (
+          <ul className="list-disc space-y-2 pl-5">
+            {copy.bullets.map((bullet) => (
+              <li key={bullet}>{bullet}</li>
+            ))}
+          </ul>
+        ) : null}
       </div>
-      <div className="mt-8 bg-primary px-3 py-2 text-primary-foreground">
-        <div className="w-full max-w-full overflow-x-auto overflow-y-hidden">
+      <div className="mt-8">
+        <h3 className="mb-3 text-sm font-medium uppercase tracking-wide text-muted-foreground">
+          {contributionsTitle}
+        </h3>
+        <div className="w-full md:w-[90%]">
           <ContributionsChart locale={locale} />
         </div>
       </div>

@@ -37,13 +37,13 @@ export function SectionHeader({
   return (
     <div
       className={cn(
-        "flex items-center gap-2 pl-4 text-sm font-medium uppercase tracking-wide text-muted-foreground",
+        "flex items-center gap-2 pl-4 text-sm font-medium uppercase tracking-wide text-foreground",
         className
       )}
     >
       <span>{title}</span>
       {typeof count === "number" && (
-        <span className="text-lg font-semibold text-foreground">{count}</span>
+        <span className="text-lg font-semibold text-muted-foreground">{count}</span>
       )}
     </div>
   );

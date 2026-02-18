@@ -10,32 +10,21 @@ interface IconTileProps {
   href?: string;
 }
 
+const tileBase = "flex h-9 w-9 items-center justify-center bg-accent text-accent-foreground backdrop-blur-sm";
+
 export function IconTile({ ariaLabel, tooltipLabel, children, className, href }: IconTileProps) {
+  const sharedProps = {
+    className: cn(tileBase, className),
+    "aria-label": ariaLabel,
+    title: ariaLabel,
+  };
+
   const content = href ? (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={cn(
-        "flex h-9 w-9 items-center justify-center bg-accent text-accent-foreground backdrop-blur-sm",
-        className
-      )}
-      aria-label={ariaLabel}
-      title={ariaLabel}
-    >
+    <a href={href} target="_blank" rel="noopener noreferrer" {...sharedProps}>
       {children}
     </a>
   ) : (
-    <div
-      className={cn(
-        "flex h-9 w-9 items-center justify-center bg-accent text-accent-foreground backdrop-blur-sm",
-        className
-      )}
-      aria-label={ariaLabel}
-      title={ariaLabel}
-    >
-      {children}
-    </div>
+    <div {...sharedProps}>{children}</div>
   );
 
   return (

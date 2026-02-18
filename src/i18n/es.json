@@ -1,8 +1,5 @@
 {
   "header": {
-    "portfolio": "Portafolio",
-    "blog": "Blog",
-    "desktops": "Escritorios",
     "languageSelectorAria": "Selector de idioma",
     "language": "Idioma",
     "languages": {
@@ -11,18 +8,8 @@
       "pt": "Português"
     }
   },
-  "desktops": {
-    "title": "Mi configuración de Arch Linux",
-    "description": "Mi configuración personal de Arch Linux.",
-    "additionalConfig": "Desarrollo de Portafolio",
-    "freshEditorFrontend": "Setup de Docker para Desarrollo",
-    "sampleApp": {
-      "title": "Aplicación de Escritorio de Ejemplo",
-      "description": "Descripción de la aplicación de escritorio."
-    }
-  },
   "footer": {
-    "repoLabel": "Repositorio GitHub",
+    "repoLabel": "Source code",
     "title": "Portafolio zGIKS"
   },
   "section1": {
@@ -32,77 +19,19 @@
   "section2": {
     "titles": {
       "about": "Sobre mí",
-      "experience": "Experiencia",
-      "education": "Educación",
       "projects": "Proyectos"
     },
     "about": {
       "paragraphs": [
-        "Hola, soy Mateo (aka giks).",
-        "Soy estudiante de ingeniería de software en Perú, enfocado en construir sistemas backend, infraestructura y servicios críticos para seguridad. Trabajo principalmente en entornos tipo Unix, usando Arch Linux en mi entorno diario y Debian/Ubuntu para servidores y producción.",
-        "Disfruto diseñar sistemas desde cero, con énfasis en confiabilidad, seguridad y arquitectura clara. Mi trabajo suele involucrar servicios backend, gestión de identidad y accesos, e infraestructura que prioriza una baja superficie de ataque y escalabilidad.",
-        "Algunas áreas y proyectos en los que he trabajado:",
-        "Me interesan especialmente roles de backend platform engineering, infraestructura y seguridad, donde el diseño de sistemas y la mantenibilidad a largo plazo importan."
+        "Hola, soy Mateo Aleman (aka giks).",
+        "Soy estudiante de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas (UPC), en Lima, Perú. Actualmente curso el sexto ciclo de la carrera y me especializo en el desarrollo de sistemas backend, arquitectura de microservicios y servicios enfocados en seguridad.",
+        "Me apasiona diseñar y construir sistemas desde cero, priorizando la seguridad, la escalabilidad y un bajo nivel de exposición al riesgo. Disfruto trabajar en entornos Linux y desarrollar soluciones que integren buenas prácticas de infraestructura, redes privadas y principios de Zero Trust.",
+        "A lo largo de mi formación, he participado en proyectos académicos y técnicos como plataformas educativas con arquitectura distribuida, sistemas IAM desarrollados en Rust, aplicaciones financieras y herramientas de análisis de grafos. Me interesa especialmente el backend engineering, la infraestructura, la ciberseguridad y el diseño de APIs robustas.",
+        "Más allá del código, disfruto aprender constantemente sobre arquitectura de software, sistemas distribuidos y optimización de despliegues en la nube. Me motiva construir soluciones que no solo funcionen, sino que estén bien diseñadas y sean mantenibles a largo plazo."
       ],
-      "bullets": [
-        "Servicios backend y microservicios, incluyendo IAM y sistemas de autenticación",
-        "API gateways y arquitecturas orientadas a eventos",
-        "Plataformas web seguras usadas en contextos académicos y de pequeños negocios",
-        "Plataformas educativas usadas por más de 150 estudiantes",
-        "Servicios en Rust con fuerte enfoque en corrección y seguridad"
-      ]
+      "bullets": []
     },
     "archConfigTitle": "Mi configuración de Arch Linux",
-    "experience": [
-      {
-        "title": "Staff Técnico / Moderación de Plataforma",
-        "period": "2021 - 2022",
-        "company": "Ghostly Network",
-        "subtitle": "Proyecto comunitario | Trainee -> Moderador Senior",
-        "highlights": [
-          "Monitoreo de usuarios y chat; detección de comportamientos no autorizados y aplicación de sanciones.",
-          "Supervisión de sistemas anti-cheat e investigación de software no autorizado (clientes modificados, procesos, DLLs).",
-          "Soporte técnico y validación de transacciones mediante sistema de tickets."
-        ]
-      },
-      {
-        "title": "Desarrollador Web (Freelance)",
-        "period": "2023 - Presente",
-        "company": "Desarrollo Web para PYMEs",
-        "highlights": [
-          "Desarrollo e implementación de sitios web y landing pages para PYMEs y negocios locales.",
-          "Aplicación de diseño responsive, estructura orientada a servicios y buenas prácticas de usabilidad.",
-          "Implementación de buenas prácticas de seguridad y hardening, incluyendo revisión de exposición de puertos y servicios en entornos de desarrollo y despliegue (pruebas básicas autorizadas).",
-          "Despliegue seguro de aplicaciones usando Cloudflare Tunnel, evitando exposición directa de IPs y puertos públicos.",
-          "Comunicación interna entre servicios mediante VPN privada con Tailscale, reduciendo superficie de ataque y mejorando el aislamiento.",
-          "Implementación y consumo de Azure Event Hub para comunicación asíncrona entre servicios.",
-          "Despliegue y administración básica de máquinas virtuales en Azure con Debian y Ubuntu.",
-          "Mantenimiento post-entrega y soporte técnico, con enfoque en estabilidad y disponibilidad."
-        ]
-      }
-    ],
-    "education": [
-      {
-        "institution": "Universidad Peruana de Ciencias Aplicadas (UPC)",
-        "location": "San Isidro, Perú",
-        "program": "Ingeniería de Software (Sexto ciclo)",
-        "period": "2023 - Presente",
-        "details": [
-          "Formación en desarrollo de software, estructuras de datos, algoritmos y arquitectura de sistemas.",
-          "Participación en proyectos académicos colaborativos orientados a aplicaciones web y backend."
-        ]
-      },
-      {
-        "institution": "Davy College",
-        "location": "Cajamarca, Perú",
-        "program": "Bachillerato Internacional (IB - International Baccalaureate)",
-        "period": "",
-        "details": [
-          "Formación preuniversitaria con enfoque en pensamiento crítico, investigación y resolución de problemas.",
-          "Desarrollo de habilidades analíticas, trabajo académico riguroso y proyectos interdisciplinarios."
-        ]
-      }
-    ],
     "projects": {
       "labels": {
         "progress": "Progreso",
@@ -113,7 +42,7 @@
         "iam": {
           "title": "Gestión de Identidad y Acceso",
           "description": "Sistema de inicio de sesión y control de accesos que protege cuentas, datos y sesiones de usuarios.",
-          "preview": "https://iam-demo.vercel.app/"
+          "preview": "https://saas-demo-sable.vercel.app/"
         },
         "levelUp": {
           "title": "LevelUp Journey",
@@ -136,6 +65,7 @@
   "section3": {
     "currentOnlineTitle": "En línea ahora",
     "linksTitle": "Enlaces",
+    "techStackTitle": "Tech Stack",
     "languagesTitle": "Lenguajes",
     "frontendTitle": "Frontend",
     "devOpsTitle": "DevOps",
@@ -143,6 +73,7 @@
     "copiedLabel": "Copiado!"
   },
   "contributions": {
+    "title": "Contribuciones en GitHub",
     "none": "Sin contribuciones",
     "one": "1 contribución",
     "many": "{count} contribuciones",

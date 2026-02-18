@@ -5,20 +5,15 @@ import {
 } from "@/components/ui/tooltip";
 import { ContributionDay } from "./types";
 import { getContributionColor } from "./color-utils";
-import { createDateFormatter } from "./date-utils";
-import { type Locale } from "@/lib/i18n";
-import { getDictionary } from "@/lib/dictionaries";
+import { Dictionary } from "@/lib/dictionaries";
 
 interface ContributionCellProps {
   day: ContributionDay;
-  cellSize: number;
-  locale: Locale;
+  formatDate: (value: string) => string;
+  t: Dictionary["contributions"];
 }
 
-export function ContributionCell({ day, cellSize, locale }: ContributionCellProps) {
-  const formatDate = createDateFormatter(locale);
-  const t = getDictionary(locale).contributions;
-
+export function ContributionCell({ day, formatDate, t }: ContributionCellProps) {
   const contributionText =
     day.contributionCount === 0
       ? t.none
@@ -30,10 +25,8 @@ export function ContributionCell({ day, cellSize, locale }: ContributionCellProp
     <Tooltip>
       <TooltipTrigger asChild>
         <div
-          className="border border-white/5 cursor-pointer"
+          className="aspect-square w-full cursor-pointer rounded-[2px]"
           style={{
-            width: cellSize,
-            height: cellSize,
             backgroundColor: getContributionColor(day.contributionCount),
           }}
         />
