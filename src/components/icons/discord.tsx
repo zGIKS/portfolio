@@ -1,14 +1,12 @@
-interface DiscordIconProps {
-  className?: string;
-}
+import type { SVGProps } from "react";
 
-export function DiscordIcon({ className = "h-4 w-4" }: DiscordIconProps) {
+export function DiscordIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       viewBox="0 0 256 199"
-      className={className}
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
+      {...props}
     >
       <path
         fill="currentColor"
