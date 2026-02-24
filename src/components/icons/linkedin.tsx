@@ -1,14 +1,12 @@
-interface LinkedinIconProps {
-  className?: string;
-}
+import type { SVGProps } from "react";
 
-export function LinkedinIcon({ className = "h-4 w-4" }: LinkedinIconProps) {
+export function LinkedinIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       viewBox="0 0 256 256"
-      className={className}
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
+      {...props}
     >
       <path
         fill="currentColor"
