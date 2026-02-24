@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, Github } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
@@ -16,7 +17,7 @@ export default function WorkPage() {
       showFooter={false}
       contentClassName="flex-col items-center justify-start gap-6 pt-2 pb-6 md:pt-4 md:pb-10"
     >
-      <div className="w-full max-w-[55.249245rem] px-4 md:px-0">
+      <div className="w-full max-w-6xl px-4 md:px-0">
         <Link
           href="/"
           className="group inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-white/60 transition hover:bg-white/5 hover:text-white"
@@ -28,11 +29,11 @@ export default function WorkPage() {
 
       <ProfilePageCard
         subtitle="Recent Projects & Work"
-        className="border-0 bg-transparent shadow-none"
+        className="border-0 bg-transparent shadow-none md:max-w-6xl"
         contentClassName="p-0 sm:p-0"
       >
-        <div className="flex flex-col gap-4 p-4 sm:gap-5 sm:p-5">
-          {PROJECTS.map((project, index) => (
+        <div className="grid grid-cols-1 gap-4 p-4 sm:gap-5 sm:p-5 xl:grid-cols-2">
+          {PROJECTS.map((project) => (
             <div
               key={project.title}
               className="group relative overflow-hidden rounded-2xl border border-white/10 bg-black/40 p-4 shadow-[0_0_0_1px_rgba(255,255,255,0.02)] transition hover:border-white/15 hover:bg-black/50 sm:p-5"
@@ -44,6 +45,19 @@ export default function WorkPage() {
 
               <div className="relative w-full">
                 <div className="flex min-h-full w-full flex-col items-start text-left">
+                  <div className="mb-4 w-full overflow-hidden rounded-xl border border-white/10 bg-white/5">
+                    <div className="relative aspect-[16/8.2] w-full">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 880px"
+                        className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
+                    </div>
+                  </div>
+
                   <h3 className="mb-3 text-lg font-semibold tracking-tight text-white sm:text-xl">
                     {project.title}
                   </h3>
@@ -53,12 +67,14 @@ export default function WorkPage() {
                   </p>
 
                   <div className="mb-6 flex w-full flex-wrap gap-2">
-                    <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80">
-                      Project {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <span className="inline-flex items-center rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-xs text-cyan-200">
-                      Preview Available
-                    </span>
+                    {project.tags?.map((tag) => (
+                      <span
+                        key={`${project.title}-${tag}`}
+                        className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
 
                   <div className="mt-auto flex w-full flex-wrap gap-3">
