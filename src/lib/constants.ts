@@ -33,7 +33,7 @@ export const PROJECTS = [
     title: "IAM System",
     description: "A robust Identity and Access Management system built with Rust, focusing on security, high performance, and Zero Trust principles.",
     image: "/projects/iam.png",
-    previewUrl: "https://graphmap.giks.net/",
+    previewUrl: "https://iam-demo.vercel.app/",
     repoUrl: "https://github.com/zGIKS/auth-service",
   },
   {
