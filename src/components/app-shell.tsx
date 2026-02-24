@@ -5,11 +5,13 @@ import { cn } from "@/lib/utils";
 interface AppShellProps {
   children: ReactNode;
   contentClassName?: string;
+  showFooter?: boolean;
 }
 
 export function AppShell({
   children,
   contentClassName,
+  showFooter = true,
 }: AppShellProps) {
   return (
     <main className="relative flex min-h-screen flex-col bg-background">
@@ -21,7 +23,7 @@ export function AppShell({
       >
         {children}
       </div>
-      <Footer />
+      {showFooter ? <Footer /> : null}
     </main>
   );
 }
