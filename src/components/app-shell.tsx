@@ -9,6 +9,7 @@ interface AppShellProps {
   locale: Locale;
   children: ReactNode;
   showBackground?: boolean;
+  showHeader?: boolean;
   contentClassName?: string;
 }
 
@@ -16,12 +17,13 @@ export function AppShell({
   locale,
   children,
   showBackground = false,
+  showHeader = true,
   contentClassName,
 }: AppShellProps) {
   return (
     <main className="relative flex min-h-screen flex-col bg-background">
       {showBackground ? <BackgroundSquare /> : null}
-      <Header locale={locale} />
+      {showHeader ? <Header locale={locale} /> : null}
       <div
         className={cn(
           "relative z-10 flex flex-1 justify-center px-0 md:px-[clamp(2rem,1.0816rem+3.9184vw,5rem)]",

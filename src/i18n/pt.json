@@ -13,7 +13,6 @@
     "title": "Portfólio zGIKS"
   },
   "section1": {
-    "yearsOldLabel": "Anos",
     "country": "Peru"
   },
   "section2": {
@@ -72,20 +71,5 @@
     "devOpsTitle": "DevOps",
     "databasesTitle": "Bancos de dados",
     "copiedLabel": "Copiado!"
-  },
-  "contributions": {
-    "title": "Contribuições no GitHub",
-    "none": "Sem contribuições",
-    "one": "1 contribuição",
-    "many": "{count} contribuições",
-    "onLabel": "em",
-    "legend": {
-      "summary": "{count} contribuições no último ano no ",
-      "less": "Menos",
-      "more": "Mais"
-    },
-    "errorHint": "Tente novamente mais tarde.",
-    "dateLocale": "pt-BR",
-    "monthLocale": "pt-BR"
   }
 }

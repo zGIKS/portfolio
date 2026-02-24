@@ -1,4 +1,3 @@
-import { ContributionsChart } from "./contributions-chart/contributions-chart";
 import { SectionBody } from "../section-shared/section-body";
 import { type Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionaries";
@@ -10,7 +9,6 @@ interface AboutProps {
 export function About({ locale }: AboutProps) {
   const dictionary = getDictionary(locale);
   const copy = dictionary.section2.about;
-  const contributionsTitle = dictionary.contributions.title;
 
   return (
     <SectionBody>
@@ -25,14 +23,6 @@ export function About({ locale }: AboutProps) {
             ))}
           </ul>
         ) : null}
-      </div>
-      <div className="mt-8">
-        <h3 className="mb-3 text-sm font-medium uppercase tracking-wide text-muted-foreground">
-          {contributionsTitle}
-        </h3>
-        <div className="w-full md:w-[90%]">
-          <ContributionsChart locale={locale} />
-        </div>
       </div>
     </SectionBody>
   );

@@ -41,7 +41,7 @@ export default async function LocalePage({ params }: LocalePageProps) {
   const activeLocale: Locale = locale;
 
   return (
-    <AppShell locale={activeLocale} showBackground>
+    <AppShell locale={activeLocale} showBackground showHeader={false}>
       <HomeCard locale={activeLocale} />
     </AppShell>
   );
