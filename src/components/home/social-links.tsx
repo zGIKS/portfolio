@@ -14,7 +14,7 @@ export function SocialLinks() {
         href={SOCIAL_LINKS.github}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 transition hover:border-white/25 hover:bg-white/10 hover:text-white"
+        className="group flex items-center justify-between rounded-xl px-4 py-3 text-sm text-white/80 transition hover:bg-white/5 hover:text-white"
       >
         <span className="inline-flex items-center gap-2">
           <GithubIcon className="h-4 w-4" />
@@ -25,13 +25,13 @@ export function SocialLinks() {
 
       <a
         href={`mailto:${SOCIAL_LINKS.email}`}
-        className="group flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 transition hover:border-white/25 hover:bg-white/10 hover:text-white"
+        className="group flex items-center justify-between rounded-xl px-4 py-3 text-sm text-white/80 transition hover:bg-white/5 hover:text-white"
       >
         <span>Email</span>
         <ArrowUpRight className="h-4 w-4 opacity-60 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100" />
       </a>
 
-      <div className="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/75">
+      <div className="flex items-center justify-between rounded-xl px-4 py-3 text-sm text-white/75">
         <span className="inline-flex items-center gap-2">
           <LinkedinIcon className="h-4 w-4 text-[#0A66C2]" />
           LinkedIn
@@ -39,7 +39,7 @@ export function SocialLinks() {
         <span className="text-xs text-white/45 italic">coming soon</span>
       </div>
 
-      <div className="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/75">
+      <div className="flex items-center justify-between rounded-xl px-4 py-3 text-sm text-white/75">
         <span>Discord</span>
         <code className="text-xs text-white/55">{SOCIAL_LINKS.discord}</code>
       </div>

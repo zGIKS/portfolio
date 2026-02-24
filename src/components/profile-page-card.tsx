@@ -19,11 +19,11 @@ export function ProfilePageCard({
   return (
     <Card
       className={cn(
-        "relative z-10 w-full gap-0 overflow-hidden rounded-none border border-white/10 bg-white/5 p-0 text-card-foreground shadow-xl backdrop-blur-xl md:min-h-full md:max-w-[55.249245rem] md:rounded-xl",
+        "relative z-10 w-full gap-0 overflow-hidden rounded-none p-0 text-card-foreground md:min-h-full md:max-w-[55.249245rem] md:rounded-xl",
         className
       )}
     >
-      <header className="border-b border-white/10 bg-white/10 px-4 py-3 sm:px-6">
+      <header className="px-4 py-3 sm:px-6">
         <div className="flex items-center gap-3 sm:gap-4">
           <Image
             src="/me.webp"
