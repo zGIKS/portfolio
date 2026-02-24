@@ -3,7 +3,7 @@ import { GithubIcon } from "./icons/github";
 
 export function Footer() {
   return (
-    <footer className="relative z-20 w-full border-t border-white/10 bg-black/30 backdrop-blur-md">
+    <footer className="relative z-20 w-full">
       <div className="mx-auto flex w-full justify-center px-0 md:px-[clamp(2rem,1.0816rem+3.9184vw,5rem)]">
         <div className="flex h-12 w-full max-w-6xl items-center justify-between px-4 text-xs text-white/65 md:px-0">
           <span>🄯 Mateo Aleman 2026</span>

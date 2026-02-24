@@ -16,9 +16,7 @@ export function HomeCard() {
 
   return (
     <section className="relative z-10 w-full px-4 py-4 md:px-0 md:py-4">
-      <div className="relative mx-auto w-full max-w-6xl overflow-hidden rounded-3xl border border-white/10 bg-black/40 shadow-2xl shadow-black/40 backdrop-blur-xl md:backdrop-blur-2xl">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_45%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.04),transparent_50%)]" />
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+      <div className="relative mx-auto w-full max-w-6xl overflow-hidden rounded-3xl">
 
         <div className="relative grid items-start gap-8 p-5 md:p-8 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-10 lg:p-10">
           <div className="flex min-w-0 flex-col">

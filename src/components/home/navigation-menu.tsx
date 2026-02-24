@@ -17,7 +17,7 @@ interface NavigationMenuProps {
 export function NavigationMenu({ items, title }: NavigationMenuProps) {
   return (
     <aside className="flex flex-col justify-start lg:pt-2">
-      <div className="rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur-md md:backdrop-blur-xl">
+      <div className="p-0">
         <p className="px-3 pb-2 text-xs tracking-[0.22em] text-white/45 uppercase">
           {title}
         </p>
@@ -37,9 +37,9 @@ function NavigationMenuItem({ item }: { item: MenuItem }) {
 
   const content = (
     <div
-      className={`group flex w-full items-center justify-between gap-4 rounded-xl border border-white/10 bg-black/25 px-4 py-3 text-left transition ${
+      className={`group flex w-full items-center justify-between gap-4 rounded-xl px-4 py-3 text-left transition ${
         isInteractive
-          ? "hover:border-white/20 hover:bg-white/10"
+          ? "hover:bg-white/5"
           : "cursor-default opacity-80"
       }`}
     >
@@ -48,7 +48,7 @@ function NavigationMenuItem({ item }: { item: MenuItem }) {
           {item.label}
         </span>
         {item.badge && (
-          <span className="rounded-md border border-white/15 bg-white/10 px-1.5 py-0.5 text-[10px] font-medium tracking-[0.14em] text-white/70 uppercase">
+          <span className="rounded-md px-1.5 py-0.5 text-[10px] font-medium tracking-[0.14em] text-white/55 uppercase">
             {item.badge}
           </span>
         )}
