@@ -26,11 +26,11 @@ export function ProfilePageCard({
       <header className="px-4 py-3 sm:px-6">
         <div className="flex items-center gap-3 sm:gap-4">
           <Image
-            src="/me.webp"
+            src="/icon.svg"
             alt="Profile photo"
             width={84}
             height={84}
-            className="h-20 w-20 rounded-sm object-cover object-center ring-1 ring-white/20"
+            className="h-20 w-20 object-contain object-center"
           />
           <div className="min-w-0">
             <h1 className="truncate text-2xl font-semibold text-white">Mateo</h1>

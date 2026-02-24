@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { GIcon } from "@/components/icons/nika";
 import { PeruFlag } from "@/components/icons/peru";
 
 interface ProfileHeaderProps {
@@ -8,14 +8,10 @@ interface ProfileHeaderProps {
 export function ProfileHeader({ countryLabel }: ProfileHeaderProps) {
   return (
     <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
-      <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-full border border-white/15 bg-white/5 shadow-lg shadow-black/30">
-        <Image
-          src="/me.webp"
-          alt="Mateo Aleman profile photo"
-          fill
-          sizes="112px"
-          className="object-cover object-center"
-          priority
+      <div className="relative h-28 w-28 shrink-0">
+        <GIcon
+          aria-label="Giks logo"
+          className="h-full w-full text-white"
         />
       </div>
 
