@@ -1,19 +1,19 @@
 import Image from "next/image";
 import { GithubIcon } from "../icons/github";
-import { IconTile } from "../section3/icon-tile";
+import { IconTile } from "../shared/icon-tile";
 import { Link as LinkIcon } from "lucide-react";
-import { SectionBody } from "../section-shared/section-body";
+import { SectionBody } from "../shared/section-body";
 import { ProjectCard } from "./project-card";
 import { getProjects } from "./projects-data";
 import { Button } from "@/components/ui/button";
 import { type Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionaries";
 
-interface ProjectsProps {
+interface ProjectsListProps {
   locale: Locale;
 }
 
-export function Projects({ locale }: ProjectsProps) {
+export function ProjectsList({ locale }: ProjectsListProps) {
   const projects = getProjects(locale);
   const labels = getDictionary(locale).section2.projects.labels;
 

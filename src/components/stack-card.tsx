@@ -1,7 +1,7 @@
 import { allStackItems } from "@/lib/stack-data";
 import { type Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionaries";
-import { DesktopTooltip } from "./section3/desktop-tooltip";
+import { DesktopTooltip } from "./shared/desktop-tooltip";
 import { ProfilePageCard } from "./profile-page-card";
 
 interface StackCardProps {

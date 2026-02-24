@@ -1,4 +1,4 @@
-import { Projects } from "./section2/projects";
+import { ProjectsList } from "./projects/projects-list";
 import { type Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionaries";
 import { ProfilePageCard } from "./profile-page-card";
@@ -12,7 +12,7 @@ export function ProjectsCard({ locale }: ProjectsCardProps) {
 
   return (
     <ProfilePageCard subtitle={t.section2.titles.projects}>
-      <Projects locale={locale} />
+      <ProjectsList locale={locale} />
     </ProfilePageCard>
   );
 }
