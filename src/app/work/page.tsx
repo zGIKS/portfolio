@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowLeft, ArrowUpRight, Github } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { ProfilePageCard } from "@/components/profile-page-card";
@@ -32,53 +31,56 @@ export default function WorkPage() {
         className="border-0 bg-transparent shadow-none"
         contentClassName="p-0 sm:p-0"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2">
+        <div className="flex flex-col gap-4 p-4 sm:gap-5 sm:p-5">
           {PROJECTS.map((project, index) => (
             <div
               key={project.title}
-              className={`group flex flex-col border-white/10 p-6 sm:p-8 transition-colors hover:bg-white/[0.02] ${
-                index % 2 === 0 ? "md:border-r" : ""
-              } ${index < PROJECTS.length - 2 ? "border-b" : "md:border-b-0"} ${
-                index < PROJECTS.length - 1 ? "max-md:border-b" : ""
-              }`}
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-black/40 p-4 shadow-[0_0_0_1px_rgba(255,255,255,0.02)] transition hover:border-white/15 hover:bg-black/50 sm:p-5"
             >
-              <div className="relative mb-6 aspect-video overflow-hidden rounded-xl border border-white/10 bg-white/5">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 400px"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+              <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                <div className="absolute -top-16 left-1/4 h-32 w-32 rounded-full bg-blue-500/10 blur-3xl" />
+                <div className="absolute -bottom-10 right-10 h-28 w-28 rounded-full bg-cyan-400/10 blur-3xl" />
               </div>
 
-              <div className="flex flex-1 flex-col">
-                <h3 className="mb-2 text-xl font-bold text-white">
-                  {project.title}
-                </h3>
-                <p className="mb-6 text-sm leading-relaxed text-white/60">
-                  {project.description}
-                </p>
+              <div className="relative w-full">
+                <div className="flex min-h-full w-full flex-col items-start text-left">
+                  <h3 className="mb-3 text-lg font-semibold tracking-tight text-white sm:text-xl">
+                    {project.title}
+                  </h3>
 
-                <div className="mt-auto flex flex-wrap gap-3">
-                  <a
-                    href={project.previewUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-lg border border-white/10 px-3 py-2 text-xs font-medium uppercase tracking-wider text-white/70 transition hover:border-white/20 hover:bg-white/5 hover:text-white"
-                  >
-                    Preview
-                    <ArrowUpRight className="h-3.5 w-3.5" />
-                  </a>
-                  <a
-                    href={project.repoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-lg border border-white/10 px-3 py-2 text-xs font-medium uppercase tracking-wider text-white/70 transition hover:border-white/20 hover:bg-white/5 hover:text-white"
-                  >
-                    <Github className="h-3.5 w-3.5" />
-                    Repo
-                  </a>
+                  <p className="mb-4 w-full text-sm leading-relaxed text-white/65 sm:text-base">
+                    {project.description}
+                  </p>
+
+                  <div className="mb-6 flex w-full flex-wrap gap-2">
+                    <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80">
+                      Project {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="inline-flex items-center rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-xs text-cyan-200">
+                      Preview Available
+                    </span>
+                  </div>
+
+                  <div className="mt-auto flex w-full flex-wrap gap-3">
+                    <a
+                      href={project.repoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 py-2.5 text-sm font-medium text-white/85 transition hover:border-white/30 hover:bg-white/10 hover:text-white sm:justify-start"
+                    >
+                      <Github className="h-4 w-4" />
+                      Code
+                    </a>
+                    <a
+                      href={project.previewUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 py-2.5 text-sm font-medium text-white/85 transition hover:border-white/30 hover:bg-white/10 hover:text-white sm:justify-start"
+                    >
+                      Preview
+                      <ArrowUpRight className="h-4 w-4" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

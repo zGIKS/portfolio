@@ -37,7 +37,7 @@ export const PROJECTS = [
     repoUrl: "https://github.com/zGIKS/auth-service",
   },
   {
-    title: "Level Up",
+    title: "Level up journey",
     description: "Educational platform featuring a distributed architecture designed for scalability and high availability.",
     image: "/projects/level-up.png",
     previewUrl: "https://web-app-dusky-one.vercel.app/",
