@@ -1,6 +1,5 @@
 import { getDictionary } from "@/lib/dictionaries";
 import { type Locale } from "@/lib/i18n";
-import { allStackItems } from "@/lib/stack-data";
 import { NAVIGATION_ITEMS } from "@/lib/constants";
 import { ProfileHeader } from "./home/profile-header";
 import { AboutSection } from "./home/about-section";
@@ -14,7 +13,7 @@ interface HomeCardProps {
 export function HomeCard({ locale }: HomeCardProps) {
   const t = getDictionary(locale);
   const aboutParagraphs = t.section2.about.paragraphs;
-  const menuItems = NAVIGATION_ITEMS(t, locale, allStackItems.length);
+  const menuItems = NAVIGATION_ITEMS(t, locale);
 
   return (
     <section className="relative z-10 w-full px-4 py-6 md:px-0 md:py-12">
