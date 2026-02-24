@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Github } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { ProfilePageCard } from "@/components/profile-page-card";
 import { PROJECTS } from "@/lib/constants";
@@ -60,15 +60,25 @@ export default function WorkPage() {
                   {project.description}
                 </p>
 
-                <div className="mt-auto flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] font-medium uppercase tracking-wider text-white/70"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                <div className="mt-auto flex flex-wrap gap-3">
+                  <a
+                    href={project.previewUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-lg border border-white/10 px-3 py-2 text-xs font-medium uppercase tracking-wider text-white/70 transition hover:border-white/20 hover:bg-white/5 hover:text-white"
+                  >
+                    Preview
+                    <ArrowUpRight className="h-3.5 w-3.5" />
+                  </a>
+                  <a
+                    href={project.repoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-lg border border-white/10 px-3 py-2 text-xs font-medium uppercase tracking-wider text-white/70 transition hover:border-white/20 hover:bg-white/5 hover:text-white"
+                  >
+                    <Github className="h-3.5 w-3.5" />
+                    Repo
+                  </a>
                 </div>
               </div>
             </div>

@@ -21,7 +21,7 @@ export function ProfileHeader({ countryLabel }: ProfileHeaderProps) {
 
       <div className="min-w-0">
         <p className="mb-2 text-xs tracking-[0.22em] text-white/55 uppercase">
-          giks / portfolio
+          giks / home
         </p>
         <h1 className="text-3xl font-semibold tracking-tight text-white md:text-5xl">
           Mateo Aleman
