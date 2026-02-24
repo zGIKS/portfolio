@@ -27,7 +27,7 @@ export function ProfileHeader({ countryLabel }: ProfileHeaderProps) {
           Mateo Aleman
         </h1>
         <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-white/70">
-          <span>Software Engineering Student</span>
+          <span>Software Engineering</span>
           <span className="hidden text-white/25 sm:inline">|</span>
           <span className="inline-flex items-center gap-2">
             <PeruFlag className="h-3.5 w-[18px]" />
