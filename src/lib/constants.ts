@@ -30,8 +30,18 @@ export const NAVIGATION_ITEMS = () => [
 
 export const PROJECTS = [
   {
-    title: "IAM System",
+    title: "nit",
     dateRange: "2026 - Present",
+    description: "Keyboard-driven terminal UI for Git built with Bubble Tea. Stage files, commit, manage branches, and run remote operations without leaving the terminal.",
+    image: "/projects/nit.png",
+    tags: ["Go", "Bubble Tea", "TUI", "Git", "CLI"],
+    installCommand: "yay -S nit-bin",
+    previewUrl: "https://aur.archlinux.org/packages/nit-bin",
+    repoUrl: "https://github.com/zGIKS/nit",
+  },
+  {
+    title: "IAM System",
+    dateRange: "2025 - 2026",
     description: "A robust Identity and Access Management system built with Rust, focusing on security, high performance, and Zero Trust principles.",
     image: "/projects/iam.png",
     tags: ["Rust", "PostgreSQL", "Redis", "Cloudflare", "Tailscale"],
@@ -40,7 +50,7 @@ export const PROJECTS = [
   },
   {
     title: "Level up journey",
-    dateRange: "2024 - 2025",
+    dateRange: "2025 - 2026",
     description: "Educational platform featuring a distributed architecture designed for scalability and high availability.",
     image: "/projects/level-up.png",
     tags: ["Java", "Spring Boot", "Go", "Gin", "PostgreSQL", "Next.js"],

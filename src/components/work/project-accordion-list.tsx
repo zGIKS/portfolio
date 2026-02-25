@@ -6,6 +6,7 @@ import { GraphMapIcon } from "@/components/icons/projects/graph-map";
 import { IAMIcon } from "@/components/icons/projects/iam";
 import { LevelUpIcon } from "@/components/icons/projects/level-up";
 import { MortgageIcon } from "@/components/icons/projects/mortgage";
+import { NitIcon } from "@/components/icons/projects/nit";
 import { cn } from "@/lib/utils";
 
 type ProjectItem = {
@@ -18,6 +19,7 @@ type ProjectItem = {
 };
 
 const PROJECT_ICONS = {
+  nit: NitIcon,
   "IAM System": IAMIcon,
   "Level up journey": LevelUpIcon,
   "Graph Map": GraphMapIcon,
@@ -160,7 +162,7 @@ export function ProjectAccordionList({ projects }: ProjectAccordionListProps) {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 py-2.5 text-sm font-medium text-white/85 transition hover:border-white/30 hover:bg-white/10 hover:text-white"
                   >
-                    Preview
+                    {project.title === "nit" ? "AUR" : "Preview"}
                     <ArrowUpRight className="h-4 w-4" />
                   </a>
                 </div>
