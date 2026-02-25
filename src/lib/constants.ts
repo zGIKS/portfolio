@@ -31,7 +31,7 @@ export const NAVIGATION_ITEMS = () => [
 export const PROJECTS = [
   {
     title: "IAM System",
-    dateRange: "2025 - Present",
+    dateRange: "2026 - Present",
     description: "A robust Identity and Access Management system built with Rust, focusing on security, high performance, and Zero Trust principles.",
     image: "/projects/iam.png",
     tags: ["Rust", "PostgreSQL", "Redis", "Cloudflare", "Tailscale"],
@@ -49,7 +49,7 @@ export const PROJECTS = [
   },
   {
     title: "Graph Map",
-    dateRange: "2024",
+    dateRange: "2025",
     description: "Advanced graph analysis tool for visualizing and processing complex relational data structures.",
     image: "/projects/graph-map.png",
     tags: ["Python", "FastAPI", "React", "Vite", "WebGL"],
@@ -58,7 +58,7 @@ export const PROJECTS = [
   },
   {
     title: "Mortgage App",
-    dateRange: "2024",
+    dateRange: "2025",
     description: "Financial application for calculating and managing mortgage loans with a focus on accuracy and user experience.",
     image: "/projects/mortgage.png",
     tags: ["Go", "Gin", "FastAPI", "PostgreSQL", "React", "Traefik"],
