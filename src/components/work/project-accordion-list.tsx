@@ -63,7 +63,7 @@ export function ProjectAccordionList({ projects }: ProjectAccordionListProps) {
             </div>
 
             <div
-              className="relative flex cursor-pointer items-start gap-3 px-4 py-4 sm:px-5"
+              className="relative flex cursor-pointer items-start gap-3 px-4 py-4 transition-colors hover:bg-white/5 sm:px-5"
               onClick={() => toggleProject(project.title)}
               role="button"
               tabIndex={0}
@@ -78,7 +78,7 @@ export function ProjectAccordionList({ projects }: ProjectAccordionListProps) {
             >
               <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center">
                 {Icon ? (
-                  <Icon className="h-8 w-8" aria-hidden="true" />
+                  <Icon className="h-5 w-5" aria-hidden="true" />
                 ) : (
                   <div className="h-2.5 w-2.5 rounded-full bg-white/60" />
                 )}
@@ -99,7 +99,7 @@ export function ProjectAccordionList({ projects }: ProjectAccordionListProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(event) => event.stopPropagation()}
-                  className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-white/60 transition hover:bg-white/5 hover:text-white"
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-white/60 transition hover:text-white"
                   aria-label={`Open ${project.title} preview`}
                 >
                   <Link2 className="h-4 w-4" />
@@ -110,7 +110,7 @@ export function ProjectAccordionList({ projects }: ProjectAccordionListProps) {
                     event.stopPropagation();
                     toggleProject(project.title);
                   }}
-                  className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-white/60 transition hover:bg-white/5 hover:text-white"
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-white/60 transition hover:text-white"
                   aria-expanded={isOpen}
                   aria-controls={`project-panel-${index}`}
                   aria-label={isOpen ? "Collapse project details" : "Expand project details"}

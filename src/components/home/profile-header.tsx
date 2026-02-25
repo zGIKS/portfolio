@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { GIcon } from "@/components/icons/nika";
+import { cn } from "@/lib/utils";
 
 export function ProfileHeader() {
-  const [peruTime, setPeruTime] = useState("--:--:--");
+  const [peruTime, setPeruTime] = useState<string | null>(null);
 
   useEffect(() => {
     const formatter = new Intl.DateTimeFormat("en-GB", {
@@ -42,8 +43,15 @@ export function ProfileHeader() {
           <span>Software Engineering</span>
           <span className="hidden text-white/25 sm:inline">|</span>
           <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/30 px-2.5 py-1 font-mono text-xs text-white/90">
-            <span aria-hidden="true" className="h-2 w-2 rounded-full bg-emerald-400" />
-            <span>{peruTime}</span>
+            <span aria-hidden="true" className={cn(
+              "h-2 w-2 rounded-full transition-colors duration-500",
+              peruTime ? "bg-emerald-400" : "bg-white/10"
+            )} />
+            {peruTime ? (
+              <span>{peruTime}</span>
+            ) : (
+              <span className="h-4 w-[60px] animate-pulse rounded bg-white/5" />
+            )}
           </span>
         </div>
       </div>
