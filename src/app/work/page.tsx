@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight, Github } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { ProfilePageCard } from "@/components/profile-page-card";
+import { ProjectAccordionList } from "@/components/work/project-accordion-list";
 import { PROJECTS } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -32,76 +32,7 @@ export default function WorkPage() {
         className="border-0 bg-transparent shadow-none md:max-w-6xl"
         contentClassName="p-0 sm:p-0"
       >
-        <div className="grid grid-cols-1 gap-4 p-4 sm:gap-5 sm:p-5 xl:grid-cols-2">
-          {PROJECTS.map((project) => (
-            <div
-              key={project.title}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-black/40 p-4 shadow-[0_0_0_1px_rgba(255,255,255,0.02)] transition hover:border-white/15 hover:bg-black/50 sm:p-5"
-            >
-              <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                <div className="absolute -top-16 left-1/4 h-32 w-32 rounded-full bg-blue-500/10 blur-3xl" />
-                <div className="absolute -bottom-10 right-10 h-28 w-28 rounded-full bg-cyan-400/10 blur-3xl" />
-              </div>
-
-              <div className="relative w-full">
-                <div className="flex min-h-full w-full flex-col items-start text-left">
-                  <div className="mb-4 w-full overflow-hidden rounded-xl border border-white/10 bg-white/5">
-                    <div className="relative aspect-[16/8.2] w-full">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        sizes="(max-width: 1024px) 100vw, 880px"
-                        className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
-                    </div>
-                  </div>
-
-                  <h3 className="mb-3 text-lg font-semibold tracking-tight text-white sm:text-xl">
-                    {project.title}
-                  </h3>
-
-                  <p className="mb-4 w-full text-sm leading-relaxed text-white/65 sm:text-base">
-                    {project.description}
-                  </p>
-
-                  <div className="mb-6 flex w-full flex-wrap gap-2">
-                    {project.tags?.map((tag) => (
-                      <span
-                        key={`${project.title}-${tag}`}
-                        className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="mt-auto flex w-full flex-wrap gap-3">
-                    <a
-                      href={project.repoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 py-2.5 text-sm font-medium text-white/85 transition hover:border-white/30 hover:bg-white/10 hover:text-white sm:justify-start"
-                    >
-                      <Github className="h-4 w-4" />
-                      Code
-                    </a>
-                    <a
-                      href={project.previewUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 py-2.5 text-sm font-medium text-white/85 transition hover:border-white/30 hover:bg-white/10 hover:text-white sm:justify-start"
-                    >
-                      Preview
-                      <ArrowUpRight className="h-4 w-4" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <ProjectAccordionList projects={PROJECTS} />
       </ProfilePageCard>
     </AppShell>
   );
