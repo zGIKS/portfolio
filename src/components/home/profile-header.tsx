@@ -1,21 +1,34 @@
-import Image from "next/image";
-import { PeruFlag } from "@/components/icons/peru";
+"use client";
 
-interface ProfileHeaderProps {
-  countryLabel: string;
-}
+import { useEffect, useState } from "react";
+import { GIcon } from "@/components/icons/nika";
+import { cn } from "@/lib/utils";
 
-export function ProfileHeader({ countryLabel }: ProfileHeaderProps) {
+export function ProfileHeader() {
+  const [peruTime, setPeruTime] = useState<string | null>(null);
+
+  useEffect(() => {
+    const formatter = new Intl.DateTimeFormat("en-GB", {
+      timeZone: "America/Lima",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false,
+    });
+
+    const updateTime = () => setPeruTime(formatter.format(new Date()));
+
+    updateTime();
+    const interval = window.setInterval(updateTime, 1000);
+    return () => window.clearInterval(interval);
+  }, []);
+
   return (
     <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
-      <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-full border border-white/15 bg-white/5 shadow-lg shadow-black/30">
-        <Image
-          src="/me.webp"
-          alt="Mateo Aleman profile photo"
-          fill
-          sizes="112px"
-          className="object-cover object-center"
-          priority
+      <div className="relative h-28 w-28 shrink-0">
+        <GIcon
+          aria-label="Giks logo"
+          className="h-full w-full text-white"
         />
       </div>
 
@@ -29,9 +42,16 @@ export function ProfileHeader({ countryLabel }: ProfileHeaderProps) {
         <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-white/70">
           <span>Software Engineering</span>
           <span className="hidden text-white/25 sm:inline">|</span>
-          <span className="inline-flex items-center gap-2">
-            <PeruFlag className="h-3.5 w-[18px]" />
-            {countryLabel}
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/30 px-2.5 py-1 font-mono text-xs text-white/90">
+            <span aria-hidden="true" className={cn(
+              "h-2 w-2 rounded-full transition-colors duration-500",
+              peruTime ? "bg-emerald-400" : "bg-white/10"
+            )} />
+            {peruTime ? (
+              <span>{peruTime}</span>
+            ) : (
+              <span className="h-4 w-[60px] animate-pulse rounded bg-white/5" />
+            )}
           </span>
         </div>
       </div>
