@@ -5,11 +5,11 @@ import { AppShell } from "@/components/app-shell";
 import { ProfilePageCard } from "@/components/profile-page-card";
 
 export const metadata: Metadata = {
-  title: "Mateo Aleman - Writing",
-  description: "Writing, notes, and articles",
+  title: "Mateo Aleman - About",
+  description: "About Mateo Aleman, software engineer",
 };
 
-export default function WritingPage() {
+export default function AboutPage() {
   return (
     <AppShell
       showFooter={false}
@@ -26,11 +26,11 @@ export default function WritingPage() {
       </div>
 
       <ProfilePageCard
-        subtitle="Recent Notes & Thoughts"
+        subtitle="Bio & Background"
         className="border-0 bg-transparent shadow-none md:max-w-6xl"
         contentClassName="p-0 sm:p-0"
       >
-        {/* Content removed as requested */}
+        {/* Bio content removed as requested */}
       </ProfilePageCard>
     </AppShell>
   );

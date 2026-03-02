@@ -13,7 +13,7 @@ export const NAVIGATION_ITEMS = () => [
   },
   {
     label: "About",
-    href: "/#about",
+    href: "/about",
     kind: "link" as const,
   },
   {
