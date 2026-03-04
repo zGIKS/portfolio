@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 interface ProfilePageCardProps {
   subtitle: string;
-  children: ReactNode;
+  children?: ReactNode;
   className?: string;
   contentClassName?: string;
 }

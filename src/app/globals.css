@@ -155,3 +155,64 @@
     animation: giksGlowPulse 1.6s ease-in-out infinite;
   }
 }
+
+/* Typography */
+.typography {
+  font-family: var(--font-ibm-plex-mono), var(--font-sans), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.typography h1 {
+  @apply text-4xl font-mono text-white mb-2;
+}
+
+.typography h2 {
+  @apply text-3xl font-mono text-white mb-2;
+}
+
+.typography h3 {
+  @apply text-2xl font-mono text-white mb-2;
+}
+
+.typography p {
+  @apply text-white/80 leading-relaxed mb-6;
+}
+
+.typography a {
+  @apply text-pink-400 hover:text-pink-300 underline;
+}
+
+.typography strong {
+  @apply font-semibold text-white;
+}
+
+.typography em {
+  @apply italic text-white/90;
+}
+
+.typography code {
+  @apply bg-white/10 px-1 py-0.5 rounded text-sm font-mono text-white;
+}
+
+.typography pre {
+  @apply bg-black/50 p-4 rounded-lg overflow-x-auto;
+}
+
+.typography pre code {
+  @apply bg-transparent p-0;
+}
+
+.typography blockquote {
+  @apply border-l-4 border-white/20 pl-4 italic text-white/70;
+}
+
+.typography ul, .typography ol {
+  @apply mb-6;
+}
+
+.typography li {
+  @apply text-white/80 leading-relaxed mb-2;
+}
+
+.typography hr {
+  @apply border-white/10 my-8;
+}
