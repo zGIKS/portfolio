@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { GIcon } from "@/components/icons/nika";
+import { UmbreonIcon } from "@/components/icons/umbreon";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
@@ -25,7 +25,7 @@ export function ProfilePageCard({
     >
       <header className="px-4 py-3 sm:px-6">
         <div className="flex items-center gap-3 sm:gap-4">
-          <GIcon
+          <UmbreonIcon
             aria-label="Giks logo"
             className="h-20 w-20 shrink-0"
           />

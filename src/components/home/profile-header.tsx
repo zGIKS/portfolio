@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { GIcon } from "@/components/icons/nika";
+import { UmbreonIcon } from "@/components/icons/umbreon";
 import { cn } from "@/lib/utils";
 
 export function ProfileHeader() {
@@ -26,7 +26,7 @@ export function ProfileHeader() {
   return (
     <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
       <div className="relative h-28 w-28 shrink-0">
-        <GIcon
+        <UmbreonIcon
           aria-label="Giks logo"
           className="h-full w-full text-white"
         />
