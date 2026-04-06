@@ -7,6 +7,7 @@ import { IAMIcon } from "@/components/icons/projects/iam";
 import { LevelUpIcon } from "@/components/icons/projects/level-up";
 import { MortgageIcon } from "@/components/icons/projects/mortgage";
 import { NitIcon } from "@/components/icons/projects/nit";
+import { PretextTextBlock } from "@/components/shared/pretext-text-block";
 import { cn } from "@/lib/utils";
 
 type ProjectItem = {
@@ -131,9 +132,10 @@ export function ProjectAccordionList({ projects }: ProjectAccordionListProps) {
                 id={`project-panel-${index}`}
                 className="relative border-t border-white/10 px-4 py-4 sm:px-5"
               >
-                <p className="mb-4 text-sm leading-relaxed text-white/70 sm:text-base">
-                  {project.description}
-                </p>
+                <PretextTextBlock
+                  text={project.description}
+                  className="mb-4 text-sm leading-relaxed text-white/70 sm:text-base"
+                />
 
                 <div className="mb-5 flex flex-wrap gap-2">
                   {project.tags?.map((tag) => (

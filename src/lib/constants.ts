@@ -2,7 +2,7 @@ export const SOCIAL_LINKS = {
   github: "https://github.com/zGIKS",
   email: "mateo.aleman.romano@gmail.com",
   discord: "@asphanyx",
-  linkedin: "https://linkedin.com/in/mateo-aleman",
+  linkedin: "https://www.linkedin.com/in/giks/",
 };
 
 export const NAVIGATION_ITEMS = () => [
