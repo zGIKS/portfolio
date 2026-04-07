@@ -27,11 +27,9 @@ export default async function WritingPage() {
             <p className="text-xs uppercase tracking-wide text-white/50">
               {post.tags.join(" • ")}
             </p>
-            <h3 className="text-xl font-mono text-white">
-              {post.title}
-            </h3>
+            <h3 className="text-xl font-mono text-white">{post.title}</h3>
             <p className="text-sm text-white/50">
-              by {post.author} — {post.publishedAt}
+              by {post.author} - {post.publishedAt}
             </p>
             <div className="mt-2 line-clamp-2 text-sm text-white/60">
               {post.excerpt}

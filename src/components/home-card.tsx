@@ -6,10 +6,8 @@ import { ProfilePageCard } from "./profile-page-card";
 
 export function HomeCard() {
   const aboutParagraphs = [
-    "Hi, I'm Mateo (aka giks)",
-    "I build backend systems, secure APIs, and scalable microservices with a strong focus on architecture and performance. I enjoy designing clean system structures, working with distributed services, and exploring security-driven engineering."
+    "Hi, I'm Mateo (aka giks), a 20-year-old Software Engineering student at UPC passionate about backend systems, security, and performance. I started exploring Linux out of curiosity—configuring, breaking, and fixing systems—which led me into backend development, infrastructure, and security-driven engineering. I enjoy building scalable microservices, designing clean architectures, and working with distributed systems, always focusing on efficiency and low-level understanding. I'm constantly learning through experimentation, especially around DevOps, reproducible environments like NixOS, and creating systems that are both robust and intentional."
   ];
-  const menuItems = NAVIGATION_ITEMS();
 
   return (
     <section className="relative z-10 w-full px-4 py-4 md:px-0 md:py-4">
@@ -27,7 +25,7 @@ export function HomeCard() {
             </ProfilePageCard>
           </div>
 
-          <NavigationMenu items={menuItems} title="Navigation" />
+          <NavigationMenu items={NAVIGATION_ITEMS} title="Navigation" />
         </div>
       </div>
     </section>

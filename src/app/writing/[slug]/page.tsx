@@ -3,13 +3,18 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { AppShell } from "@/components/app-shell";
 import { ProfileBackLink } from "@/components/profile-back-link";
-import { getBlogPostBySlug } from "@/lib/blog-posts";
+import { getBlogPostBySlug, getBlogPosts } from "@/lib/blog-posts";
 
 type WritingPostPageProps = {
   params: Promise<{
     slug: string;
   }>;
 };
+
+export async function generateStaticParams() {
+  const posts = await getBlogPosts();
+  return posts.map((post) => ({ slug: post.slug }));
+}
 
 export default async function WritingPostPage({ params }: WritingPostPageProps) {
   const { slug } = await params;
@@ -32,7 +37,7 @@ export default async function WritingPostPage({ params }: WritingPostPageProps) 
         <header className="mb-8 border-b border-white/10 pb-8">
           <h1 className="mb-2 text-4xl font-mono text-white">{post.title}</h1>
           <div className="space-y-1 text-sm text-white/50">
-            <p>by {post.author} — {post.publishedAt}</p>
+            <p>by {post.author} - {post.publishedAt}</p>
             <p>(tags: {post.tags.join(", ")})</p>
           </div>
         </header>
