@@ -1,7 +1,7 @@
 ---
 title: Markdown, documentation and some tools
 author: Mateo
-publisbun ohedAt: 2026-03-04
+publishedAt: 2026-03-04
 tags: markdown, open-source, tools
 excerpt: When I took the Open Source course, I encountered something that was completely new for many of my classmates: most software documentation is written in Markdown.
 ---
