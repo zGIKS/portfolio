@@ -1,3 +1,5 @@
+import type { Route } from "next";
+
 export const SOCIAL_LINKS = {
   github: "https://github.com/zGIKS",
   email: "mateo.aleman.romano@gmail.com",
@@ -5,30 +7,42 @@ export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/in/giks/",
 };
 
-export const NAVIGATION_ITEMS = () => [
+export type NavigationItem = {
+  label: string;
+  href: Route;
+  kind: "link";
+};
+
+export const NAVIGATION_ITEMS: NavigationItem[] = [
   {
     label: "Work",
     href: "/work",
-    kind: "link" as const,
+    kind: "link",
   },
   {
     label: "About",
     href: "/about",
-    kind: "link" as const,
+    kind: "link",
   },
   {
     label: "Writing",
     href: "/writing",
-    kind: "link" as const,
-  },
-  {
-    label: "Resume",
-    kind: "static" as const,
-    badge: "PDF",
+    kind: "link",
   },
 ];
 
-export const PROJECTS = [
+export type Project = {
+  title: string;
+  dateRange?: string;
+  description: string;
+  image: string;
+  tags: string[];
+  previewUrl: string;
+  repoUrl: string;
+  installCommand?: string;
+};
+
+export const PROJECTS: Project[] = [
   {
     title: "nit",
     dateRange: "2026 - Present",

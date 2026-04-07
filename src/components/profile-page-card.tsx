@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 import { UmbreonIcon } from "@/components/icons/umbreon";
-import { PretextTextBlock } from "@/components/shared/pretext-text-block";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
@@ -31,15 +30,8 @@ export function ProfilePageCard({
             className="h-20 w-20 shrink-0"
           />
           <div className="min-w-0">
-            <PretextTextBlock
-              as="h1"
-              text="Mateo"
-              className="truncate text-2xl font-semibold text-white"
-            />
-            <PretextTextBlock
-              text={subtitle}
-              className="truncate text-sm text-white/80"
-            />
+            <h1 className="truncate text-2xl font-semibold text-white">Mateo</h1>
+            <p className="truncate text-sm text-white/80">{subtitle}</p>
           </div>
         </div>
       </header>

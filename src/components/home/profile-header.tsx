@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { UmbreonIcon } from "@/components/icons/umbreon";
-import { PretextTextBlock } from "@/components/shared/pretext-text-block";
 import { cn } from "@/lib/utils";
 
 export function ProfileHeader() {
@@ -34,21 +33,14 @@ export function ProfileHeader() {
       </div>
 
       <div className="min-w-0">
-        <PretextTextBlock
-          text="giks / home"
-          className="mb-2 text-xs tracking-[0.22em] text-white/55 uppercase"
-        />
-        <PretextTextBlock
-          as="h1"
-          text="Mateo Aleman"
-          className="text-3xl font-semibold tracking-tight text-white md:text-5xl"
-        />
+        <p className="mb-2 text-xs uppercase tracking-[0.22em] text-white/55">
+          giks / home
+        </p>
+        <h1 className="text-3xl font-semibold tracking-tight text-white md:text-5xl">
+          Mateo Aleman
+        </h1>
         <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-white/70">
-          <PretextTextBlock
-            as="span"
-            text="Software Engineering"
-            className="inline-block"
-          />
+          <span>Software Engineering</span>
           <span className="hidden text-white/25 sm:inline">|</span>
           <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/30 px-2.5 py-1 font-mono text-xs text-white/90">
             <span aria-hidden="true" className={cn(
@@ -56,11 +48,7 @@ export function ProfileHeader() {
               peruTime ? "bg-emerald-400" : "bg-white/10"
             )} />
             {peruTime ? (
-              <PretextTextBlock
-                as="span"
-                text={peruTime}
-                className="inline-block"
-              />
+              <span>{peruTime}</span>
             ) : (
               <span className="h-4 w-[60px] animate-pulse rounded bg-white/5" />
             )}

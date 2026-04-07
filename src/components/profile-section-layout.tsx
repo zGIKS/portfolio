@@ -1,10 +1,11 @@
+import type { Route } from "next";
 import type { ReactNode } from "react";
 import { AppShell } from "@/components/app-shell";
 import { ProfileBackLink } from "@/components/profile-back-link";
 import { ProfilePageCard } from "@/components/profile-page-card";
 
 interface ProfileSectionLayoutProps {
-  backHref: string;
+  backHref: Route;
   backLabel: string;
   subtitle: string;
   children: ReactNode;
