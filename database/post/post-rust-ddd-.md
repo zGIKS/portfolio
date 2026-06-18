@@ -96,19 +96,19 @@ flowchart TD
 
 The C4 context diagram gives a high-level view of the system. It shows how the IAM service interacts with users, the frontend client, Google OAuth, and SMTP services (Brown, 2018).
 
-![Context Diagram](https://i.imgur.com/sCaVL1b.png)
+![Context Diagram](https://raw.githubusercontent.com/zGIKS/auth-service/refs/heads/main/docs/assets/iam-context-dark.png)
 
 ### 4.3 Container diagram
 
 The container diagram shows the main runtime pieces of the system: the Axum API, PostgreSQL, and Redis (Brown, 2018).
 
-![Container Diagram](https://i.imgur.com/Q3JCrCn.png)
+![Container Diagram](https://raw.githubusercontent.com/zGIKS/auth-service/refs/heads/main/docs/assets/iam-containers-dark.png)
 
 ### 4.4 Component diagram
 
 The component diagram shows the internal structure of the Axum API container. It highlights the separation between REST interfaces, application services, domain logic, and infrastructure adapters (Brown, 2018).
 
-![Component Diagram](https://i.imgur.com/dqSEVY8.png)
+![Component Diagram](https://raw.githubusercontent.com/zGIKS/auth-service/refs/heads/main/docs/assets/iam-components-dark.png)
 
 ### 4.5 Data model
 
