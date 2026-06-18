@@ -1,16 +1,20 @@
 import React from "react";
 import Image from "next/image";
 
-export function ProfileImage() {
+interface ProfileImageProps {
+  className?: string;
+}
+
+export function ProfileImage({ className = "" }: ProfileImageProps) {
   return (
-    <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-xl overflow-hidden border border-border/50 shadow-md">
+    <div className={`relative overflow-hidden ${className}`}>
       <Image
         src="/assets/mateo.png"
         alt="Mateo Aleman"
         fill
-        sizes="(max-width: 768px) 128px, 160px"
         priority
-        className="object-cover"
+        sizes="(max-width: 1024px) 320px, 280px"
+        className="object-contain"
       />
     </div>
   );

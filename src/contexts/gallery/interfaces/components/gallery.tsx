@@ -8,7 +8,7 @@ export function Gallery() {
         <h1 className="text-2xl font-semibold tracking-tight text-foreground">
           Gallery
         </h1>
-        <div className="text-xl text-foreground leading-relaxed font-light flex flex-col gap-4">
+        <div className="text-lg text-foreground leading-relaxed font-light flex flex-col gap-4">
           <Text text="This is the empty gallery page container, ready to showcase your visual context." />
         </div>
       </article>

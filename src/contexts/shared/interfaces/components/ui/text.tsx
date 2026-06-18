@@ -11,8 +11,8 @@ interface TextProps extends React.HTMLAttributes<HTMLDivElement> {
   wordBreak?: "normal" | "keep-all";
   letterSpacing?: number;
   // Flow/Float options
-  floatWidth?: number;      // Optional: override base float width
-  floatHeight?: number;     // Optional: override base float height
+  floatWidth?: number;
+  floatHeight?: number;
   floatGap?: number;
   floatComponent?: React.ReactNode;
 }
@@ -45,29 +45,28 @@ export function Text({
     const element = containerRef.current;
     if (!element) return;
 
-    const style = window.getComputedStyle(element);
-    const fontWeight = style.fontWeight || "normal";
-    const fontSize = style.fontSize || "16px";
-    const fontFamily = style.fontFamily || "sans-serif";
-    const computedFont = font || `${fontWeight} ${fontSize} ${fontFamily}`;
-    
-    let computedLineHeight = lineHeight;
-    if (computedLineHeight === undefined) {
-      const parsed = parseFloat(style.lineHeight);
-      computedLineHeight = isNaN(parsed) ? 24 : parsed;
-    }
+    const updateLayout = () => {
+      const style = window.getComputedStyle(element);
+      const fontWeight = style.fontWeight || "normal";
+      const fontSize = style.fontSize || "16px";
+      const fontFamily = style.fontFamily || "sans-serif";
+      const computedFont = font || `${fontWeight} ${fontSize} ${fontFamily}`;
+      
+      let computedLineHeight = lineHeight;
+      if (computedLineHeight === undefined) {
+        const parsed = parseFloat(style.lineHeight);
+        computedLineHeight = isNaN(parsed) ? 24 : parsed;
+      }
 
-    setDetectedFont(computedFont);
-    setDetectedLineHeight(computedLineHeight);
-    setWidth(element.getBoundingClientRect().width);
+      setDetectedFont(computedFont);
+      setDetectedLineHeight(computedLineHeight);
+      setWidth(element.getBoundingClientRect().width);
 
-    // Responsive check for standard profile image float sizes if component is provided
-    const updateFloatSize = () => {
       if (floatComponent) {
         if (window.innerWidth >= 768) {
           setCurrentFloatSize({
-            width: floatWidth || 160,
-            height: floatHeight || 160,
+            width: floatWidth || 176,
+            height: floatHeight || 176,
           });
         } else {
           setCurrentFloatSize({
@@ -77,13 +76,19 @@ export function Text({
         }
       }
     };
-    updateFloatSize();
+
+    updateLayout();
+
+    // Trigger recalculation when custom fonts (like EB Garamond) are fully loaded
+    if (typeof document !== "undefined" && document.fonts) {
+      document.fonts.ready.then(() => {
+        updateLayout();
+      });
+    }
 
     const observer = new ResizeObserver((entries) => {
       if (!entries || entries.length === 0) return;
-      const rect = entries[0].contentRect;
-      setWidth(rect.width);
-      updateFloatSize();
+      updateLayout();
     });
 
     observer.observe(element);
