@@ -13,7 +13,7 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
       <main className="flex-1 flex flex-col justify-start">
         <Suspense fallback={
           <div className="flex-1 flex items-center justify-center text-muted-foreground font-sans italic">
-            Cargando contenido...
+            Loading content...
           </div>
         }>
           <PostList />

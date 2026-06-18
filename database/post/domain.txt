@@ -1,5 +1,0 @@
-UUID
-title
-TAGS
-status
-FECHA DE PUBLICACION

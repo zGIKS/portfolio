@@ -5,5 +5,5 @@ export type PostDetail = {
   status: "published" | "draft";
   publishedAt: string;
   readingTime: string;
-  content: string; // El Markdown del body del post
+  content: string; // The Markdown body of the post
 };

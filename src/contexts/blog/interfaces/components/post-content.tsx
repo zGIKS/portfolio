@@ -8,7 +8,7 @@ interface PostContentProps {
   content: string;
 }
 
-// Inicializar Marked con los plugins de forma segura
+// Initialize Marked with the plugins safely
 const markedInstance = new Marked();
 markedInstance.use(gfmHeadingId());
 markedInstance.use({
@@ -33,7 +33,7 @@ export function PostContent({ content }: PostContentProps) {
   useEffect(() => {
     if (!isMounted) return;
 
-    // Solo cargamos e inicializamos mermaid en el navegador
+    // Only load and initialize mermaid in the browser
     import("mermaid").then((m) => {
       const mermaid = m.default;
       mermaid.initialize({
@@ -42,7 +42,7 @@ export function PostContent({ content }: PostContentProps) {
         securityLevel: "loose",
       });
       
-      // Corremos el render de Mermaid de forma segura
+      // Run Mermaid rendering safely
       mermaid.run().catch((err) => {
         console.error("Mermaid render error:", err);
       });
@@ -56,4 +56,3 @@ export function PostContent({ content }: PostContentProps) {
     />
   );
 }
-

@@ -104,13 +104,15 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
   }
   html {
     @apply font-sans;
+    font-size: 18px;
+    scrollbar-gutter: stable;
   }
 
-  /* Asegurar que las viñetas y títulos en prose se rendericen correctamente y compactos */
+  /* Ensure prose bullets and headings render correctly and compactly */
   .prose {
     max-width: none;
   }

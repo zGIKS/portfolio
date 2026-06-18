@@ -12,13 +12,13 @@ interface BlogPostPageProps {
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { id } = await params;
 
-  // Invocar al Query Service de la capa de aplicación
+  // Invoke the application layer Query Service
   const post = getPostQueryService({ uuid: id });
 
   if (!post) {
     notFound();
   }
 
-  // Delegar toda la presentación y formateo al componente del Bounded Context en interfaces
+  // Delegate all presentation and formatting to the bounded context interface component
   return <PostDetailView post={post} />;
 }
