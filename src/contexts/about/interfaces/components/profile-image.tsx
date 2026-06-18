@@ -7,7 +7,7 @@ interface ProfileImageProps {
 
 export function ProfileImage({ className = "" }: ProfileImageProps) {
   return (
-    <div className={`relative overflow-hidden ${className}`}>
+    <div className={`relative overflow-hidden select-none pointer-events-none ${className}`}>
       <Image
         src="/assets/mateo-hat.png"
         alt="Mateo Aleman"

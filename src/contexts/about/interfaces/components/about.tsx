@@ -1,5 +1,4 @@
 import React from "react";
-import { Text } from "@/contexts/shared/interfaces/components/text";
 import { ProfileImage } from "./profile-image";
 
 const BIOGRAPHY_PARAGRAPHS = [
@@ -10,8 +9,6 @@ const BIOGRAPHY_PARAGRAPHS = [
   "I also value learning from mistakes, because I believe every challenge is an opportunity to grow both professionally and personally.",
 ];
 
-const BIOGRAPHY_TEXT = BIOGRAPHY_PARAGRAPHS.join("\n\n");
-
 export function About() {
   return (
     <main className="flex-1 px-6 py-8">
@@ -20,28 +17,15 @@ export function About() {
           About Me
         </h1>
 
-        <section className="flex flex-col gap-8">
-          <div className="lg:hidden">
-            <ProfileImage className="mx-auto w-full max-w-[320px] aspect-[1017/1342]" />
+        <section className="text-lg font-light leading-relaxed text-foreground hyphens-auto text-justify">
+          <div className="mb-8 lg:float-right lg:ml-8 lg:mb-4 lg:w-[280px] lg:shrink-0">
+            <ProfileImage className="mx-auto w-full max-w-[320px] aspect-[1017/1342] lg:max-w-none" />
           </div>
 
-          <div className="space-y-6 text-lg font-light leading-relaxed text-foreground text-justify hyphens-auto lg:hidden">
+          <div className="space-y-6">
             {BIOGRAPHY_PARAGRAPHS.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
-          </div>
-
-          <div className="hidden lg:block">
-            <Text
-              text={BIOGRAPHY_TEXT}
-              whiteSpace="pre-wrap"
-              justify
-              floatGap={32}
-              floatWidth={280}
-              floatHeight={370}
-              floatComponent={<ProfileImage className="h-full w-full" />}
-              className="text-lg font-light leading-relaxed text-foreground hyphens-auto"
-            />
           </div>
         </section>
       </article>
