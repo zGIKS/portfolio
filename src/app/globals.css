@@ -115,6 +115,12 @@
   /* Ensure prose bullets and headings render correctly and compactly */
   .prose {
     max-width: none;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  .prose a {
+    word-break: break-all;
+    overflow-wrap: break-word;
   }
   .prose p {
     margin-top: 0.5rem !important;
