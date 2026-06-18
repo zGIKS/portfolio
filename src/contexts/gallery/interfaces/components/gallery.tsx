@@ -1,4 +1,5 @@
 import React from "react";
+import { Text } from "@/contexts/shared/interfaces/components/ui/text";
 
 export function Gallery() {
   return (
@@ -8,9 +9,7 @@ export function Gallery() {
           Gallery
         </h1>
         <div className="text-base text-foreground leading-relaxed font-light flex flex-col gap-4">
-          <p>
-            This is the empty gallery page container, ready to showcase your visual context.
-          </p>
+          <Text text="This is the empty gallery page container, ready to showcase your visual context." />
         </div>
       </article>
     </main>
