@@ -25,7 +25,7 @@ export function About() {
             <ProfileImage className="mx-auto w-full max-w-[320px] aspect-[1017/1342]" />
           </div>
 
-          <div className="space-y-6 text-lg font-light leading-relaxed text-foreground lg:hidden">
+          <div className="space-y-6 text-lg font-light leading-relaxed text-foreground text-justify hyphens-auto lg:hidden">
             {BIOGRAPHY_PARAGRAPHS.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
@@ -35,11 +35,12 @@ export function About() {
             <Text
               text={BIOGRAPHY_TEXT}
               whiteSpace="pre-wrap"
+              justify
               floatGap={32}
               floatWidth={280}
               floatHeight={370}
               floatComponent={<ProfileImage className="h-full w-full" />}
-              className="text-lg font-light leading-relaxed text-foreground"
+              className="text-lg font-light leading-relaxed text-foreground hyphens-auto"
             />
           </div>
         </section>

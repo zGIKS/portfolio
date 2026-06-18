@@ -10,6 +10,7 @@ interface TextProps extends React.HTMLAttributes<HTMLDivElement> {
   whiteSpace?: "normal" | "pre-wrap";
   wordBreak?: "normal" | "keep-all";
   letterSpacing?: number;
+  justify?: boolean;
   // Flow/Float options
   floatWidth?: number;
   floatHeight?: number;
@@ -24,6 +25,7 @@ export function Text({
   whiteSpace = "normal",
   wordBreak = "normal",
   letterSpacing,
+  justify = false,
   floatWidth,
   floatHeight,
   floatGap = 24,
@@ -112,7 +114,14 @@ export function Text({
   const layout = useMemo(() => {
     if (!prepared || width === null || width <= 0) return null;
     try {
-      const lines: Array<{ text: string; width: number; top: number; left: number }> = [];
+      const lines: Array<{
+        text: string;
+        width: number;
+        availableWidth: number;
+        shouldJustify: boolean;
+        top: number;
+        left: number;
+      }> = [];
       let cursor = { segmentIndex: 0, graphemeIndex: 0 };
       let y = 0;
 
@@ -127,9 +136,19 @@ export function Text({
         if (range === null) break;
 
         const line = materializeLineRange(prepared, range);
+        const spaceCount = (line.text.match(/\s/g) ?? []).length;
+        const extraSpace = currentMaxWidth - line.width;
+        const shouldJustifyLine =
+          justify &&
+          spaceCount >= 4 &&
+          extraSpace > 0 &&
+          line.width < currentMaxWidth * 0.98 &&
+          line.width >= currentMaxWidth * 0.6;
         lines.push({
           text: line.text,
           width: line.width,
+          availableWidth: currentMaxWidth,
+          shouldJustify: shouldJustifyLine,
           top: y,
           left: 0,
         });
@@ -189,12 +208,23 @@ export function Text({
             position: "absolute",
             top: `${line.top}px`,
             left: `${line.left}px`,
-            width: `${line.width}px`,
+            width: `${line.availableWidth}px`,
+            display: line.shouldJustify ? "flex" : "block",
+            justifyContent: line.shouldJustify ? "space-between" : undefined,
             whiteSpace: "nowrap",
             lineHeight: `${detectedLineHeight}px`,
           }}
         >
-          {line.text}
+          {line.shouldJustify
+            ? line.text
+                .trim()
+                .split(/\s+/)
+                .map((word, wordIndex) => (
+                  <span key={`${index}-${wordIndex}`} className="shrink-0">
+                    {word}
+                  </span>
+                ))
+            : line.text}
         </div>
       ))}
     </div>
