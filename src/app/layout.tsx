@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
+import { EB_Garamond } from "next/font/google";
+import { cn } from "@/lib/utils";
 
-const ibmPlexMono = IBM_Plex_Mono({
-  variable: "--font-ibm-plex-mono",
+const ebGaramond = EB_Garamond({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
-  title: "Mateo Aleman - Software Engineer",
-  description: "Portfolio of Mateo Aleman, a software engineering student based in Peru, specializing in backend systems, infrastructure, and security-critical services. Features personal photo, experience, projects, and technical stack.",
+  title: "Hello World",
+  description: "Minimal Next.js hello world.",
 };
 
 export default function RootLayout({
@@ -19,10 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${ibmPlexMono.className} ${ibmPlexMono.variable} antialiased overflow-x-hidden`}>
-        {children}
-      </body>
+    <html lang="en" className={cn("font-sans", ebGaramond.variable)}>
+      <body>{children}</body>
     </html>
   );
 }
