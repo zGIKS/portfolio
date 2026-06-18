@@ -3,8 +3,8 @@ import "server-only";
 import fs from "fs";
 import path from "path";
 import yaml from "js-yaml";
-import type { PostSummary } from "@/contexts/blog/domain/model/post-summary";
-import type { PostDetail } from "@/contexts/blog/domain/model/post-detail";
+import type { PostSummary } from "@/contexts/blog/interfaces/resources/post-summary";
+import type { PostDetail } from "@/contexts/blog/interfaces/resources/post-detail";
 
 const POSTS_DIR = path.join(process.cwd(), "database", "post");
 
