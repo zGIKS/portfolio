@@ -9,7 +9,7 @@ export function ProfileImage({ className = "" }: ProfileImageProps) {
   return (
     <div className={`relative overflow-hidden ${className}`}>
       <Image
-        src="/assets/mateo.png"
+        src="/assets/mateo-hat.png"
         alt="Mateo Aleman"
         fill
         priority

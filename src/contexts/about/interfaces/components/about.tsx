@@ -1,5 +1,5 @@
 import React from "react";
-import { Text } from "@/contexts/shared/interfaces/components/ui/text";
+import { Text } from "@/contexts/shared/interfaces/components/text";
 import { ProfileImage } from "./profile-image";
 
 const BIOGRAPHY_PARAGRAPHS = [
