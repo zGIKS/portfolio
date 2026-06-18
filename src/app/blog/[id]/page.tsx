@@ -1,8 +1,11 @@
 import React, { Suspense } from "react";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { Workspace } from "@/contexts/blog/interfaces/components/workspace";
 import { Header } from "@/contexts/shared/interfaces/components/header";
 import { Footer } from "@/contexts/shared/interfaces/components/footer";
+import { getPostQueryService } from "@/contexts/blog/application/internal/queryservices/get-post.query-service";
+import { PostContent } from "@/contexts/blog/interfaces/components/post-content";
 
 type Params = Promise<{ id: string }>;
 
@@ -11,8 +14,22 @@ interface BlogPostPageProps {
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  // Await the params promise as required in Next.js 16/React 19
   const { id } = await params;
+
+  // Invocar al Query Service de la capa de aplicación
+  const post = getPostQueryService({ uuid: id });
+
+  if (!post) {
+    notFound();
+  }
+
+  const formattedDate = post.publishedAt
+    ? new Date(post.publishedAt).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      })
+    : "";
 
   return (
     <Workspace>
@@ -34,26 +51,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 &larr; Back to posts
               </Link>
               <h1 className="text-2xl font-semibold tracking-tight text-foreground mt-4">
-                Post Detail #{id}
+                {post.title}
               </h1>
               <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                <span>Year 2026</span>
-                <span>•</span>
-                <span>5 min read</span>
+                {formattedDate && <span>{formattedDate}</span>}
+                {formattedDate && post.tags && post.tags.length > 0 && <span>•</span>}
+                {post.tags && post.tags.length > 0 && (
+                  <span className="italic">{post.tags.join(", ")}</span>
+                )}
               </div>
             </header>
 
-            <div className="text-base text-foreground leading-relaxed font-light flex flex-col gap-4">
-              <p>
-                This is the dynamic content of the post with ID <strong>{id}</strong>.
-              </p>
-              <p>
-                According to the recommended DDD (Domain-Driven Design) architecture, 
-                this App Router page functions solely as an orchestrator that reads the 
-                route parameters (<code>params</code>) and delegates business and 
-                presentation logic to the corresponding layers of your bounded context.
-              </p>
-            </div>
+            <PostContent content={post.content} />
           </article>
         </Suspense>
       </main>

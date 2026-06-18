@@ -12,7 +12,10 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^1.20.0",
+    "marked": "^18.0.5",
+    "marked-gfm-heading-id": "^4.1.4",
     "mdx": "^0.3.1",
+    "mermaid": "^11.15.0",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3",
@@ -23,6 +26,7 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.1",
     "@types/js-yaml": "^4.0.9",
+    "@types/marked": "^6.0.0",
     "@types/node": "^20.19.39",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
