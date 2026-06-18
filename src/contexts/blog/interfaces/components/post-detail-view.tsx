@@ -43,9 +43,13 @@ export function PostDetailView({ post }: PostDetailViewProps) {
               </h1>
               <div className="flex items-center gap-2 text-xs text-muted-foreground">
                 {formattedDate && <span>{formattedDate}</span>}
-                {formattedDate && post.tags && post.tags.length > 0 && <span>•</span>}
+                {formattedDate && <span>•</span>}
+                <span>{post.readingTime}</span>
                 {post.tags && post.tags.length > 0 && (
-                  <span className="italic">{post.tags.join(", ")}</span>
+                  <>
+                    <span>•</span>
+                    <span className="italic">{post.tags.join(", ")}</span>
+                  </>
                 )}
               </div>
             </header>

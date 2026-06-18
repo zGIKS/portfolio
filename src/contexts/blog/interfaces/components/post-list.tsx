@@ -22,7 +22,7 @@ export function PostList() {
               </h2>
             </div>
             <span className="text-sm text-muted-foreground shrink-0 font-light">
-              {post.tags.join(", ")}
+              {post.readingTime}
             </span>
           </Link>
         ))}

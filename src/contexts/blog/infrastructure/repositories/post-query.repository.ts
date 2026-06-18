@@ -19,6 +19,12 @@ function parsePost(raw: string): { data: Record<string, unknown>; content: strin
   };
 }
 
+function calculateReadingTime(content: string): string {
+  const words = content.trim().split(/\s+/).filter(Boolean).length;
+  const minutes = Math.max(1, Math.ceil(words / 200));
+  return `${minutes} min read`;
+}
+
 export function listPostSummaries(): PostSummary[] {
   const files = fs
     .readdirSync(POSTS_DIR)
@@ -27,7 +33,7 @@ export function listPostSummaries(): PostSummary[] {
   return files
     .map((file) => {
       const raw = fs.readFileSync(path.join(POSTS_DIR, file), "utf-8");
-      const { data } = parsePost(raw);
+      const { data, content } = parsePost(raw);
 
       return {
         uuid: String(data.uuid ?? ""),
@@ -35,6 +41,7 @@ export function listPostSummaries(): PostSummary[] {
         tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
         status: data.status === "draft" ? "draft" : "published",
         publishedAt: data.publishedAt ? String(data.publishedAt) : "",
+        readingTime: calculateReadingTime(content),
       } satisfies PostSummary;
     })
     .sort(
@@ -59,6 +66,7 @@ export function getPostByUuid(uuid: string): PostDetail | null {
         tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
         status: data.status === "draft" ? "draft" : "published",
         publishedAt: data.publishedAt ? String(data.publishedAt) : "",
+        readingTime: calculateReadingTime(content),
         content,
       } satisfies PostDetail;
     }

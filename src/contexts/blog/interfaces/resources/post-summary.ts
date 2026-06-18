@@ -4,4 +4,5 @@ export type PostSummary = {
   tags: string[];
   status: "published" | "draft";
   publishedAt: string;
+  readingTime: string;
 };
