@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 interface Post {
   id: string;
@@ -45,9 +46,10 @@ export function PostList() {
     <div className="w-full flex flex-col gap-6 p-6">
       <div className="flex flex-col gap-4">
         {POSTS.map((post) => (
-          <article
+          <Link
             key={post.id}
-            className="flex items-baseline justify-between py-2 group cursor-pointer"
+            href={`/blog/${post.id}`}
+            className="flex items-baseline justify-between py-2 group cursor-pointer decoration-transparent"
           >
             <div className="flex items-baseline gap-4">
               <span className="text-sm text-muted-foreground w-12 shrink-0">
@@ -60,7 +62,7 @@ export function PostList() {
             <span className="text-sm text-muted-foreground shrink-0 font-light">
               {post.readingTime}
             </span>
-          </article>
+          </Link>
         ))}
       </div>
     </div>
