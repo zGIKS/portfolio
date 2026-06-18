@@ -1,15 +1,20 @@
 "use client";
 
 import React, { useEffect, useRef, useState, useMemo } from "react";
-import { prepareWithSegments, layoutWithLines } from "@chenglou/pretext";
+import { prepareWithSegments, layoutNextLineRange, materializeLineRange } from "@chenglou/pretext";
 
 interface TextProps extends React.HTMLAttributes<HTMLDivElement> {
   text: string;
-  font?: string; // Optional: Override computed font
-  lineHeight?: number; // Optional: Override computed line-height
+  font?: string;
+  lineHeight?: number;
   whiteSpace?: "normal" | "pre-wrap";
   wordBreak?: "normal" | "keep-all";
   letterSpacing?: number;
+  // Flow/Float options
+  floatWidth?: number;      // Optional: override base float width
+  floatHeight?: number;     // Optional: override base float height
+  floatGap?: number;
+  floatComponent?: React.ReactNode;
 }
 
 export function Text({
@@ -19,32 +24,33 @@ export function Text({
   whiteSpace = "normal",
   wordBreak = "normal",
   letterSpacing,
+  floatWidth,
+  floatHeight,
+  floatGap = 24,
+  floatComponent,
   className,
   ...props
 }: TextProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState<number | null>(null);
   const [isClient, setIsClient] = useState(false);
-  
-  // Dynamically detected styles from the DOM
   const [detectedFont, setDetectedFont] = useState<string>("");
   const [detectedLineHeight, setDetectedLineHeight] = useState<number>(24);
+  
+  // Track float size dynamically for responsiveness
+  const [currentFloatSize, setCurrentFloatSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
     setIsClient(true);
     const element = containerRef.current;
     if (!element) return;
 
-    // Detect styling from global CSS / Tailwind classes
     const style = window.getComputedStyle(element);
-    
-    // Fallbacks if browser fails to serialize getComputedStyle().font
     const fontWeight = style.fontWeight || "normal";
     const fontSize = style.fontSize || "16px";
     const fontFamily = style.fontFamily || "sans-serif";
     const computedFont = font || `${fontWeight} ${fontSize} ${fontFamily}`;
     
-    // Parse computed line-height
     let computedLineHeight = lineHeight;
     if (computedLineHeight === undefined) {
       const parsed = parseFloat(style.lineHeight);
@@ -55,17 +61,36 @@ export function Text({
     setDetectedLineHeight(computedLineHeight);
     setWidth(element.getBoundingClientRect().width);
 
+    // Responsive check for standard profile image float sizes if component is provided
+    const updateFloatSize = () => {
+      if (floatComponent) {
+        if (window.innerWidth >= 768) {
+          setCurrentFloatSize({
+            width: floatWidth || 160,
+            height: floatHeight || 160,
+          });
+        } else {
+          setCurrentFloatSize({
+            width: floatWidth || 128,
+            height: floatHeight || 128,
+          });
+        }
+      }
+    };
+    updateFloatSize();
+
     const observer = new ResizeObserver((entries) => {
       if (!entries || entries.length === 0) return;
       const rect = entries[0].contentRect;
       setWidth(rect.width);
+      updateFloatSize();
     });
 
     observer.observe(element);
     return () => {
       observer.disconnect();
     };
-  }, [font, lineHeight]);
+  }, [font, lineHeight, floatWidth, floatHeight, floatComponent]);
 
   // Memoize preparation
   const prepared = useMemo(() => {
@@ -78,15 +103,42 @@ export function Text({
     }
   }, [text, detectedFont, whiteSpace, wordBreak, letterSpacing, isClient]);
 
+  // Custom line-by-line layout loop for floating elements
   const layout = useMemo(() => {
     if (!prepared || width === null || width <= 0) return null;
     try {
-      return layoutWithLines(prepared, width, detectedLineHeight);
+      const lines: Array<{ text: string; width: number; top: number; left: number }> = [];
+      let cursor = { segmentIndex: 0, graphemeIndex: 0 };
+      let y = 0;
+
+      const fWidth = currentFloatSize.width;
+      const fHeight = currentFloatSize.height;
+
+      while (true) {
+        const isWithinFloat = fWidth > 0 && fHeight > 0 && y < fHeight;
+        const currentMaxWidth = isWithinFloat ? width - fWidth - floatGap : width;
+
+        const range = layoutNextLineRange(prepared, cursor, currentMaxWidth);
+        if (range === null) break;
+
+        const line = materializeLineRange(prepared, range);
+        lines.push({
+          text: line.text,
+          width: line.width,
+          top: y,
+          left: 0,
+        });
+
+        cursor = range.end;
+        y += detectedLineHeight;
+      }
+
+      return { lines, height: Math.max(y, fHeight) };
     } catch (e) {
       console.error("Pretext layout failed:", e);
       return null;
     }
-  }, [prepared, width, detectedLineHeight]);
+  }, [prepared, width, detectedLineHeight, currentFloatSize, floatGap]);
 
   // SSR or hydration fallback: render normal text but invisible/hidden to preserve SEO and prevent layout shift
   if (!layout) {
@@ -109,13 +161,29 @@ export function Text({
       }}
       {...props}
     >
+      {/* Float component positioned absolutely at top right */}
+      {floatComponent && currentFloatSize.width > 0 && (
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            right: 0,
+            width: `${currentFloatSize.width}px`,
+            height: `${currentFloatSize.height}px`,
+          }}
+        >
+          {floatComponent}
+        </div>
+      )}
+
+      {/* Render each calculated line */}
       {layout.lines.map((line, index) => (
         <div
           key={index}
           style={{
             position: "absolute",
-            top: `${index * detectedLineHeight}px`,
-            left: 0,
+            top: `${line.top}px`,
+            left: `${line.left}px`,
             width: `${line.width}px`,
             whiteSpace: "nowrap",
             lineHeight: `${detectedLineHeight}px`,
