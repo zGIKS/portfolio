@@ -6,9 +6,14 @@ export function Header() {
       <span className="text-xl font-semibold tracking-tight text-foreground">
         Mateo Aleman
       </span>
-      <Button variant="ghost" className="text-foreground hover:text-foreground text-base">
-        About
-      </Button>
+      <div className="flex items-center gap-4">
+        <Button variant="ghost" className="text-foreground hover:text-foreground text-base">
+          About
+        </Button>
+        <Button variant="ghost" className="text-foreground hover:text-foreground text-base">
+          Gallery
+        </Button>
+      </div>
     </header>
   );
 }
