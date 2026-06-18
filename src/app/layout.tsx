@@ -9,8 +9,8 @@ const ebGaramond = EB_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Hello World",
-  description: "Minimal Next.js hello world.",
+  title: "Mateo Aleman's Blog",
+  description: "Mateo Aleman's Portfolio and Blog",
 };
 
 export default function RootLayout({
