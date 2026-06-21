@@ -158,4 +158,45 @@
     font-weight: 700 !important;
     color: var(--foreground) !important;
   }
+  .prose :not(pre) > code::before,
+  .prose :not(pre) > code::after {
+    content: none !important;
+  }
+  .prose :not(pre) > code {
+    color: var(--foreground) !important;
+    background: color-mix(in oklab, var(--foreground) 10%, transparent) !important;
+    border-radius: 0.25rem;
+    padding: 0.1rem 0.3rem;
+    font-weight: 600;
+  }
+  .prose table {
+    width: 100% !important;
+    table-layout: fixed;
+    border-collapse: collapse;
+  }
+  .prose th,
+  .prose td {
+    vertical-align: top;
+    word-break: normal;
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+  .prose th:nth-child(1),
+  .prose td:nth-child(1) {
+    width: 14%;
+  }
+  .prose th:nth-child(2),
+  .prose td:nth-child(2) {
+    width: 12%;
+  }
+  .prose th:nth-child(3),
+  .prose td:nth-child(3) {
+    width: 42%;
+  }
+  .prose th:nth-child(4),
+  .prose td:nth-child(4),
+  .prose th:nth-child(5),
+  .prose td:nth-child(5) {
+    width: 16%;
+  }
 }
