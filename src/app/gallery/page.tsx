@@ -2,13 +2,13 @@ import React from "react";
 import { Workspace } from "@/contexts/blog/interfaces/components/workspace";
 import { Header } from "@/contexts/shared/interfaces/components/header";
 import { Footer } from "@/contexts/shared/interfaces/components/footer";
-import { About } from "@/contexts/about/interfaces/components/about";
+import { Gallery } from "@/contexts/gallery/interfaces/components/gallery";
 
-export default function AboutPage() {
+export default function GalleryPage() {
   return (
     <Workspace>
       <Header />
-      <About />
+      <Gallery />
       <Footer />
     </Workspace>
   );

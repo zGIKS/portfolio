@@ -1,16 +1,25 @@
-import type { Metadata } from "next";
-import { HomeCard } from "@/components/home-card";
-import { AppShell } from "@/components/app-shell";
+import { Suspense } from "react";
+import { Workspace } from "@/contexts/blog/interfaces/components/workspace";
+import { Header } from "@/contexts/shared/interfaces/components/header";
+import { Footer } from "@/contexts/shared/interfaces/components/footer";
+import { PostList } from "@/contexts/blog/interfaces/components/post-list";
 
-export const metadata: Metadata = {
-  title: "Mateo Aleman - Software Engineer",
-  description: "Portfolio of Mateo Aleman, a software engineering student based in Peru, specializing in backend systems, infrastructure, and security-critical services.",
-};
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
-export default function HomePage() {
+export default async function HomePage({ searchParams }: { searchParams: SearchParams }) {
   return (
-    <AppShell>
-      <HomeCard />
-    </AppShell>
+    <Workspace>
+      <Header />
+      <main className="flex-1 flex flex-col justify-start">
+        <Suspense fallback={
+          <div className="flex-1 flex items-center justify-center text-muted-foreground font-sans italic">
+            Loading content...
+          </div>
+        }>
+          <PostList />
+        </Suspense>
+      </main>
+      <Footer />
+    </Workspace>
   );
 }
